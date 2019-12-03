@@ -1,0 +1,17 @@
+version: '3'
+
+services: 
+  angular:
+    build: 
+      context: ./client
+      dockerfile: dockerfile
+    volumes: 
+      - ./client:/app
+    ports:
+      - 80:4200
+    networks: 
+      manuproj_network:
+    entrypoint: "npm start"
+
+networks: 
+  manuproj_network:
