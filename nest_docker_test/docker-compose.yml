@@ -1,0 +1,47 @@
+version: '3'
+
+services: 
+    angular_service:
+        container_name: angularcontainer
+        volumes:
+            - ./client/app:/angularapp
+        # working_dir: /angularapp
+        build: 
+            context: ./client
+            dockerfile: dockerfile
+        ports: 
+            - 81:4200
+        # entrypoint: "sh -c 'sleep 100'"
+        entrypoint: "sh -c 'npm run start'"
+        networks: 
+            angular_nginx_network:
+    nest_service:
+        container_name: nestcontainer
+        working_dir: /nestapp
+        volumes:
+            - ./nestapp1:/nestapp
+        build: 
+            context: ./nestapp1
+            dockerfile: dockerfile
+        ports: 
+            - 82:3000
+        # entrypoint: "sh -c 'sleep 100'"
+        entrypoint: "sh -c 'npm run start'"
+        networks: 
+            angular_nginx_network:
+    nginxserver:
+        container_name: nginxservercontainter
+        image: nginx:alpine
+        working_dir: /usr/share/nginx/html
+        volumes: 
+            - ./client/app/dist/app:/usr/share/nginx/html
+            - ./nginx/configs:/etc/nginx/conf.d
+        ports: 
+            - 80:80
+        depends_on: 
+            - angular_service
+        networks: 
+            angular_nginx_network:
+
+networks: 
+    angular_nginx_network:

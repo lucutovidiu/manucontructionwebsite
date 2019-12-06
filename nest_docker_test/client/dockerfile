@@ -1,0 +1,6 @@
+FROM node:10.17.0-alpine3.9 as nest_image
+# RUN npm i g npm i -g @nestjs/cli
+RUN npm install -g @angular/cli
+WORKDIR /angularapp
+# COPY . .
+# RUN nest new . -p npm
