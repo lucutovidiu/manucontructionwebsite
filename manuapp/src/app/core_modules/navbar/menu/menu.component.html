@@ -1,4 +1,4 @@
 <div class="navbar_wrapper">
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button routerLink="/about">About</a>
+    <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button routerLink="/">Home</a>
+    <a routerLinkActive="active" mat-button routerLink="/about">About</a> 
 </div>
