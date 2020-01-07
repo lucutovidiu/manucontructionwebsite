@@ -1,0 +1,11 @@
+.homepage{
+    background-image: url('../../../assets/homepagecover1.jpg');
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    &_hero{
+        position: relative;
+        top: 70px;
+    }
+}
