@@ -1,0 +1,40 @@
+app
+    core_modules
+        navbar
+            menu.component
+        router
+            HOME_PAGE 
+            ABOUT_PAGE 
+            SERVICES_PAGE 
+            PROJECTS_PAGE 
+            CONTACT_PAGE
+        imports:{page_modules}
+
+    shared_components_module
+        Local_Services
+            ContactFormEmailService
+        LanguageBtnComponent
+        FacebookBtnComponent ...
+        ContactFormComponent
+        MyLocationMapComponent
+
+    page_modules
+        HOME-PAGE
+        ABOUT-PAGE 
+        SERVICES-PAGE 
+        PROJECTS-PAGE 
+        CONTACT-PAGE
+        imports:{shared_components_module}
+    
+    shared_services_module
+        LanguageService
+        CommonServices
+        
+    shared_daos
+
+app-imports
+    navbar
+    router
+<navbar>
+<router-outlet>
+{router}
