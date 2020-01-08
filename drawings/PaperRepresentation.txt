@@ -2,16 +2,17 @@ app
     core_modules
         navbar
             menu.component
+            top_followme_bar
+            footer
         router
             HOME_PAGE 
             ABOUT_PAGE 
-            SERVICES_PAGE 
-            PROJECTS_PAGE 
-            CONTACT_PAGE
+            Services_Page 
+            Galerie_Page 
+            Contact_Page
         imports:{page_modules}
 
     shared_components_module
-        Local_Services
             ContactFormEmailService
         LanguageBtnComponent
         FacebookBtnComponent ...
