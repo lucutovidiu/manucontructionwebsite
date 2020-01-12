@@ -19,7 +19,7 @@ npm i
 npm start which will run ng serve.
 
 # Production (also for testing SSR/Pre-rendering locally)
-*npm run build:ssr && npm run serve:ssr
+*npm run build:ssr && npm run serve:ssr 
 
 Compiles your application and spins up a Nest server to serve your Universal application on http://localhost:4000.
 *npm run build:prerender && npm run serve:prerender

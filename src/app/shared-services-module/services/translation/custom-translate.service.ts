@@ -9,7 +9,7 @@ export class CustomTranslateService {
   langLength;
   browserLang;
 
-  constructor(private translate: TranslateService) { 
+  constructor(private translate: TranslateService) {
     this.translate.addLangs(['en', 'fr']);
     this.languages = this.translate.getLangs();
     this.langLength = this.translate.getLangs().length;
@@ -33,23 +33,29 @@ export class CustomTranslateService {
   }
 
   setLocalLanguageExist() {
-    if (localStorage.getItem('current_language')) {
-      (localStorage.getItem('current_language').match(/en|fr/) && this.translate.getBrowserLang().match(/en|fr/)) ?
-        this.translate.use(localStorage.getItem('current_language')) : this.defaultLanguage();
-    } else {
-      (this.translate.getBrowserLang().match(/en|fr/)) ?
-        this.setBrowserLang() : this.defaultLanguage();
+    if (localStorage) {
+      if (localStorage.getItem('current_language')) {
+        (localStorage.getItem('current_language').match(/en|fr/) && this.translate.getBrowserLang().match(/en|fr/)) ?
+          this.translate.use(localStorage.getItem('current_language')) : this.defaultLanguage();
+      } else {
+        (this.translate.getBrowserLang().match(/en|fr/)) ?
+          this.setBrowserLang() : this.defaultLanguage();
+      }
     }
   }
 
   setBrowserLang() {
-    this.translate.use(this.translate.getBrowserLang());
-    localStorage.setItem('current_language', this.translate.getBrowserLang());
+    if (localStorage) {
+      this.translate.use(this.translate.getBrowserLang());
+      localStorage.setItem('current_language', this.translate.getBrowserLang());
+    }
   }
 
   defaultLanguage(): void {
-    localStorage.setItem('current_language', 'en');
-    this.translate.setDefaultLang('en');
+    if (localStorage) {
+      localStorage.setItem('current_language', 'en');
+      this.translate.setDefaultLang('en');
+    }
   }
 
   translateUse(param): void {
