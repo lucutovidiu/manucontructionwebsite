@@ -16,7 +16,7 @@ nest new controller ...
 npm i
 
 # Development (Client-side only rendering)
-npm start which will run ng serve.
+npm start which will run: npm run start:dev.
 
 # Production (also for testing SSR/Pre-rendering locally)
 *npm run build:ssr && npm run serve:ssr 
@@ -26,3 +26,10 @@ Compiles your application and spins up a Nest server to serve your Universal app
 
 Compiles your application and prerenders your applications files, spinning up a demo http-server so you can view it on http://localhost:8080
 Note: To deploy your static site to a static hosting platform you will have to deploy the dist/browser folder, rather than the usual dist
+
+# For heroku
+1. Requires script below:
+"heroku-postbuild": "npm run build:ssr"
+2. Start script was modified as below: 
+"start": "npm run serve:ssr"
+both above are required by heroku

@@ -11,7 +11,8 @@ import { ContactPageComponent } from 'page-modules/contact-page/contact-page.com
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent
+    component: HomePageComponent,
+    pathMatch: 'full'
   },
   {
     path: 'about',

@@ -16,6 +16,10 @@ export class CustomTranslateService {
     this.setLocalLanguageExist();
   }
 
+  isLocalStorageSet(): boolean {
+    return typeof localStorage !== "undefined";
+  }
+
   getAllLanguages() {
     return this.languages;
   }
@@ -33,7 +37,7 @@ export class CustomTranslateService {
   }
 
   setLocalLanguageExist() {
-    if (localStorage) {
+    if (this.isLocalStorageSet()) {
       if (localStorage.getItem('current_language')) {
         (localStorage.getItem('current_language').match(/en|fr/) && this.translate.getBrowserLang().match(/en|fr/)) ?
           this.translate.use(localStorage.getItem('current_language')) : this.defaultLanguage();
@@ -45,14 +49,14 @@ export class CustomTranslateService {
   }
 
   setBrowserLang() {
-    if (localStorage) {
+    if (this.isLocalStorageSet()) {
       this.translate.use(this.translate.getBrowserLang());
       localStorage.setItem('current_language', this.translate.getBrowserLang());
     }
   }
-
+  
   defaultLanguage(): void {
-    if (localStorage) {
+    if (this.isLocalStorageSet()) {
       localStorage.setItem('current_language', 'en');
       this.translate.setDefaultLang('en');
     }
