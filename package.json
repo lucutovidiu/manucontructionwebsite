@@ -1,6 +1,10 @@
 {
-  "name": "manuapp",
-  "version": "10.18.0",
+  "name": "manu_sonstruction",
+  "description": "a really cool construction app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.18.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "npm run serve:ssr",
