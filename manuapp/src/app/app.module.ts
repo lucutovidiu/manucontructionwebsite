@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 
 import { AppRoutingModule } from './core_modules/router_module/app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarModule } from './core_modules/navbar/navbar.module'
 import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -28,7 +30,19 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    NgxUiLoaderModule.forRoot({
+      fgsSize: 100,
+      fgsType:SPINNER.threeStrings,
+      fgsColor: '#ff3366',
+      hasProgressBar: false,
+      bgsOpacity: 0.0,
+    }),
+    NgxUiLoaderRouterModule
+  ],
+  exports:[
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
