@@ -6,7 +6,8 @@ import { AboutPageComponent } from 'page-modules/about-page/about-page.component
 import { ServicesPageComponent } from 'page-modules/services-page/services-page.component';
 import { GaleriePageComponent } from 'page-modules/galerie-page/galerie-page.component';
 import { ContactPageComponent } from 'page-modules/contact-page/contact-page.component';
-import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { SharedServicesModuleModule } from "shared_services/shared-services-module.module";
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
     AboutPageComponent,
     ServicesPageComponent,
     GaleriePageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    NotFoundComponent
   ],
   imports: [
     SharedServicesModuleModule,

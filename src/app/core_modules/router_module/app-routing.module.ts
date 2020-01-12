@@ -30,6 +30,7 @@ const routes: Routes = [
     path: 'services',
     component: ServicesPageComponent
   },
+  { path: '**', component: HomePageComponent }
 ];
 
 @NgModule({
