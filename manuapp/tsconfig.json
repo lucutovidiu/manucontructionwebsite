@@ -19,8 +19,18 @@
     ],
     "baseUrl": "src",
     "paths": {
-        "page-modules/*": [ "app/page-modules/*" ],
-        "core_modules/*": [ "app/core_modules/*" ]
+      "page-modules/*": [
+        "app/page-modules/*"
+      ],
+      "core_modules/*": [
+        "app/core_modules/*"
+      ],
+      "shared_services/*": [
+        "app/shared-services-module/*"
+      ],
+      "app_module/*":[
+        "app/*"
+      ]
     }
   },
   "angularCompilerOptions": {

@@ -6,12 +6,26 @@ import { AboutPageComponent } from 'page-modules/about-page/about-page.component
 import { ServicesPageComponent } from 'page-modules/services-page/services-page.component';
 import { GaleriePageComponent } from 'page-modules/galerie-page/galerie-page.component';
 import { ContactPageComponent } from 'page-modules/contact-page/contact-page.component';
+import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
 
 @NgModule({
-  declarations: [HomePageComponent, AboutPageComponent, ServicesPageComponent, GaleriePageComponent, ContactPageComponent],
+  declarations: [
+    HomePageComponent,
+    AboutPageComponent,
+    ServicesPageComponent,
+    GaleriePageComponent,
+    ContactPageComponent
+  ],
   imports: [
+    SharedServicesModuleModule,
     CommonModule
   ],
-  exports: [HomePageComponent, AboutPageComponent, ServicesPageComponent,GaleriePageComponent,ContactPageComponent]
+  exports: [
+    HomePageComponent, 
+    AboutPageComponent, 
+    ServicesPageComponent, 
+    GaleriePageComponent, 
+    ContactPageComponent
+  ]
 })
 export class PageModulesModule { }

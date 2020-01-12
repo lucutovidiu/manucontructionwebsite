@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { CustomTranslateService } from "shared_services/services/translation/custom-translate.service"
 
 @Component({
   selector: 'app-language-bar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translate: CustomTranslateService) { }
 
   ngOnInit() {
+  }
+
+  setLanguage(inputLang): void {
+    localStorage.setItem('current_language', inputLang);
+    this.translate.setLocalLanguageExist();
   }
 
 }

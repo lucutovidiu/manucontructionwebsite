@@ -7,11 +7,17 @@ import { RouterModule } from '@angular/router';
 
 import { MenuBarComponent } from './menu/menu.component';
 import { LanguageBarComponent } from './language-bar/language-bar.component'
+import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
 
 @NgModule({
   declarations: [MenuBarComponent, LanguageBarComponent],
   imports: [
-    CommonModule, BrowserAnimationsModule, MatMenuModule, MatButtonModule,RouterModule
+    CommonModule, 
+    BrowserAnimationsModule, 
+    MatMenuModule, 
+    MatButtonModule,
+    RouterModule,
+    SharedServicesModuleModule
   ],
   exports:[MenuBarComponent]
 })
