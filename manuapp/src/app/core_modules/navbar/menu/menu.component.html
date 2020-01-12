@@ -1,7 +1,12 @@
 <div class="navbar_wrapper">
-    <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button routerLink="/">Home</a>
-    <a routerLinkActive="active" mat-button routerLink="/about">About</a> 
-    <a routerLinkActive="active" mat-button routerLink="/services">Services</a> 
-    <a routerLinkActive="active" mat-button routerLink="/galerie">Galerie</a> 
-    <a routerLinkActive="active" mat-button routerLink="/contact">Contact</a> 
+    <div>
+        <app-language-bar></app-language-bar>
+    </div>
+    <div>
+        <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button routerLink="/">Home</a>
+        <a routerLinkActive="active" mat-button routerLink="/about">About</a>
+        <a routerLinkActive="active" mat-button routerLink="/services">Services</a>
+        <a routerLinkActive="active" mat-button routerLink="/galerie">Galerie</a>
+        <a routerLinkActive="active" mat-button routerLink="/contact">Contact</a>
+    </div>
 </div>

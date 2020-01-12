@@ -5,10 +5,11 @@ import { MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router';
 
-import { MenuBarComponent } from './menu/menu.component'
+import { MenuBarComponent } from './menu/menu.component';
+import { LanguageBarComponent } from './language-bar/language-bar.component'
 
 @NgModule({
-  declarations: [MenuBarComponent],
+  declarations: [MenuBarComponent, LanguageBarComponent],
   imports: [
     CommonModule, BrowserAnimationsModule, MatMenuModule, MatButtonModule,RouterModule
   ],
