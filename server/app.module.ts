@@ -8,7 +8,7 @@ import { HelloController } from './src/hello/hello.controller';
     AngularUniversalModule.forRoot({
       viewsPath: join(process.cwd(), 'dist/browser'),
       bundle: require('../server/main'),
-      liveReload: true
+      liveReload: false
     })
   ],
   controllers: [HelloController]
