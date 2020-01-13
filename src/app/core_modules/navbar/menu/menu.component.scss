@@ -1,9 +1,14 @@
 .navbar_wrapper{
-    height: 70px;
-    position: absolute;
+    height: 70px;    
+    // position: absolute;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     padding-left: 20px;
+    justify-content: center;
+}
+
+.fineBorder{
+    border-bottom: 2px solid #ededed;
 }

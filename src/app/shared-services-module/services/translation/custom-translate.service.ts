@@ -5,18 +5,15 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class CustomTranslateService {
-  languages;
-  langLength;
-  browserLang;
+  private languages;
 
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['en', 'fr']);
+    this.translate.addLangs(['en', 'fr','ro']);
     this.languages = this.translate.getLangs();
-    this.langLength = this.translate.getLangs().length;
     this.setLocalLanguageExist();
   }
 
-  isLocalStorageSet(): boolean {
+  private isLocalStorageSet(): boolean {
     return typeof localStorage !== "undefined";
   }
 
@@ -24,71 +21,40 @@ export class CustomTranslateService {
     return this.languages;
   }
 
-  getLanguagesLength() {
-    return this.langLength;
-  }
-
   getCurrentLang() {
     return this.translate.currentLang;
   }
 
-  getBrowserLang() {
-    return this.translate.getBrowserLang();
+  switchLanguage(language){
+    if (this.isLocalStorageSet()) {
+      localStorage.setItem("current_language",language);
+      this.setLocalLanguageExist();
+    }
   }
 
-  setLocalLanguageExist() {
+  private setLocalLanguageExist() {
     if (this.isLocalStorageSet()) {
       if (localStorage.getItem('current_language')) {
-        (localStorage.getItem('current_language').match(/en|fr/) && this.translate.getBrowserLang().match(/en|fr/)) ?
+        (localStorage.getItem('current_language').match(/en|fr|ro/) && this.translate.getBrowserLang().match(/en|fr/)) ?
           this.translate.use(localStorage.getItem('current_language')) : this.defaultLanguage();
       } else {
-        (this.translate.getBrowserLang().match(/en|fr/)) ?
+        (this.translate.getBrowserLang().match(/en|fr|ro/)) ?
           this.setBrowserLang() : this.defaultLanguage();
       }
     }
   }
 
-  setBrowserLang() {
+  private setBrowserLang() {
     if (this.isLocalStorageSet()) {
       this.translate.use(this.translate.getBrowserLang());
       localStorage.setItem('current_language', this.translate.getBrowserLang());
     }
   }
   
-  defaultLanguage(): void {
+  private defaultLanguage(): void {
     if (this.isLocalStorageSet()) {
       localStorage.setItem('current_language', 'en');
       this.translate.setDefaultLang('en');
     }
-  }
-
-  translateUse(param): void {
-    this.translate.use(param);
-  }
-
-  buildMultipleLanguages() {
-    return [
-      {
-        name: 'English',
-        value: this.getAllLanguages()[this.getLanguagesLength() - 2]
-      },
-      {
-        name: 'Franch',
-        value: this.getAllLanguages()[this.getLanguagesLength() - 1]
-      }
-    ];
-  }
-
-  buildOneLanguage() {
-    return [
-      {
-        name: 'English',
-        value: 'en'
-      }
-    ];
-  }
-
-  checkLanguageExist() {
-    return (this.translate.getLangs().indexOf(this.translate.getBrowserLang()) !== -1) ? true : false;
   }
 }

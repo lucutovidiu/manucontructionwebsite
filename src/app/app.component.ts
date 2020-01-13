@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CustomTranslateService } from "shared_services/services/translation/custom-translate.service"
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,8 @@ import { CustomTranslateService } from "shared_services/services/translation/cus
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'manuapp';
+  title:string = "Lazur Concept"
 
-  constructor(private translate: CustomTranslateService){
+  constructor(){
   }
 }

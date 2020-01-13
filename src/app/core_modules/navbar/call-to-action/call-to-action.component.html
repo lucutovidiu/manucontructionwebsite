@@ -1,0 +1,26 @@
+<!-- Top Navbar -->
+<div class="top_nav">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="mt-2">
+                    <li><a href="#" class="keepItemsTougether"><span
+                                class="fa fa-phone mr-2"></span>{{siteConfig.phoneNumber}}</a></li>
+                    <li><a href="#" class="keepItemsTougether"><span class="fa fa-envelope mr-2"></span>
+                            {{siteConfig.email}}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="social_icon list-inline">
+                    <span><i class="fa fa-facebook-official fa-2x icon-color-blue mr-3" aria-hidden="true"></i></span>
+                    <span class="languageSelect" *ngFor="let lang of availableLanguages">
+                        <span (click)="switchLanguage(lang)">
+                            <i class="fa fa-globe fa-1x icon-color-blue mr-1" aria-hidden="true"></i>
+                            <span [ngClass]="{'activeLanguage': lang === currentSelectedLanguage}">{{lang}}</span>
+                        </span>
+                    </span>
+                </ul>
+            </div>
+        </div>
+    </div><!-- Top Navbar end -->
+</div>

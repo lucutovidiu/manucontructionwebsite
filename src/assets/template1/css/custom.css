@@ -132,34 +132,7 @@ a:hover,a:focus{ text-decoration: none}
 
 
 
-/* Top Nav */
-.top_nav {
-    background: #ffcb0f none repeat scroll 0 0;
-    overflow: hidden;
-    padding: 10px 0;
-}
-.list-inline.info {
-    float: left;
-    margin: 0;
-}
-.list-inline.info > li {
-    padding: 0 20px 0 0;
-}
-.list-inline.info a,.list-inline.social_icon a {
-    color: #222;
-    font-family: 'futura_ltbook', sans-serif;
-}
-.list-inline.info a:hover,.list-inline.social_icon a:hover {
-    color: #555;
-}
-.list-inline.info a .fa,.list-inline.social_icon  a .fa {
-    font-size: 20px;
-    vertical-align: text-top;
-}
-.list-inline.social_icon {
-    float: right;
-    margin: 0;
-}
+
 /* Main Nav */
 nav.navbar.bootsnav {
     background: #222533 none repeat scroll 0 0;

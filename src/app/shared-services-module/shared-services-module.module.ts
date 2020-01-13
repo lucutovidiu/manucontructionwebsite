@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
     TranslateService
   ],
   exports: [
-    TranslateModule
+    TranslateModule,
   ]
 })
 export class SharedServicesModuleModule { }

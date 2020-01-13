@@ -1,0 +1,43 @@
+/* Top Nav */
+@import '../../../shared-services-module/websiteSettings/styleConfig.scss';
+
+.top_nav {
+  background: $navbar_color none repeat scroll 0 0;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.list-inline {
+    display: flex;
+    justify-content: flex-end;
+}
+ul {
+  li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 15px;
+    a {
+      text-decoration: none;
+      color: $callToActionPhoneAndEmailColor;
+    }
+  }
+}
+.icon-color-blue {
+  color: $activeLanguageGlobeColor;
+  &:hover {
+    color: $activeLanguageGlobeColor_active;
+  }
+}
+.languageSelect{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.activeLanguage{
+  font-weight: bold;
+  color: $activeLanguageColor;
+  border-bottom: 2px solid $activeLanguageColor;
+}

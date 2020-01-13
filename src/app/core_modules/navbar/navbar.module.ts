@@ -6,11 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router';
 
 import { MenuBarComponent } from './menu/menu.component';
-import { LanguageBarComponent } from './language-bar/language-bar.component'
 import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { CallToActionComponent } from './call-to-action/call-to-action.component'
 
 @NgModule({
-  declarations: [MenuBarComponent, LanguageBarComponent],
+  declarations: [
+    MenuBarComponent,
+    CallToActionComponent
+  ],
   imports: [
     CommonModule, 
     BrowserAnimationsModule, 
@@ -19,6 +22,9 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
     RouterModule,
     SharedServicesModuleModule
   ],
-  exports:[MenuBarComponent]
+  exports:[
+    MenuBarComponent,
+    CallToActionComponent
+  ]
 })
 export class NavBarModule { }

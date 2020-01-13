@@ -30,6 +30,9 @@
       ],
       "app_module/*":[
         "app/*"
+      ],
+      "components/*" : [
+        "app/components-module/*"
       ]
     }
   },
