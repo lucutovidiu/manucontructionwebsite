@@ -57,7 +57,7 @@
 .mobile_view_menu {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: $menuWidth;
   text-transform: uppercase;
   background-color: $mobNavBackgroundColor;
   padding: 30px 0;

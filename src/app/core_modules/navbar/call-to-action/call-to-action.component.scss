@@ -13,7 +13,7 @@ $smallSizeScreenBrakeDown: 579px;
     @media screen and (max-width: $smallSizeScreenBrakeDown) {
       & {
         justify-content: flex-end;
-        padding-top: 10px;
+        padding-top: $topNavLanguagePaddingTop;
       }
     }
   }
