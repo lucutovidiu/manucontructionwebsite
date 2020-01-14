@@ -15,14 +15,14 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
     CallToActionComponent
   ],
   imports: [
-    CommonModule, 
-    BrowserAnimationsModule, 
-    MatMenuModule, 
+    CommonModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
     MatButtonModule,
     RouterModule,
     SharedServicesModuleModule
   ],
-  exports:[
+  exports: [
     MenuBarComponent,
     CallToActionComponent
   ]
