@@ -1,0 +1,42 @@
+.hero {
+  background: url(../../../assets/hero-component/pic1.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  height: 80%;
+  text-transform: uppercase;
+  color: rgb(255, 247, 250);
+  font-weight: bold;
+  font-size: 1.9rem;
+  font-family: "Baloo Bhai", cursive;
+  letter-spacing: 1px;
+  position: relative;
+  & .hero_text {
+    @media all and (max-width: 379px) {
+      font-size: 1.0rem;
+      padding-top: 1rem;
+    }
+    @media all and (min-width:380px) and (max-width: 576px) {
+        font-size: 1.3rem;
+        padding-top: 1rem;
+      }
+  }
+  & .blackLayer {
+    z-index: 0;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+  & .welcome_text {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

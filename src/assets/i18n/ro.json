@@ -8,13 +8,10 @@
       "GALERIE": "Galerie",
       "CONTACT": "Contact"
     },
-    "PROFILE_HISTORY": {
-      "TIME_FRAME": "Time Frame",
-      "DESCRIPTION": "Description",
-      "NO_PROJECTS": "Spare time, fun and work but no projects",
-      "NO_TEAM": "A new team awaits for you",
-      "NO_SKILLS": "Tell them how skilled you are",
-      "SELECT_YEAR": "Select year"
+    "HERO": {
+      "WELCOME_TO_OUR_SITE": "Bun venit pe site",
+      "WE_ENGAGE_TO_DELIVER": "N-e angajam sa va aducem",
+      "THE_BEST_QUALITY": "Cea mai buna calitate"
     },
     "SKILLS": {
       "SKILL": "Skill",

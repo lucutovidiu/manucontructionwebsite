@@ -13,7 +13,8 @@
   & .active {
     border-left: 2px solid $activeButtonColor;
     background-color: lighten($activeButtonColor, 15%);
-    box-shadow: 0px 2px 5px lighten($activeBackgroundColor, 29%);
+    font-weight: bold;
+    // box-shadow: 0px 2px 5px lighten($activeBackgroundColor, 29%);
   }
   & .lazurLogo {
     width: 100px;
@@ -62,17 +63,18 @@
   padding: 30px 0;
   border-radius: 0 3px 3px 0;
   position: absolute;
+  z-index: 1000;
   top: 0;
   height: 100%;
 
   & .mobileactive {
-    color: #2c3e50;
+    color: $mobileactiveLinkColor;
     font-weight: bold;
     font-size: 17px;
   }
 
   & .navBarBackbtn {
-    color: #2c3e50;
+    color: $navBarBackbtnColor;
     font-weight: bold;
     align-self: center;
     margin-top: 50px;

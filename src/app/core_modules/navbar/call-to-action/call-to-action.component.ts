@@ -21,7 +21,6 @@ export class CallToActionComponent implements OnInit {
 
   switchLanguage(language:string){
     this.translate.switchLanguage(language);
-    console.log(language)
     this.currentSelectedLanguage = language;
   }
 

@@ -8,13 +8,10 @@
     "GALERIE": "Galerie",
     "CONTACT": "Contact"
   },
-  "PROFILE_HISTORY": {
-    "TIME_FRAME": "Time Frame",
-    "DESCRIPTION": "Description",
-    "NO_PROJECTS": "Spare time, fun and work but no projects",
-    "NO_TEAM": "A new team awaits for you",
-    "NO_SKILLS": "Tell them how skilled you are",
-    "SELECT_YEAR": "Select year"
+  "HERO": {
+    "WELCOME_TO_OUR_SITE": "Welcome to our site",
+    "WE_ENGAGE_TO_DELIVER": "We engage to deliver",
+    "THE_BEST_QUALITY": "the best quality"
   },
   "SKILLS": {
     "SKILL": "Skill",
