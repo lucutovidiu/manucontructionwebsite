@@ -28,9 +28,6 @@ $manuapp-theme: mat-light-theme($manuapp-primary, $manuapp-accent, $manuapp-warn
 @include angular-material-theme($manuapp-theme);
 
 /* You can add global styles to this file, and also import other style files */
-.active {
-  background-color: #c3c8cc;
-}
 html,
 body {
   height: 100%;
@@ -49,7 +46,3 @@ body {
     border: 2px solid blue;
 }
 
-.keepItemsTougether{
-  display: inline-flex;
-  flex-wrap: nowrap;
-}

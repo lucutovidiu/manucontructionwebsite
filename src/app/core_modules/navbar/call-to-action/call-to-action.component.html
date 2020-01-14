@@ -2,16 +2,16 @@
 <div class="top_nav">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-sm-8">
                 <ul class="mt-2">
                     <li><a href="#" class="keepItemsTougether"><span
                                 class="fa fa-phone mr-2"></span>{{siteConfig.phoneNumber}}</a></li>
-                    <li><a href="#" class="keepItemsTougether"><span class="fa fa-envelope mr-2"></span>
+                    <li class="paddingTop"><a href="#" class="keepItemsTougether"><span class="fa fa-envelope mr-2"></span>
                             {{siteConfig.email}}</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <ul class="social_icon list-inline">
+            <div class="col-sm-4">
+                <ul class="list-inline">
                     <span><i class="fa fa-facebook-official fa-2x icon-color-blue mr-3" aria-hidden="true"></i></span>
                     <span class="languageSelect" *ngFor="let lang of availableLanguages">
                         <span (click)="switchLanguage(lang)">
