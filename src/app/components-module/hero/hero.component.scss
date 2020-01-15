@@ -1,7 +1,7 @@
-@import '../../shared-services-module/websiteSettings/styleConfig.scss';
+@import "../../shared-services-module/websiteSettings/styleConfig.scss";
 
 .hero {
-  background: url(../../../assets/hero-component/pic1.jpg) no-repeat;
+  background-image: url(../../../assets/hero-component/pic1.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -13,15 +13,16 @@
   font-family: $heroFontFamilly;
   letter-spacing: 1px;
   position: relative;
+  box-shadow: 0px 2px 5px black;
   & .hero_text {
     @media all and (max-width: 379px) {
-      font-size: 1.0rem;
+      font-size: 1rem;
       padding-top: 1rem;
     }
-    @media all and (min-width:380px) and (max-width: 576px) {
-        font-size: 1.3rem;
-        padding-top: 1rem;
-      }
+    @media all and (min-width: 380px) and (max-width: 576px) {
+      font-size: 1.3rem;
+      padding-top: 1rem;
+    }
   }
   & .blackLayer {
     z-index: 0;

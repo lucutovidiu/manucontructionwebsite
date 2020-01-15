@@ -21,7 +21,7 @@ $mobileactiveLinkColor:#2c3e50;
 $menuWidth:100%;
 
 //hero
-$heroContainerHight: 80%;
+$heroContainerHight: calc(100% - 76.14px);
 $heroTextColor:rgb(255, 247, 250);
 $heroFontFamilly: "Baloo Bhai", cursive;
 $heroImageLayerColor: black;
