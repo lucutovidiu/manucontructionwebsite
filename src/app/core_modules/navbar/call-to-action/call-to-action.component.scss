@@ -2,9 +2,8 @@
 @import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
 // Desktop view
-$smallSizeScreenBrakeDown: 579px;
 .top_nav {
-  background: $navbar_color none repeat scroll 0 0;
+  background: $navbar_background_color none repeat scroll 0 0;
   overflow: hidden;
   padding: 10px 0;
   & .list-inline {
@@ -12,7 +11,7 @@ $smallSizeScreenBrakeDown: 579px;
     justify-content: flex-end;
     @media screen and (max-width: $smallSizeScreenBrakeDown) {
       & {
-        justify-content: flex-end;
+        justify-content: flex-start;
         padding-top: $topNavLanguagePaddingTop;
       }
     }

@@ -1,5 +1,8 @@
-/* Top Nav */
-$navbar_color: white; //#ededed;
+// General settings
+$smallSizeScreenBrakeDown : 670px;
+
+/* Top Nav - call to action*/
+$navbar_background_color: transparent;//white; //#ededed;
 $activeLanguageColor: #2c3e50;
 $activeLanguageGlobeColor: #2c3e50;
 $activeLanguageGlobeColor_active: #34495e;
@@ -15,7 +18,7 @@ $marginBottom: 10px;
 $mobNavBackgroundColor: #f9feff;
 $navBarBackbtnColor:#2c3e50;
 $mobileactiveLinkColor:#2c3e50;
-$menuWidth:70%;
+$menuWidth:100%;
 
 //hero
 $heroContainerHight: 80%;

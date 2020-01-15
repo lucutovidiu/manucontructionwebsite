@@ -13,23 +13,8 @@
     "WE_ENGAGE_TO_DELIVER": "Nous nous engageons à livrer",
     "THE_BEST_QUALITY": "la meilleure qualité"
   },
-  "SKILLS": {
-    "SKILL": "Skill",
-    "SCORE": "Score",
-    "SKILLS": "Skills",
-    "ACTION": "Action",
-    "EDIT_SKILL": "Edit skill",
-    "DELETE": "Delete",
-    "DELETE_SKILL": "Are you sure you want to delete this skill?",
-    "EDIT": "Edit",
-    "SKILL_WAS_NOT_FOUND": "The skill was not found. Please add the skill.",
-    "PLEASE_DESCRIBE": "Please describe",
-    "ADD_NEW_PROFILE": "Add new profile",
-    "PROJECT_SKILLS": "Project Skills",
-    "TECHNICAL_SKILLS": "Technical Skills",
-    "COMPARE": "Compare",
-    "SOURCE": "Source",
-    "TARGET": "Target"
+  "GENERAL": {
+    "BACK": "Retour"
   },
   "PROJECTS": {
     "PROJECTS": "Projects",

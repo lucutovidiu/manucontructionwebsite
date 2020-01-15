@@ -1,4 +1,6 @@
-<app-call-to-action></app-call-to-action>
+<div class="top_nav_for_desktop_version_only">
+    <app-call-to-action></app-call-to-action>
+</div>
 <div class="desktop_navbar_wrapper">
     <img alt="Lazur Concept" class="lazurLogo" src="../../../../assets/logo/lazurconcept-logo1.png" />
     <div>
@@ -12,8 +14,8 @@
 </div>
 
 <div class="mobile_navbar_wrapper">
-    <div (click)="togggleNavMenu()" class="menu_btn"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
     <img alt="Lazur Concept" class="lazurLogo" src="../../../../assets/logo/lazurconcept-logo1.png" />
+    <div (click)="togggleNavMenu()" class="menu_btn"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
 </div>
 
 <div *ngIf="isMobileMenuActive" [@inOutAnimation] [class.mobile_view_menu]="isMobileMenuActive">
@@ -24,5 +26,8 @@
     <a routerLinkActive="mobileactive" mat-button routerLink="/galerie">{{'NAVIGATION_MENU.GALERIE' | translate}}</a>
     <a routerLinkActive="mobileactive" mat-button routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
     <div class="navBarBackbtn" (click)="togggleNavMenu()"><i class="fa fa-arrow-circle-left"
-            aria-hidden="true"></i>&nbsp; Back</div>
+            aria-hidden="true"></i>&nbsp;{{'GENERAL.BACK' | translate}}</div>
+    <div class="callToActionMenu_forMobileVersion">
+        <app-call-to-action></app-call-to-action>
+    </div>    
 </div>
