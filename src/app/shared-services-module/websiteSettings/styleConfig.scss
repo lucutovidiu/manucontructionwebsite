@@ -2,7 +2,7 @@
 $smallSizeScreenBrakeDown : 670px;
 
 /* Top Nav - call to action*/
-$navbar_background_color: transparent;//white; //#ededed;
+$navbar_background_color: transparent;
 $activeLanguageColor: #2c3e50;
 $activeLanguageGlobeColor: #2c3e50;
 $activeLanguageGlobeColor_active: #34495e;
@@ -26,3 +26,16 @@ $heroTextColor:rgb(255, 247, 250);
 $heroFontFamilly: "Baloo Bhai", cursive;
 $heroImageLayerColor: black;
 $heroImageLayerOpacity: 0.6;
+
+
+//services intro
+$services_title_margin-bottom: 2rem;
+$services_title_font-size: 2rem;
+$services_title_bottomTextLine_color:#2980b9;
+$services_presentation_box_height: 450px;
+$services_presentation_flex-basis: 400px; //width
+$services_presentation_box_textBox_color: white;
+$services_presentation_box_textBox_title_bottomline_color: #9b59b6;
+$services_presentation_box_values_background_image: url(../../../assets/services_intro/services_intro_pic5.jpg);
+$services_presentation_box_benefits_background_image: url(../../../assets/services_intro/services_intro_pic1.jpg);
+$services_presentation_box_services_background_image: url(../../../assets/services_intro/services_intro_pic3.jpg);

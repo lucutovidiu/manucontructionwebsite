@@ -16,34 +16,15 @@
   "GENERAL": {
     "BACK": "Retour"
   },
-  "PROJECTS": {
-    "PROJECTS": "Projects",
-    "PROJECT_SEARCH": "Project search",
-    "PROJECT_NAME": "Project name",
-    "PROJECT_DESCRIPTION": "Project description",
-    "START_DATE": "Start date",
-    "END_DATE": "End date",
-    "VIEW_DETAILS": "View Project",
-    "ITEMS_PER_PAGE": "items per page",
-    "PROJECT_DETAILS": "Project details",
-    "PROJECT_START_DATE": "Project start date",
-    "PROJECT_END_DATE": "Project end date",
-    "PROJECT_SKILLS": "Project skills",
-    "IF_NO_RESULTS_NEW": "If no results, please assign some skills.",
-    "ADD_NEW_PROJECT_SKILL": "Add new project skill",
-    "PROJECT_SKILL_UPDATE": "Project skill update",
-    "ADD_NEW_PROJECT": "Add new project",
-    "NEW_PROJECT": "New project",
-    "UPDATE_PROJECT": "Update project",
-    "DELETE_PROJECT": "Delete project",
-    "SURE_DELETE_PROJECT": "Are you sure you want to delete this project?",
-    "CANCEL": "Cancel",
-    "PROJECT_NAME_REQUIRED": "Project name is required.",
-    "PROJECT_NAME_REQUIRED_3": "Project name must be at least 3 characters long.",
-    "PROJECT_NAME_INVALID": "Project name is invalid.",
-    "IF_NO_RESULTS_ADD": "If no results, please add a new project.",
-    "PROJECT_SKILLS_EDIT": "Project skills edit",
-    "VIEW": "View"
+  "SERVICES_INTRO": {
+    "WELCOME_TO": "Bienvenue à Sarl Lazur Concept",
+    "OUR_COMPANY_PROVIDES": "Notre entreprise fournit l'équipement mobile, les outils, la planification du site, la maintenance de l'équipement et les fournitures nécessaires pour aider les projets à augmenter la productivité, réduire les coûts et la duplication, standardiser l'équipement et les outils, et terminer à temps et en respectant le budget.",
+    "VALUES": "Valeurs",
+    "QULITY_TRUST": "Qualité, confiance, indépendance, individualité, professionnalisme. Ce sont les valeurs fondamentales qui définissent la philosophie de Lazur Concept et établissent une référence pour nous guider dans notre travail quotidien et dans la façon dont nous menons nos affaires. Ils sont les fondements de notre engagement envers nos clients, un engagement qui repose sur la confiance, la polyvalence et la performance.",
+    "BENEFITS": "Avantages",
+    "OUR_MISSION_IS": "Notre mission est que Lazur Concept soit le leader du marché en France offrant un service d'audit de qualité indépendant et devenant une partie intrinsèque de toutes les activités des clients de Lazur Concept en évaluant de manière proactive les activités des clients et en formulant et en fournissant des solutions à tous les obstacles actuels et potentiels.",
+    "SERVICES": "Prestations de service",
+    "LC_PRIDES_AND_DIFFERENCIETES": "Lazur Concept est fier et se différencie au sein de l'industrie des télécommunications via une gestion de niveau directeur supervisant le fonctionnement quotidien de l'entreprise pour assurer une prestation de service professionnelle, rapide et efficace à ses clients, en utilisant des méthodes et des initiatives innovantes et axées sur le marché tout en maintenant la rentabilité."
   },
   "TEAMS": {
     "PROJECT_TEAMS": "Project teams",
