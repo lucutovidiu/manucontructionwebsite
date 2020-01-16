@@ -1,7 +1,7 @@
-@import "../../shared-services-module/websiteSettings/styleConfig.scss";
+@import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
 .hero {
-  background-image: url(../../../assets/hero-component/pic1.jpg);
+  background-image: $heroBackgroundImage;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;

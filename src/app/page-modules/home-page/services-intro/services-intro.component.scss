@@ -1,4 +1,4 @@
-@import "../../shared-services-module/websiteSettings/styleConfig.scss";
+@import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
 @mixin bottomTextLine($color,$top,$left,$width) {
     &:after{

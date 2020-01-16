@@ -5,10 +5,11 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 
-import { AppRoutingModule } from './core_modules/router_module/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarModule } from './core_modules/navbar/navbar.module'
 import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { HomePageModule } from 'page-modules/home-page/home.page.module'
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -21,9 +22,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule, NavBarModule,
+    AppRoutingModule, 
+    NavBarModule,
     HttpClientModule,
     SharedServicesModuleModule,
+    HomePageModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

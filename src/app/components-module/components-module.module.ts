@@ -2,20 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-import { SharedServicesModuleModule } from 'shared_services/shared-services-module.module';
-import { HeroComponent } from './hero/hero.component';
-import { ServicesIntroComponent } from './services-intro/services-intro.component'
+// import { SharedServicesModuleModule } from 'shared_services/shared-services-module.module';
 
 @NgModule({
-  declarations: [HeroComponent, ServicesIntroComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    SharedServicesModuleModule
+    // SharedServicesModuleModule
   ],
   providers:[],
   exports: [
-    HeroComponent,
-    ServicesIntroComponent
+    
   ]
 })
 export class ComponentsModuleModule { }
