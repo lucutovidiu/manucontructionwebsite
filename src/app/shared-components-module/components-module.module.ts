@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-// import { SharedServicesModuleModule } from 'shared_services/shared-services-module.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NotFoundComponent
+  ],
   imports: [
-    CommonModule,
-    // SharedServicesModuleModule
+    CommonModule
   ],
   providers:[],
   exports: [

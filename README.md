@@ -29,7 +29,9 @@ Note: To deploy your static site to a static hosting platform you will have to d
 
 # For heroku
 1. Requires script below:
+npm run heroku-postbuild
 "heroku-postbuild": "npm run build:ssr"
 2. Start script was modified as below: 
+npm run start
 "start": "npm run serve:ssr"
 both above are required by heroku

@@ -7,7 +7,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-load
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarModule } from './core_modules/navbar/navbar.module'
+import { NavBarModule } from './page-modules/navbar/navbar.module'
 import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
 import { HomePageModule } from 'page-modules/home-page/home.page.module'
 

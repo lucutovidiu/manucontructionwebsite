@@ -22,17 +22,14 @@
       "page-modules/*": [
         "app/page-modules/*"
       ],
-      "core_modules/*": [
-        "app/core_modules/*"
-      ],
       "shared_services/*": [
         "app/shared-services-module/*"
       ],
       "app_module/*":[
         "app/*"
       ],
-      "components/*" : [
-        "app/components-module/*"
+      "shared-components/*" : [
+        "app/shared-components-module/*"
       ]
     }
   },
