@@ -1,0 +1,76 @@
+$screen-sm-brake-size: 576px;
+$screen-sm-brake-width: 80%;
+
+$screen-lg-brake-size: 942px;
+$screen-lg-brake-width: 95%;
+
+$contactForm_height: 65vh;
+$form_font_size: 1vw;
+
+.contact_warpper {
+  max-height: $contactForm_height;
+  width: 100%;
+  padding: 1rem 0;
+
+  & .contact_form {
+    background: rgba(223, 223, 221, 0.85);
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100%;
+
+    @media all and (max-width: $screen-lg-brake-size) {
+      & {
+        width: $screen-sm-brake-width;
+      }
+    }
+    @media all and (max-width: $screen-sm-brake-size) {
+      & {
+        width: $screen-lg-brake-width;
+      }
+    }
+
+    & .form-items {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+    }
+    & .form-item-style {
+      border: none;
+      height: 3vw;
+      border-radius: 15px;
+      margin: 0.3rem 0;
+      font-size: $form_font_size;
+      padding-left: 1.5rem;
+      &:focus {
+        outline: none;
+      }
+    }
+    & .form-item-style-area {
+      border: none;
+      border-radius: 15px;
+      margin: 0.3rem 0;
+      font-size: $form_font_size;
+      padding-left: 1.5rem;
+      padding-top: 1rem;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & .form-submit-btn{
+        margin-top: 1rem;
+        align-self: center;
+        padding:1rem 1rem;
+        border-radius: 15px;
+        font-size: $form_font_size;
+        font-weight: bold;
+        border:none;
+        background-color: #663259;
+        &:hover{
+            background-color: #8b0f6c;
+        }
+    }
+  }
+}

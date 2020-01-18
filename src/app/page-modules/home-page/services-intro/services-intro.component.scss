@@ -10,7 +10,6 @@ $screenLgAddMarginBottom: 991px;
 $screenLgAddMarginBottomSize: 1rem;
 
 .services_wrapper {
-  height: 80vh;
   & .text_description {
     padding: 0 3rem 1rem 3rem;
     font-weight: bold;
@@ -35,13 +34,6 @@ $screenLgAddMarginBottomSize: 1rem;
       border-radius: 10px;
     }
   }
-}
-
-.backgroundImageFit {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .text_reponsive {

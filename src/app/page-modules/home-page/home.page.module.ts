@@ -7,7 +7,7 @@ import { ComponentsModuleModule } from 'shared-components/components-module.modu
 import { HeroComponent } from './hero/hero.component'
 import { ServicesIntroComponent } from './services-intro/services-intro.component'
 import { SharedServicesModuleModule } from 'shared_services/shared-services-module.module'
-
+import { ContactModule } from "page-modules/contact-page/contact.page.module"
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { SharedServicesModuleModule } from 'shared_services/shared-services-modu
     CommonModule,
     HomePageRoutingModule,
     ComponentsModuleModule,
-    SharedServicesModuleModule
+    SharedServicesModuleModule,
+    ContactModule
   ]
 })
 export class HomePageModule {}

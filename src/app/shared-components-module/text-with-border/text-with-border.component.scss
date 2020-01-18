@@ -15,20 +15,22 @@ $textNoGrowBreakPointFontSize_scoundaryText: 2vw;
 $bottom_border_height_small_screen: 1.7vw;
 $bottom_border_height_big_screen: 0.7vw;
 
+$border_top_distance:110%;
 
 .title_wrapper_primary {
   position: relative;
   width: fit-content;
-  margin: 1.8rem auto 2.5rem auto;
+  // margin: 1.8rem auto 2.5rem auto;
+  margin: auto;
   white-space: nowrap;
   &::after {
     content: "";
     position: absolute;
     width: 50%;
     left: 50%;
-    top: 110%;
+    top: $border_top_distance;
     transform: translateX(-50%);
-    height:$bottom_border_height_big_screen;
+    height: $bottom_border_height_big_screen;
     border-radius: 10px;
     background-color: $sectiontitle_bottomLineBG_primary;
   }
@@ -52,15 +54,16 @@ $bottom_border_height_big_screen: 0.7vw;
 .title_wrapper_secoundary {
   position: relative;
   width: fit-content;
-  margin: 1rem auto;
+  // margin: 1rem auto;
+  margin: auto;
   &::after {
     content: "";
     position: absolute;
     width: 50%;
     left: 50%;
-    top: 100%;
+    top: $border_top_distance;
     transform: translateX(-50%);
-    height:$bottom_border_height_big_screen;
+    height: $bottom_border_height_big_screen;
     border-radius: 10px;
     background-color: $sectiontitle_bottomLineBG_secondary;
   }

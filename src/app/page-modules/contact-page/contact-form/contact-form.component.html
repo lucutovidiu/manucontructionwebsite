@@ -1,0 +1,14 @@
+<div class="contact_warpper backgroundImageFit" [ngStyle]="{'background-image': servicesBackgroundImage}">
+    <div class="contact_form">
+        <app-text-with-border [borderColor]="'secoundary'">
+            <h3>Send us a message</h3>
+        </app-text-with-border>
+        <form class="form-items">
+            <input class="form-item-style" type="text" placeholder="Full Name" />
+            <input class="form-item-style" type="text" placeholder="E-mail" />
+            <input class="form-item-style" type="text" placeholder="Phone" />
+            <textarea class="form-item-style-area" name="contact_message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <button class="form-submit-btn" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp; Send Message</button>
+        </form>
+    </div>
+</div>
