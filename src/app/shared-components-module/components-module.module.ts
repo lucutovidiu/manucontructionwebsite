@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TextWithBorder } from './text-with-border/text-with-border.component';
 import { TextResponsiveComponent } from './text-responsive/text-responsive.component';
 import { FooterComponent } from './footer/footer.component';
+import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedServicesModuleModule
   ],
   providers:[],
   exports: [

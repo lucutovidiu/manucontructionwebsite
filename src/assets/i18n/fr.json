@@ -38,7 +38,11 @@
     "YOUR_MESSAGE": "Message",
     "SEND_MESSAGE": "Envoyer"
   },
-
+  "FOOTER":{
+    "CONTACT_US":"Nous contacter",
+    "DONT_HESITATE":"N'hésitez pas à nous contacter pour un devis",
+    "AND_YOU_WILL_NOT_BE":"Et vous ne serez pas déçu!"
+  },
 
 
 

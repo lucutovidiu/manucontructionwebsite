@@ -38,6 +38,12 @@
     "YOUR_MESSAGE": "Your Message",
     "SEND_MESSAGE": "Send Message"
   },
+  "FOOTER":{
+    "CONTACT_US":"Contact us",
+    "DONT_HESITATE":"Don't hesitate to contact us for a quote",
+    "AND_YOU_WILL_NOT_BE":"And you will not be dissapointed!"
+  },
+
   "LOGIN": {
     "USERNAME_OR_EMAIL": "Username or Email",
     "PASSWORD": "Password",

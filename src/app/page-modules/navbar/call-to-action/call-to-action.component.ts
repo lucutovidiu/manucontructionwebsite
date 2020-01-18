@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
 import { siteConfig } from "shared_services/websiteSettings/configs.js"
 import { CustomTranslateService } from "shared_services/services/translation/custom-translate.service"
 

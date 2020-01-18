@@ -1,26 +1,47 @@
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<p>footer works!</p>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<div class="container-fluid footer_wrapper" [ngStyle]="{'background-color':'#282C2F'}">
+    <div class="row autoheight">
+        <div class="col-md-6 autoheight">
+            <div class="address-contact autoheight">
+                <div class="wrapper ">
+                    <div class="address-box">
+                        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                        <div class="address_content ">
+                            <span>25 AVENUE JEAN MERMOZ</span><br />
+                            <span>91320, WISSOUS, FRANCE</span>
+                        </div>
+                    </div>
+                    <div class="phone_box pt-3">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <div class="phone_box_number">
+                            <a href="tel:{{siteConfig.phoneNumber}}">
+                                &nbsp;{{siteConfig.phoneNumber}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="email_me pt-3">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <div class="email_box">
+                            <a href="mailto:{{siteConfig.email}}">{{siteConfig.email}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 autoheight">
+            <div class="about-follow autoheight">
+                <div class="wrapper">
+                    <div class="about-title">
+                        {{'FOOTER.CONTACT_US' | translate}}
+                    </div>
+                    <div class="about-description pt-3">
+                        {{'FOOTER.DONT_HESITATE' | translate}}<br />
+                        {{'FOOTER.AND_YOU_WILL_NOT_BE' | translate}}
+                    </div>
+                    <div class="social-media pt-3">
+                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -38,7 +38,11 @@
       "YOUR_MESSAGE": "Mesaj",
       "SEND_MESSAGE": "Trimite Mesajul"
     },
-
+    "FOOTER":{
+      "CONTACT_US":"Contacteaza-ne",
+      "DONT_HESITATE":"Nu ezita sa ne contactezi pentru o oferta",
+      "AND_YOU_WILL_NOT_BE":"Si nu vei fi dezamagit!"
+    },
 
 
     "TEAMS": {
