@@ -27,6 +27,20 @@
       "SERVICES": "Services",
       "LC_PRIDES_AND_DIFFERENCIETES": "Conceptul Lazur se mândrește și se diferențiază în cadrul industriei de telecomunicații prin intermediul managementului la nivel de director care supraveghează funcționarea zilnică a companiei pentru a asigura o livrare profesională, în timp util și eficientă a clienților săi, folosind metode și inițiative inovatoare și conduse pe piață, menținând în același timp eficiența costurilor."
     },
+    "CONTACT_PAGE": {
+      "CONTACT": "Contact"
+    },
+    "CONTACT_FORM": {
+      "SEND_US_A_MESSAGE": "Scrie-ne",
+      "FULL_NAME": "Nume complet",
+      "EMAIL": "E-mail",
+      "PHONE": "Telefon",
+      "YOUR_MESSAGE": "Mesaj",
+      "SEND_MESSAGE": "Trimite Mesajul"
+    },
+
+
+
     "TEAMS": {
       "PROJECT_TEAMS": "Project teams",
       "TEAM_NAME": "Team name",

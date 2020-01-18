@@ -27,6 +27,22 @@
     "SERVICES": "Prestations de service",
     "LC_PRIDES_AND_DIFFERENCIETES": "Lazur Concept est fier et se différencie au sein de l'industrie des télécommunications via une gestion de niveau directeur supervisant le fonctionnement quotidien de l'entreprise pour assurer une prestation de service professionnelle, rapide et efficace à ses clients, en utilisant des méthodes et des initiatives innovantes et axées sur le marché tout en maintenant la rentabilité."
   },
+  "CONTACT_PAGE": {
+    "CONTACT": "Contact"
+  },
+  "CONTACT_FORM": {
+    "SEND_US_A_MESSAGE": "Nous écrire",
+    "FULL_NAME": "Nom",
+    "EMAIL": "E-mail",
+    "PHONE": "Phone",
+    "YOUR_MESSAGE": "Message",
+    "SEND_MESSAGE": "Envoyer"
+  },
+
+
+
+
+
   "TEAMS": {
     "PROJECT_TEAMS": "Project teams",
     "TEAM_NAME": "Team name",

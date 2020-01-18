@@ -4,11 +4,12 @@ $screen-sm-brake-width: 80%;
 $screen-lg-brake-size: 942px;
 $screen-lg-brake-width: 95%;
 
-$contactForm_height: 65vh;
-$form_font_size: 1vw;
+$form_sm_font_size: 3.4vw;
+$form_lg_font_size: 2vw;
+$form_xl_font_size: 1.2vw;
+
 
 .contact_warpper {
-  max-height: $contactForm_height;
   width: 100%;
   padding: 1rem 0;
 
@@ -24,10 +25,16 @@ $form_font_size: 1vw;
       & {
         width: $screen-sm-brake-width;
       }
+      & .form-item-size {
+        font-size: $form_lg_font_size;
+      }
     }
     @media all and (max-width: $screen-sm-brake-size) {
       & {
         width: $screen-lg-brake-width;
+      }
+      & .form-item-size {
+        font-size: $form_sm_font_size;
       }
     }
 
@@ -41,8 +48,10 @@ $form_font_size: 1vw;
       height: 3vw;
       border-radius: 15px;
       margin: 0.3rem 0;
-      font-size: $form_font_size;
-      padding-left: 1.5rem;
+      padding: 1.5rem;
+      @media all and (min-width: $screen-lg-brake-size) {
+        font-size: $form_xl_font_size;
+      }
       &:focus {
         outline: none;
       }
@@ -51,9 +60,11 @@ $form_font_size: 1vw;
       border: none;
       border-radius: 15px;
       margin: 0.3rem 0;
-      font-size: $form_font_size;
       padding-left: 1.5rem;
       padding-top: 1rem;
+      @media all and (min-width: $screen-lg-brake-size) {
+        font-size: $form_xl_font_size;
+      }
       &:focus {
         outline: none;
       }
@@ -64,10 +75,12 @@ $form_font_size: 1vw;
         align-self: center;
         padding:1rem 1rem;
         border-radius: 15px;
-        font-size: $form_font_size;
         font-weight: bold;
         border:none;
         background-color: #663259;
+        @media all and (min-width: $screen-lg-brake-size) {
+          font-size: $form_xl_font_size;
+        }
         &:hover{
             background-color: #8b0f6c;
         }
