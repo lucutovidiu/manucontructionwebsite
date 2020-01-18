@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from 'page-modules/home-page/home-page.component/home-page.component'
-
+import { NotFoundComponent } from 'shared-components/not-found/not-found.component'
 const routes: Routes = [
   {
     path:"",
@@ -34,7 +34,7 @@ const routes: Routes = [
   //   path: 'services',
   //   component: ServicesPageComponent
   // },
-  // { path: '**', component: HomePageComponent }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,37 @@
+@import "../../shared-services-module/websiteSettings/styleConfig.scss";
+
+$sizeBrakeDownAt: 600px;
+$textNoGrowBreakPoint: 1040px;
+$textNoGrowBreakPointFontSize: 3.5rem;
+$brakeUpFontSize: 5.5vw;
+$brakeDownFontSize: 6.8vw;
+
+
+.text_wrapper {
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  font-size: 4vw;
+  @media all and (max-width: $sizeBrakeDownAt) {
+    & {
+      font-size: $brakeUpFontSize;
+    }
+  }
+  
+  @media all and (min-width: $textNoGrowBreakPoint) {
+    & {
+      font-size: $textNoGrowBreakPointFontSize;
+    }
+  }
+
+  @media all and (max-width: $sizeBrakeDownAt) {
+    & {
+      font-size: $brakeDownFontSize;
+      word-wrap: break-word;
+      text-align: center;
+      &::after {
+        height: 1.7vw;
+      }
+    }
+  }
+}

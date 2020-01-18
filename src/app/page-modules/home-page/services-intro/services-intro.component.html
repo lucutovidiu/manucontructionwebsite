@@ -1,57 +1,64 @@
 <section class="services_wrapper">
-    <h2 class="services_title">{{'SERVICES_INTRO.WELCOME_TO' | translate}}</h2>
-    <p class="services_description">
-        {{'SERVICES_INTRO.OUR_COMPANY_PROVIDES' | translate}}</p>
-    <div class="containter-fluid">
-        <div class="row services_presentation">
-            <div class="col-lg-4 services_presentation_box_values services_presentation_box">
-                <div class="textBox">
-                    <div class="textBox_title">
-                        {{'SERVICES_INTRO.VALUES' | translate}}
-                    </div>   
-                    <div class="textBox_content">
-                        {{'SERVICES_INTRO.QULITY_TRUST' | translate}}
-                    </div>                    
-                </div> 
-                <div class="darkenBox"></div>
-            </div>
-            <div class="col-lg-4 services_presentation_box_benefits services_presentation_box">
-                <div class="textBox">
-                    <div class="textBox_title">
-                        {{'SERVICES_INTRO.BENEFITS' | translate}}
-                    </div>      
-                    <div class="textBox_content">
-                        {{'SERVICES_INTRO.OUR_MISSION_IS' | translate}}
-                    </div>                 
-                </div>                 
-                <div class="darkenBox"></div>
-            </div>
-            <div class="col-lg-4 services_presentation_box_services services_presentation_box">
-                <div class="textBox">
-                    <div class="textBox_title">
-                        {{'SERVICES_INTRO.SERVICES' | translate}}
-                    </div>      
-                    <div class="textBox_content">
-                        {{'SERVICES_INTRO.LC_PRIDES_AND_DIFFERENCIETES' | translate}}
-                    </div>   
-                </div>                  
-                <div class="darkenBox"></div>
+    <app-text-with-border [borderColor]="'primary'">
+        {{'SERVICES_INTRO.WELCOME_TO' | translate}} <wbr> {{'SERVICES_INTRO.SARL_LAZUR_CONCEPT' | translate}}
+    </app-text-with-border>
+        <p class="text_reponsive">{{'SERVICES_INTRO.OUR_COMPANY_PROVIDES' | translate}}</p>
+        <div class="container-fluid py-5 backgroundImageFit" [ngStyle]="{'background-image': servicesBackgroundImage}">
+            <div class="row">
+                <div class="col-lg-4 pb-3">
+                    <div class="services_presentation">
+                        <div class="services_presentation_box">
+                            <app-text-with-border [borderColor]="'secoundary'">
+                                {{'SERVICES_INTRO.VALUES' | translate}}
+                            </app-text-with-border>
+                            <div class="text_reponsive">
+                                {{'SERVICES_INTRO.QULITY_TRUST' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 pb-3">
+                    <div class="services_presentation">
+                        <div class="services_presentation_box">
+                            <app-text-with-border [borderColor]="'secoundary'">
+                                {{'SERVICES_INTRO.BENEFITS' | translate}}
+                            </app-text-with-border>
+                            <div class="text_reponsive">
+                                {{'SERVICES_INTRO.OUR_MISSION_IS' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 pb-3">
+                    <div class="services_presentation">
+                        <div class="services_presentation_box">
+                            <app-text-with-border [borderColor]="'secoundary'">
+                                {{'SERVICES_INTRO.SERVICES' | translate}}
+                            </app-text-with-border>
+                            <div class="text_reponsive">
+                                {{'SERVICES_INTRO.LC_PRIDES_AND_DIFFERENCIETES' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
 </section>
 
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

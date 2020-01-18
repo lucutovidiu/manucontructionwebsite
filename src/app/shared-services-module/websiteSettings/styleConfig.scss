@@ -1,5 +1,5 @@
 // General settings
-$smallSizeScreenBrakeDown : 670px;
+$smallSizeScreenBrakeDown: 670px;
 
 /* Top Nav - call to action*/
 $navbar_background_color: transparent;
@@ -7,7 +7,7 @@ $activeLanguageColor: #2c3e50;
 $activeLanguageGlobeColor: #2c3e50;
 $activeLanguageGlobeColor_active: #34495e;
 $callToActionPhoneAndEmailColor: black;
-$topNavLanguagePaddingTop:20px;
+$topNavLanguagePaddingTop: 20px;
 
 //nav bar - desktop
 $activeButtonColor: #c3c8cc;
@@ -16,24 +16,23 @@ $marginBottom: 10px;
 
 //mobile nav
 $mobNavBackgroundColor: #f9feff;
-$navBarBackbtnColor:#2c3e50;
-$mobileactiveLinkColor:#2c3e50;
-$menuWidth:100%;
+$navBarBackbtnColor: #2c3e50;
+$mobileactiveLinkColor: #2c3e50;
+$menuWidth: 100%;
 
 //hero
 $heroContainerHight: calc(100% - 76.14px);
-$heroTextColor:rgb(255, 247, 250);
+$heroTextColor: rgb(255, 247, 250);
 $heroFontFamilly: "Baloo Bhai", cursive;
 $heroImageLayerColor: black;
 $heroImageLayerOpacity: 0.6;
 $heroBackgroundImage: url(/assets/hero-component/pic1.jpg);
 
-
 //services intro
 $services_title_margin-bottom: 3rem;
 $services_title_margin-top: 3rem;
 $services_title_font-size: 2rem;
-$services_title_bottomTextLine_color:#2980b9;
+$services_title_bottomTextLine_color: #2980b9;
 $services_presentation_box_height: 450px;
 $services_presentation_flex-basis: 400px; //width
 $services_presentation_box_textBox_color: white;
@@ -41,3 +40,7 @@ $services_presentation_box_textBox_title_bottomline_color: #9b59b6;
 $services_presentation_box_values_background_image: url(/assets/services_intro/services_intro_pic5.jpg);
 $services_presentation_box_benefits_background_image: url(/assets/services_intro/services_intro_pic1.jpg);
 $services_presentation_box_services_background_image: url(/assets/services_intro/services_intro_pic3.jpg);
+
+//Section Title
+$sectiontitle_bottomLineBG_primary: #2980b9;
+$sectiontitle_bottomLineBG_secondary: #9b59b6;
