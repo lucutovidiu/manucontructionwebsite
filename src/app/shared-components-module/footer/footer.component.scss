@@ -7,19 +7,18 @@ $font_size_sm: 3vw;
 $font_size_md: 2.2vw;
 $font_size_lg: 0.8vw;
 
-.autoheight{
-    height: 100%;
-    width: 100%;
-    height: fit-content;
+.autoheight {
+  height: 100%;
+  width: 100%;
+  height: fit-content;
 }
 
 .footer_wrapper {
   padding: 2.5rem 0;
   color: whitesmoke;
-  
 
   & .wrapper {
-      height: 100%;
+    height: 100%;
     background: rgba(#34495e, 0.3);
     padding: 2rem 3rem;
     border-radius: 60px 20px 60px 0px;
@@ -33,11 +32,11 @@ $font_size_lg: 0.8vw;
 
   @media all and (max-width: $sm_screen_break) {
     & {
-        font-size: $font_size_sm;
+      font-size: $font_size_sm;
     }
   }
 
-  @media all and (min-width:$sm_screen_break) and (max-width: $md_screen_break) {
+  @media all and (min-width: $sm_screen_break) and (max-width: $md_screen_break) {
     & {
       padding: 2.5rem 0 0 0;
       font-size: $font_size_md;
@@ -46,13 +45,13 @@ $font_size_lg: 0.8vw;
 
   @media all and (min-width: $lg_screen_break) {
     & {
-        font-size: $font_size_lg;
-        background-color: red;
+      font-size: $font_size_lg;
+      background-color: red;
     }
   }
 
   & .address-contact {
-      height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +92,7 @@ $font_size_lg: 0.8vw;
   & .about-follow {
     display: flex;
     justify-content: center;
-    width:80%;
+    width: 80%;
     height: auto;
     & .about-title {
       font-weight: bold;

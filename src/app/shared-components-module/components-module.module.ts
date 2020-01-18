@@ -19,7 +19,7 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
     CommonModule,
     SharedServicesModuleModule
   ],
-  providers:[],
+  providers: [],
   exports: [
     TextWithBorder,
     TextResponsiveComponent,

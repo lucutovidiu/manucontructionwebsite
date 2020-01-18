@@ -22,7 +22,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule, 
+    AppRoutingModule,
     NavBarModule,
     HttpClientModule,
     SharedServicesModuleModule,
@@ -37,14 +37,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     NgxUiLoaderModule.forRoot({
       fgsSize: 100,
-      fgsType:SPINNER.threeStrings,
+      fgsType: SPINNER.threeStrings,
       fgsColor: '#ff3366',
       hasProgressBar: false,
       bgsOpacity: 0.0,
     }),
     NgxUiLoaderRouterModule
   ],
-  exports:[
+  exports: [
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule,
   ],
