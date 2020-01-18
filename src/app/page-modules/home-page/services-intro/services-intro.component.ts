@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services-intro.component.scss']
 })
 export class ServicesIntroComponent implements OnInit {
-  servicesBackgroundImage: string = "url(/assets/services_intro/services_intro_pic2.jpg)";
+  servicesBackgroundImage: string = "url(/assets/services_intro/services_intro_pic6.jpg)";
 
   constructor() { }
 
