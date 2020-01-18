@@ -1,21 +1,22 @@
 <div class="top_nav_for_desktop_version_only">
     <app-call-to-action></app-call-to-action>
 </div>
-<div class="desktop_navbar_wrapper">
+<div class="desktop_navbar_wrapper mb-2 mb-xl-3">
     <img alt="Lazur Concept" class="lazurLogo" src="/assets/logo/lazurconcept-logo1.png" />
     <div>
-        <a class="mediumFont" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button
+        <a   [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button
             routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
-        <!-- <a class="mediumFont" routerLinkActive="active" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
-        <!-- <a class="mediumFont" routerLinkActive="active" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>
-        <a class="mediumFont" routerLinkActive="active" mat-button routerLink="/galerie">{{'NAVIGATION_MENU.GALERIE' | translate}}</a>-->
-        <a class="mediumFont" routerLinkActive="active" mat-button routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a> 
+        <!-- <a  routerLinkActive="active" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
+        <!-- <a  routerLinkActive="active" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>
+        <a " routerLinkActive="active" mat-button routerLink="/galerie">{{'NAVIGATION_MENU.GALERIE' | translate}}</a>-->
+        <a  routerLinkActive="active" mat-button
+            routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
     </div>
 </div>
 
 <div class="mobile_navbar_wrapper">
-    <img alt="Lazur Concept" class="lazurLogo" src="/assets/logo/lazurconcept-logo1.png" />
-    <div (click)="togggleNavMenu()" class="menu_btn"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
+    <img alt="Lazur Concept" class="lazurLogo ml-4" src="/assets/logo/lazurconcept-logo1.png" />
+    <div (click)="togggleNavMenu()" class="menu_btn mr-4"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
 </div>
 
 <div *ngIf="isMobileMenuActive" [@inOutAnimation] [class.mobile_view_menu]="isMobileMenuActive">
@@ -24,10 +25,11 @@
     <!-- <a routerLinkActive="mobileactive" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
     <!-- <a routerLinkActive="mobileactive" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>
     <a routerLinkActive="mobileactive" mat-button routerLink="/galerie">{{'NAVIGATION_MENU.GALERIE' | translate}}</a>-->
-    <a routerLinkActive="mobileactive" (click)="togggleNavMenu()" mat-button routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a> 
+    <a routerLinkActive="mobileactive" (click)="togggleNavMenu()" mat-button
+        routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
     <div class="navBarBackbtn" (click)="togggleNavMenu()"><i class="fa fa-arrow-circle-left"
             aria-hidden="true"></i>&nbsp;{{'GENERAL.BACK' | translate}}</div>
     <div class="callToActionMenu_forMobileVersion">
         <app-call-to-action></app-call-to-action>
-    </div>    
+    </div>
 </div>

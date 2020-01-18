@@ -1,84 +1,41 @@
 @import "../../shared-services-module/websiteSettings/styleConfig.scss";
 
-$firstScreenBrakesAt: 600px;
-$firstBrakeFontSize: 6vw;
-
-$textNoGrowBreakPoint: 1040px;
-$textNoGrowBreakPointFontSize: 1.7vw;
-
-$firstScreenBrakesAt: 600px;
-$firstBrakeFontSize_scoundaryText: 5.5vw;
-
-$textNoGrowBreakPoint: 1040px;
-$textNoGrowBreakPointFontSize_scoundaryText: 1.6vw;
-
-$bottom_border_height_small_screen: 1.7vw;
-$bottom_border_height_big_screen: 0.5vw;
-
-$border_top_distance: 110%;
-
 .title_wrapper_primary {
+  font-size: $bordered_text_primary_font_size;
   position: relative;
   width: fit-content;
-  // margin: 1.8rem auto 2.5rem auto;
   margin: auto;
   white-space: nowrap;
+  text-align: center;
+  font-weight: bold;
   &::after {
     content: "";
     position: absolute;
     width: 50%;
     left: 50%;
-    top: $border_top_distance;
+    top: $bordered_text_primary_border_top_distance;
     transform: translateX(-50%);
-    height: $bottom_border_height_big_screen;
+    height: $bordered_text_primary_border_height;
     border-radius: 10px;
-    background-color: $sectiontitle_bottomLineBG_primary;
-  }
-  @media all and (max-width: $firstScreenBrakesAt) {
-    & {
-      font-size: $firstBrakeFontSize;
-      text-align: center;
-      &::after {
-        height: $bottom_border_height_small_screen;
-      }
-    }
-  }
-
-  @media all and (min-width: $textNoGrowBreakPoint) {
-    & {
-      font-size: $textNoGrowBreakPointFontSize;
-    }
+    background-color: $bordered_text_primary_background_color;
   }
 }
 
 .title_wrapper_secoundary {
+  font-size: $bordered_text_secoundary_font_size;
+  font-weight: bold;
   position: relative;
   width: fit-content;
-  // margin: 1rem auto;
   margin: auto;
   &::after {
     content: "";
     position: absolute;
     width: 50%;
     left: 50%;
-    top: $border_top_distance;
+    top: $bordered_text_secoundary_border_top_distance;
     transform: translateX(-50%);
-    height: $bottom_border_height_big_screen;
+    height: $bordered_text_secoundary_border_height;
     border-radius: 10px;
-    background-color: $sectiontitle_bottomLineBG_secondary;
-  }
-  @media all and (max-width: $firstScreenBrakesAt) {
-    & {
-      font-size: $firstBrakeFontSize_scoundaryText;
-      text-align: center;
-      &::after {
-        height: $bottom_border_height_small_screen;
-      }
-    }
-  }
-  @media all and (min-width: $textNoGrowBreakPoint) {
-    & {
-      font-size: $textNoGrowBreakPointFontSize_scoundaryText;
-    }
+    background-color: $bordered_text_secoundary_background_color;
   }
 }

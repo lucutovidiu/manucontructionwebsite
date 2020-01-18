@@ -1,88 +1,37 @@
-$screen-sm-brake-size: 576px;
-$screen-sm-brake-width: 80%;
-
-$screen-lg-brake-size: 942px;
-$screen-lg-brake-width: 95%;
-
-$form_sm_font_size: 3.4vw;
-$form_lg_font_size: 1.5vw;
-$form_xl_font_size: 0.9vw;
-
+@import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
 .contact_warpper {
-  width: 100%;
-  padding: 1rem 0;
-
   & .contact_form {
-    background: rgba(223, 223, 221, 0.85);
-    border-radius: 10px;
-    width: 50%;
-    margin: 0 auto;
-    padding: 2rem;
-    height: 100%;
-
-    @media all and (max-width: $screen-lg-brake-size) {
-      & {
-        width: $screen-sm-brake-width;
-      }
-      & .form-item-size {
-        font-size: $form_lg_font_size;
-      }
-    }
-    @media all and (max-width: $screen-sm-brake-size) {
-      & {
-        width: $screen-lg-brake-width;
-      }
-      & .form-item-size {
-        font-size: $form_sm_font_size;
-      }
-    }
+    background: $contact_form_background_color;
+    border-radius: $contact_form_border_radius;
+    font-size: $contact_form_font_size;
 
     & .form-items {
-      margin-top: 3rem;
       display: flex;
       flex-direction: column;
     }
     & .form-item-style {
       border: none;
-      height: 3vw;
-      border-radius: 15px;
-      margin: 0.3rem 0;
-      padding: 1.5rem;
-      @media all and (min-width: $screen-lg-brake-size) {
-        font-size: $form_xl_font_size;
-      }
+      border-radius: $contact_form_border_radius;
       &:focus {
         outline: none;
       }
     }
     & .form-item-style-area {
       border: none;
-      border-radius: 15px;
-      margin: 0.3rem 0;
-      padding-left: 1.5rem;
-      padding-top: 1rem;
-      @media all and (min-width: $screen-lg-brake-size) {
-        font-size: $form_xl_font_size;
-      }
+      border-radius: $contact_form_border_radius;
       &:focus {
         outline: none;
       }
     }
-
     & .form-submit-btn{
-        margin-top: 1rem;
         align-self: center;
-        padding:1rem 1rem;
-        border-radius: 15px;
+        border-radius: $contact_form_border_radius;
         font-weight: bold;
         border:none;
-        background-color: #663259;
-        @media all and (min-width: $screen-lg-brake-size) {
-          font-size: $form_xl_font_size;
-        }
+        background-color: $contact_form_submit_btn_color;
         &:hover{
-            background-color: #8b0f6c;
+            background-color: $contact_form_submit_btn_active_color;
         }
     }
   }

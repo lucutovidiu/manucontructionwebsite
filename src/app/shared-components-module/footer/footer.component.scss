@@ -1,106 +1,60 @@
+@import "../../shared-services-module/websiteSettings/styleConfig.scss";
 $boxMarginLeft: 1.5rem;
+$footer_background_color: #282c2f;
+$footer_foreground_color: whitesmoke;
+$footer_font_weight: bold;
+$footer_main_font_size: 0.7rem;
+$footer_box_width: fit-content;
 
-$sm_screen_break: 500px;
-$md_screen_break: 768px;
-$lg_screen_break: 1100px;
-$font_size_sm: 3vw;
-$font_size_md: 2.2vw;
-$font_size_lg: 0.8vw;
-
-.autoheight {
-  height: 100%;
-  width: 100%;
-  height: fit-content;
+.initial_font_settings {
+  background-color: $footer_background_color;
+  color: $footer_foreground_color;
+  font-weight: $footer_font_weight;
+  font-size: $footer_main_font_size;
+}
+.box_wrapper {
+  width: $footer_box_width;
+  background: rgba(#34495e, 0.3);
+  border-radius: 60px 20px 60px 0px;
 }
 
-.footer_wrapper {
-  padding: 2.5rem 0;
-  color: whitesmoke;
+.address-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  & .wrapper {
-    height: 100%;
-    background: rgba(#34495e, 0.3);
-    padding: 2rem 3rem;
-    border-radius: 60px 20px 60px 0px;
-    @media all and (max-width: $md_screen_break) {
-      & {
-        width: 90%;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-
-  @media all and (max-width: $sm_screen_break) {
-    & {
-      font-size: $font_size_sm;
-    }
-  }
-
-  @media all and (min-width: $sm_screen_break) and (max-width: $md_screen_break) {
-    & {
-      padding: 2.5rem 0 0 0;
-      font-size: $font_size_md;
-    }
-  }
-
-  @media all and (min-width: $lg_screen_break) {
-    & {
-      font-size: $font_size_lg;
-      background-color: red;
-    }
-  }
-
-  & .address-contact {
-    height: 100%;
+  & .address-box {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    & .address-box {
-      display: flex;
-      align-items: center;
-      & .address_content {
-        margin-left: $boxMarginLeft;
-        font-weight: bold;
-      }
-    }
-
-    & .phone_box {
-      display: flex;
-      & .phone_box_number {
-        & a {
-          text-decoration: none;
-          color: inherit;
-        }
-        margin-left: $boxMarginLeft;
-        font-weight: bold;
-      }
-    }
-
-    & .email_me {
-      display: flex;
-      & .email_box {
-        & a {
-          text-decoration: none;
-          color: inherit;
-        }
-        margin-left: $boxMarginLeft;
-        font-weight: bold;
-      }
+    & .address_content {
+      margin-left: $boxMarginLeft;
     }
   }
 
-  & .about-follow {
+  & .phone_box {
     display: flex;
-    justify-content: center;
-    width: 80%;
-    height: auto;
-    & .about-title {
-      font-weight: bold;
-    }
-
-    & .about-description {
-      font-weight: bold;
-      line-height: 1.5rem;
+    & .phone_box_number {
+      & a {
+        text-decoration: none;
+        color: inherit;
+      }
+      margin-left: $boxMarginLeft;
     }
   }
+
+  & .email_me {
+    display: flex;
+    & .email_box {
+      & a {
+        text-decoration: none;
+        color: inherit;
+      }
+      margin-left: $boxMarginLeft;
+    }
+  }
+}
+
+.about-follow {
+  display: flex;
+  justify-content: center;
 }

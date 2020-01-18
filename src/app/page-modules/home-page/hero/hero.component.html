@@ -1,15 +1,15 @@
-<div class="hero">
+<div class="hero" [ngStyle]="{'background-image': heroBackgroundImage}">
     <div class="blackLayer"></div>
-    <div class="welcome_text">
-        <app-text-responsive>
-            <p>{{'HERO.WELCOME_TO_OUR_SITE' | translate}}</p>
-        </app-text-responsive>
-        <app-text-responsive>
-            <p>{{'HERO.WE_ENGAGE_TO_DELIVER' | translate}}
-        </app-text-responsive>
-        <app-text-responsive>
-            <p>{{'HERO.THE_BEST_QUALITY' | translate}}</p>
-        </app-text-responsive>
+    <div class="welcome_text" >
+        <!-- <app-text-responsive> -->
+            <h1>{{'HERO.WELCOME_TO_OUR_SITE' | translate}}</h1>
+        <!-- </app-text-responsive> -->
+        <!-- <app-text-responsive> -->
+            <h2>{{'HERO.WE_ENGAGE_TO_DELIVER' | translate}}</h2>
+        <!-- </app-text-responsive>
+        <app-text-responsive> -->
+            <h3>{{'HERO.THE_BEST_QUALITY' | translate}}</h3>
+        <!-- </app-text-responsive> -->
         <!-- <p class="hero_text">{{'HERO.WELCOME_TO_OUR_SITE' | translate}}</p>
         <p class="hero_text">{{'HERO.WE_ENGAGE_TO_DELIVER' | translate}}</p>
         <p class="hero_text">{{'HERO.THE_BEST_QUALITY' | translate}}</p> -->

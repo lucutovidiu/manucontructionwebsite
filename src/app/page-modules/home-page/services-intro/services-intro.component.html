@@ -1,57 +1,33 @@
 <section class="services_wrapper">
-    <div class="p-5">
+    <div class="py-5 py-md-4">
         <app-text-with-border [borderColor]="'primary'">
             {{'SERVICES_INTRO.WELCOME_TO' | translate}} <wbr> {{'SERVICES_INTRO.SARL_LAZUR_CONCEPT' | translate}}
         </app-text-with-border>
     </div>
-    
-        <p class="text_reponsive">{{'SERVICES_INTRO.OUR_COMPANY_PROVIDES' | translate}}</p>
-        <div class="container-fluid py-3" [ngStyle]="{'background-color': servicesBackgroundImage}">
-            <div class="row">
-                <div class="col-lg-4 pb-3">
-                    <div class="services_presentation" [ngStyle]="{'background-image': servicesValuesBackgroundImage}">
-                        <div class="services_presentation_box">
-                            <div class="pt-3 pb-5">
-                                <app-text-with-border [borderColor]="'secoundary'">
-                                    {{'SERVICES_INTRO.VALUES' | translate}}
-                                </app-text-with-border>
-                            </div>                            
-                            <div class="text_reponsive">
-                                {{'SERVICES_INTRO.QULITY_TRUST' | translate}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 pb-3">
-                    <div class="services_presentation" [ngStyle]="{'background-image': servicesBenefitsBackgroundImage}">
-                        <div class="services_presentation_box">
-                            <div class="pt-3 pb-5">
-                                <app-text-with-border [borderColor]="'secoundary'">
-                                    {{'SERVICES_INTRO.BENEFITS' | translate}}
-                                </app-text-with-border>
-                            </div>                            
-                            <div class="text_reponsive">
-                                {{'SERVICES_INTRO.OUR_MISSION_IS' | translate}}
-                            </div>
+    <div class="container-fluid pt-md-1">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h4 class="px-4 font-weight-bold text-center">{{'SERVICES_INTRO.OUR_COMPANY_PROVIDES' | translate}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4" [ngStyle]="{'background-color': servicesBackgroundImage}">
+        <div class="row">
+            <div class="col-lg-4 mb-3 mb-lg-0" *ngFor="let imageIntro of boxesBackgroundImages">
+                <div class="services_presentation h-100" [ngStyle]="{'background-image': imageIntro.introImageUrl}">
+                    <div class="services_presentation_box py-4 px-3 text-center h-100">
+                        <div class="service_title pb-4">
+                            <app-text-with-border [borderColor]="'secoundary'">
+                                {{imageIntro.introTitle| translate}}
+                            </app-text-with-border>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 pb-3">
-                    <div class="services_presentation" [ngStyle]="{'background-image': servicesServicesBackgroundImage}">
-                        <div class="services_presentation_box">
-                            <div class="pt-3 pb-5">
-                                <app-text-with-border [borderColor]="'secoundary'">
-                                    {{'SERVICES_INTRO.SERVICES' | translate}}
-                                </app-text-with-border>
-                            </div>                            
-                            <div class="text_reponsive">
-                                {{'SERVICES_INTRO.LC_PRIDES_AND_DIFFERENCIETES' | translate}}
-                            </div>
+                        <div class="service_description pt-1">
+                            {{imageIntro.introDescription | translate}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-
+  heroBackgroundImage:string= "url(/assets/hero-component/hero_pic3.jpg)";
   constructor() { }
 
   ngOnInit() {

@@ -1,37 +1,37 @@
 @import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
-@media all and (max-width: $smallSizeScreenBrakeDown){
-  .top_nav_for_desktop_version_only{
+@media all and (max-width: $smallSizeScreenBrakeDown) {
+  .top_nav_for_desktop_version_only {
     display: none;
   }
 }
-
-.mediumFont{
-  font-size: 1.1rem;
-}
-
-.desktop_navbar_wrapper {  
-  height: 70px;
+.desktop_navbar_wrapper {
+  font-size: $nav_bar_desktop_font_size;
+  font-weight: $nav_bar_desktop_font_weight;
+  height: $nav_bar_desktop_height;
   display: flex;
   flex-direction: row;
-  width: 100%;
   align-items: center;
-  padding-left: 20px;
-  justify-content: flex-start;
-  margin-top: -10px;
-  margin-bottom: $marginBottom;
-  & .active {
-    border-left: 2px solid $activeButtonColor;
-    background-color: lighten($activeButtonColor, 15%);
-    font-weight: bold;
+  justify-content: center;
+  & a {
     font-size: inherit;
   }
-  & .lazurLogo {
-    width: 150px;
-    margin: 0 20px;
+
+  & .active {
+    border-left: 2px solid $nav_bar_desktop_active_link_color;
+    background-color: lighten($nav_bar_desktop_active_link_color, 15%);
+    font-size: inherit;
   }
 
-  @media all and (max-width: $smallSizeScreenBrakeDown) {
+  & .lazurLogo {
+    width: $nav_bar_logo_width;
+    height: $nav_bar_logo_height;
+    position: absolute;
+    top: $nav_bar_logo_position_top;
+    left: $nav_bar_logo_position_left;
+  }
+
+  @media all and (max-width: $nav_bar_desktop_no_display_screen_width) {
     & {
       display: none;
     }
@@ -44,17 +44,15 @@
   justify-content: space-between;
   flex-direction: row;
   & .menu_btn {
-    padding-right: 20px;
     cursor: pointer;
   }
-  @media all and (min-width: $smallSizeScreenBrakeDown + 1) {
+  @media all and (min-width: $nav_bar_mobile_no_display_screen_width + 1) {
     & {
       display: none;
     }
   }
   & .lazurLogo {
     width: 135px;
-    margin-left: 20px;
     justify-self: flex-start;
   }
 }
@@ -66,9 +64,9 @@
 .mobile_view_menu {
   display: flex;
   flex-direction: column;
-  width: $menuWidth;
+  width: $nav_bar_mobile_menu_width;
   text-transform: uppercase;
-  background-color: $mobNavBackgroundColor;
+  background-color: $nav_bar_mobile_background_color;
   padding: 30px 0;
   border-radius: 0 3px 3px 0;
   position: absolute;
@@ -77,23 +75,24 @@
   height: 100%;
 
   & .mobileactive {
-    color: $mobileactiveLinkColor;
+    color: $nav_bar_mobile_link_active_color;
     font-weight: bold;
     font-size: 17px;
   }
 
   & .navBarBackbtn {
-    color: $navBarBackbtnColor;
+    color: $nav_bar_mobile_back_link_color;
     font-weight: bold;
     align-self: center;
     margin-top: 50px;
     cursor: pointer;
   }
 
-  & .callToActionMenu_forMobileVersion{
+  & .callToActionMenu_forMobileVersion {
     flex-grow: 1;
-    display:flex;
+    display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
     margin-left: 10px;
   }
 }

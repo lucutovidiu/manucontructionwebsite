@@ -3,59 +3,45 @@
 
 // Desktop view
 .top_nav {
-  background: $navbar_background_color none repeat scroll 0 0;
+  font-size: $top_nav_font_size;
+  background: $top_nav_background_color none repeat scroll 0 0;
   overflow: hidden;
-  padding: 10px 0;
-  font-size: 0.9rem;
   & .list-inline {
+    height: 100%;
     display: flex;
     justify-content: flex-end;
-    @media screen and (max-width: $smallSizeScreenBrakeDown) {
-      & {
-        justify-content: flex-start;
-        padding-top: $topNavLanguagePaddingTop;
-      }
-    }
   }
   ul {
     li {
       list-style: none;
       display: inline-block;
-      padding-right: 15px;
       a {
         text-decoration: none;
-        color: $callToActionPhoneAndEmailColor;
+        color: $top_nav_phone_and_email_color;
       }
     }
   }
   & .icon-color-blue {
-    color: $activeLanguageGlobeColor;
+    color: $top_nav_globe_color;
     &:hover {
-      color: $activeLanguageGlobeColor_active;
+      color: $top_nav_globe_color_on_hover;
     }
   }
   & .languageSelect {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 10px;
     cursor: pointer;
     text-transform: uppercase;
   }
 
   & .activeLanguage {
     font-weight: bold;
-    color: $activeLanguageColor;
-    border-bottom: 2px solid $activeLanguageColor;
+    color: $top_nav_language_color;
+    border-bottom: 2px solid $top_nav_language_color;
   }
 
-  @media screen and (max-width: 373px) {
-    .paddingTop{
-      padding-top: 5px;
-    }    
-  }
-
-  & .keepItemsTougether{
+  & .keepItemsTougether {
     display: inline-flex;
     flex-wrap: nowrap;
   }

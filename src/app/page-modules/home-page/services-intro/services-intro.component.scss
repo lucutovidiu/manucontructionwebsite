@@ -1,72 +1,17 @@
 @import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
-$sizeBrakeDownAt: 600px;
-$brakeUpFontSize: 2vw;
-$brakeDownFontSize: 4vw;
-$textNoGrowBreakPoint: 991px;
-$textNoGrowBreakPointFontSize: 1.2vw;
-
-$screenLgAddMarginBottom: 991px;
-$screenLgAddMarginBottomSize: 1rem;
-
 .services_wrapper {
-  & .text_description {
-    padding: 0 3rem 1rem 3rem;
-    font-weight: bold;
-    word-wrap: break-word;
-    text-align: center;
-  }
   .services_presentation {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    height: 100%;
-    // background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     &_box {
-      height: 100%;
-      padding: 0 2rem;
       font-weight: bold;
       color: #f3f1f3;
-      padding-top: 1rem;
       // text-shadow: 1px 1px rgb(146, 146, 146);
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.95);
       border-radius: 10px;
-    }
-  }
-}
-
-.text_reponsive {
-  text-align: center;
-  position: relative;
-  width: fit-content;  
-  margin: 0 auto;
-  font-weight: bold;
-  padding: 1rem 2rem 2rem 2rem;
-  @media all and (min-width: $sizeBrakeDownAt) {
-    & {
-      font-size: $brakeUpFontSize;
-    }
-  }
-
-  @media all and (min-width: $textNoGrowBreakPoint) {
-    & {
-      font-size: $textNoGrowBreakPointFontSize;
-    }
-  }
-
-  @media all and (max-width: $sizeBrakeDownAt) {
-    & {
-      font-size: $brakeDownFontSize;
-      word-wrap: break-word;
-      text-align: center;
-      &::after {
-        height: 1.7vw;
-      }
     }
   }
 }

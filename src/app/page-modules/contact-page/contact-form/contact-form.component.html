@@ -1,14 +1,28 @@
-<div class="contact_warpper backgroundImageFit" [ngStyle]="{'background-image': servicesBackgroundImage}">
-    <div class="contact_form">
-        <app-text-with-border [borderColor]="'secoundary'">
-            <h3>{{'CONTACT_FORM.SEND_US_A_MESSAGE' | translate}}</h3>
-        </app-text-with-border>
-        <form class="form-items">
-            <input class="form-item-style form-item-size" type="text" placeholder="{{'CONTACT_FORM.FULL_NAME' | translate}}" />
-            <input class="form-item-style form-item-size" type="text" placeholder="{{'CONTACT_FORM.EMAIL' | translate}}" />
-            <input class="form-item-style form-item-size" type="text" placeholder="{{'CONTACT_FORM.PHONE' | translate}}" />
-            <textarea class="form-item-style-area form-item-size" name="contact_message" id="" cols="30" rows="10" placeholder="{{'CONTACT_FORM.YOUR_MESSAGE' | translate}}"></textarea>
-            <button class="form-submit-btn form-item-size" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp; {{'CONTACT_FORM.SEND_MESSAGE' | translate}}</button>
-        </form>
+<div class="contact_warpper backgroundImageFit py-4" [ngStyle]="{'background-image': servicesBackgroundImage}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="contact_form px-5 py-4">
+                    <div class="form_title pb-4 pt-2">
+                        <app-text-with-border [borderColor]="'secoundary'">
+                            {{'CONTACT_FORM.SEND_US_A_MESSAGE' | translate}}
+                        </app-text-with-border>
+                    </div>
+                    <form class="form-items pt-2">
+                        <input class="form-item-style py-2 px-3 my-2" type="text"
+                            placeholder="{{'CONTACT_FORM.FULL_NAME' | translate}}" />
+                        <input class="form-item-style py-2 px-3 my-2" type="text"
+                            placeholder="{{'CONTACT_FORM.EMAIL' | translate}}" />
+                        <input class="form-item-style py-2 px-3 my-2" type="text"
+                            placeholder="{{'CONTACT_FORM.PHONE' | translate}}" />
+                        <textarea class="form-item-style-area py-2 px-3 my-2" name="contact_message" id="" cols="30"
+                            rows="10" placeholder="{{'CONTACT_FORM.YOUR_MESSAGE' | translate}}"></textarea>
+                        <button class="form-submit-btn py-2 px-3 my-2 mt-3 mb-2 py-2 px-3" type="submit"><i
+                                class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;
+                            {{'CONTACT_FORM.SEND_MESSAGE' | translate}}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

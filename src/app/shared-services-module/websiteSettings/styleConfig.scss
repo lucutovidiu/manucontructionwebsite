@@ -1,46 +1,65 @@
 // General settings
 $smallSizeScreenBrakeDown: 670px;
 
+//screen widths
+$media-sm-width: 576px;
+$media-lg-width: 767px;
+
 /* Top Nav - call to action*/
-$navbar_background_color: transparent;
-$activeLanguageColor: #2c3e50;
-$activeLanguageGlobeColor: #2c3e50;
-$activeLanguageGlobeColor_active: #34495e;
-$callToActionPhoneAndEmailColor: black;
-$topNavLanguagePaddingTop: 20px;
+$top_nav_background_color: transparent;
+$top_nav_font_size: 0.9rem;
+$top_nav_phone_and_email_color: black;
+$top_nav_globe_color: #2c3e50;
+$top_nav_globe_color_on_hover: #1d89f5;
+$top_nav_language_color: #4c7094;
 
 //nav bar - desktop
-$activeButtonColor: #c3c8cc;
-$activeBackgroundColor: #3498db;
-$marginBottom: 10px;
+$nav_bar_desktop_font_size: 1.1rem;
+$nav_bar_desktop_height: 70px;
+$nav_bar_desktop_font_weight: bold;
+$nav_bar_desktop_no_display_screen_width: 670px;
+$nav_bar_desktop_active_link_color: #c3c8cc;
+//navbar - logo
+$nav_bar_logo_width: 6.37rem;
+$nav_bar_logo_height: 3.3rem;
+$nav_bar_logo_position_top: 0.1rem;
+$nav_bar_logo_position_left: 0.6rem;
 
 //mobile nav
-$mobNavBackgroundColor: #f9feff;
-$navBarBackbtnColor: #2c3e50;
-$mobileactiveLinkColor: #2c3e50;
-$menuWidth: 100%;
+$nav_bar_mobile_no_display_screen_width: 670px;
+$nav_bar_mobile_menu_width: 100%;
+$nav_bar_mobile_background_color: #f9feff;
+$nav_bar_mobile_link_active_color: #2c3e50;
+$nav_bar_mobile_back_link_color: #2c3e50;
+// $menuWidth: 100%;
 
 //hero
-$heroContainerHight: calc(100% - 76.14px);
-$heroTextColor: rgb(255, 247, 250);
-$heroFontFamilly: "Baloo Bhai", cursive;
-$heroImageLayerColor: black;
-$heroImageLayerOpacity: 0.6;
-$heroBackgroundImage: url(/assets/hero-component/hero_pic3.jpg);
+$hero_height: calc(100% - 76.14px);
+$hero_text_color: rgb(255, 247, 250);
+$hero_font_familly: "Baloo Bhai", cursive;
+$hero_black_layaut_color: black;
+$hero_black_layaut_opacity: 0.6;
 
 //services intro
-$services_title_margin-bottom: 3rem;
-$services_title_margin-top: 3rem;
-$services_title_font-size: 2rem;
-$services_title_bottomTextLine_color: #2980b9;
-$services_presentation_box_height: 450px;
-$services_presentation_flex-basis: 400px; //width
-$services_presentation_box_textBox_color: white;
-$services_presentation_box_textBox_title_bottomline_color: #9b59b6;
-$services_presentation_box_values_background_image: url(/assets/services_intro/services_intro_pic5.jpg);
-$services_presentation_box_benefits_background_image: url(/assets/services_intro/services_intro_pic1.jpg);
-$services_presentation_box_services_background_image: url(/assets/services_intro/services_intro_pic3.jpg);
 
-//Section Title
-$sectiontitle_bottomLineBG_primary: #2980b9;
-$sectiontitle_bottomLineBG_secondary: #9b59b6;
+//bordered text primary
+$bordered_text_primary_font_size: 1.5rem;
+$bordered_text_primary_border_top_distance: 120%;
+$bordered_text_primary_border_height: 0.3rem;
+$bordered_text_primary_background_color: #2980b9;
+//bordered text secoundary
+$bordered_text_secoundary_border_top_distance: 120%;
+$bordered_text_secoundary_border_height: 0.3rem;
+$bordered_text_secoundary_background_color: #9b59b6;
+$bordered_text_secoundary_font_size: 1.4rem;
+
+// contact form
+$contact_form_background_color: rgba(223, 223, 221, 0.85);
+$contact_form_submit_btn_color: #663259;
+$contact_form_submit_btn_active_color: #8b0f6c;
+$contact_form_border_radius: 0.3rem;
+$contact_form_font_size: 0.8rem;
+
+.border {
+  border: 2px solid red;
+}

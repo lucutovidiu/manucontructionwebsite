@@ -2,7 +2,8 @@
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -36,19 +37,132 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  & a:hover {
+    text-decoration: none;
+    color: black;
+  }
 }
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: #484848;
 }
 
-.border{
-    border: 2px solid blue;
+.border {
+  border: 2px solid blue;
 }
 
 .backgroundImageFit {
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center top;
   background-size: cover;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1rem;
+}
+p,
+li {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 570px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 620px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 680px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 19px;
+  }
+}
+@media screen and (min-width: 860px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 920px) {
+  html {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 2500px) {
+  html {
+    font-size: 35px;
+  }
+}
+@media screen and (min-width: 3000px) {
+  html {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 3500px) {
+  html {
+    font-size: 45px;
+  }
+}
+@media screen and (min-width: 4000px) {
+  html {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 4500px) {
+  html {
+    font-size: 45px;
+  }
+}
+
+.inline-block {
+  display: inline-block;
 }
