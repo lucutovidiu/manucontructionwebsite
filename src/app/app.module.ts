@@ -4,6 +4,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from 'hammerjs';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,13 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
 import { HomePageModule } from 'page-modules/home-page/home.page.module'
 import { ComponentsModuleModule } from "shared-components/components-module.module"
 import { ProjectsModule } from "page-modules/projects-page/projects.page.module"
+
+
+export class HammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    'swipe': { direction: Hammer.DIRECTION_ALL }
+  };
+}
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -50,7 +60,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

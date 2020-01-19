@@ -28,8 +28,17 @@ export class ImageSliderComponent implements OnInit {
     });
   }
 
-  swipe(){
-    console.log("swiping lesdfsfdasf");
+  handleScrollDownUpPage(type:string):void{
+    switch (type){
+      case "UP":{
+        window.scrollBy(0, 250);
+        return;
+      }
+      case "DOWN":{
+        window.scrollBy(0, -250);
+        return;
+      }
+    }
   }
 
   handleNextPrevPictureSelect(type) {
