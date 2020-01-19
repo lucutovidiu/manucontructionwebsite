@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TextWithBorder } from './text-with-border/text-with-border.component';
-import { TextResponsiveComponent } from './text-responsive/text-responsive.component';
 import { FooterComponent } from './footer/footer.component';
-import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { SharedServicesModuleModule } from "shared_services/shared-services-module.module";
+import { ImageSliderComponent } from './image-slider/image-slider.component'
 
 @NgModule({
   declarations: [
     NotFoundComponent,
     TextWithBorder,
-    TextResponsiveComponent,
-    FooterComponent
+    FooterComponent,
+    ImageSliderComponent
   ],
   imports: [
     CommonModule,
@@ -22,8 +22,8 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
   providers: [],
   exports: [
     TextWithBorder,
-    TextResponsiveComponent,
-    FooterComponent
+    FooterComponent,
+    ImageSliderComponent
   ]
 })
 export class ComponentsModuleModule { }

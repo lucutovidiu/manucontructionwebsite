@@ -16,6 +16,10 @@ const routes: Routes = [
     path:"contact",
     loadChildren: 'page-modules/contact-page/contact.page.module#ContactModule'
   },
+  {
+    path: "project",
+    loadChildren: "page-modules/projects-page/projects.page.module#ProjectsModule"
+  },
 
   // {
   //   path: 'about',

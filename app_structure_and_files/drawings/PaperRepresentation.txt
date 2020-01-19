@@ -8,7 +8,7 @@ app
             HOME_PAGE 
             ABOUT_PAGE 
             Services_Page 
-            Galerie_Page 
+            Projects_Page 
             Contact_Page
         imports:{page_modules}
 

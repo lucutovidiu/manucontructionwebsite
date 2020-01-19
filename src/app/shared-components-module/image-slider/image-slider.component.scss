@@ -1,0 +1,86 @@
+@import "../../shared-services-module/websiteSettings/styleConfig.scss";
+
+.articleImageGalery_wrapper {
+  outline: $image_slider_side_outline;
+  outline-offset: $image_slider_side_outline_offset;
+  position: relative;
+  display: flex;
+  & .side_picture_panel {
+    position: relative;
+    width: $image_slider_side_picture_width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    & img {
+      height: 80px;
+      width: auto;
+      max-height: 100px;
+      max-width: 100px;
+      display: block;
+      border-radius: $image_slider_small_img_border_radius;
+      cursor: pointer;
+      &:hover {
+        opacity: $image_slider_side_picture_opacity;
+      }
+    }
+  }
+  & .picture_display_panel {
+    position: relative;
+    border-radius: $image_slider_main_img_border_radius;
+
+    overflow: hidden;
+    & .picture_image {
+      & img {
+        height: auto;
+        width: auto;
+        max-height: 550px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: $image_slider_main_img_border_radius;
+      }
+    }
+    & .prev_picture_chevroux,
+    & .next_picture_chevroux {
+      position: absolute;
+      height: 70px;
+      width: 45px;
+      top: 50%;
+      z-index: 1000;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: height 0.1s, width 0.1s;
+      background-color: white;
+      opacity: 0.8;
+      &:hover {
+        height: 80px;
+        width: 50px;
+      }
+    }
+    & .prev_picture_chevroux {
+      left: 0px;
+      border-radius: 0 10px 10px 0;
+    }
+    & .next_picture_chevroux {
+      right: 0;
+      border-radius: 10px 0 0 10px;
+    }
+    & .picture_text {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: $image_slider_wrapper_bottom_text_height;
+      line-height: $image_slider_wrapper_bottom_text_height;
+      text-align: center;
+      background-color: gray;
+    }
+  }
+  & .showBottomBorder {
+    border-bottom: $image_slider_side_picture_border;
+    width: $image_slider_side_picture_border_width;
+  }
+}

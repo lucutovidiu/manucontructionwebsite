@@ -7,14 +7,14 @@ $media-lg-width: 767px;
 
 /* Top Nav - call to action*/
 $top_nav_background_color: transparent;
-$top_nav_font_size: 0.9rem;
+$top_nav_font_size: 0.7rem;
 $top_nav_phone_and_email_color: black;
 $top_nav_globe_color: #2c3e50;
 $top_nav_globe_color_on_hover: #1d89f5;
 $top_nav_language_color: #4c7094;
 
 //nav bar - desktop
-$nav_bar_desktop_font_size: 1.1rem;
+$nav_bar_desktop_font_size: 0.8rem;
 $nav_bar_desktop_height: 70px;
 $nav_bar_desktop_font_weight: bold;
 $nav_bar_desktop_no_display_screen_width: 670px;
@@ -60,6 +60,17 @@ $contact_form_submit_btn_active_color: #8b0f6c;
 $contact_form_border_radius: 0.3rem;
 $contact_form_font_size: 0.8rem;
 
-.border {
+//image slider
+$image_slider_side_picture_width: 100%;
+$image_slider_side_picture_opacity: 0.6;
+$image_slider_side_picture_border: 2px solid rgb(84, 45, 102);
+$image_slider_side_outline: 2px dashed gray;
+$image_slider_side_outline_offset: 5px;
+$image_slider_side_picture_border_width: 100%;
+$image_slider_wrapper_bottom_text_height: 30px;
+$image_slider_small_img_border_radius:5px;
+$image_slider_main_img_border_radius:10px;
+
+.borderd {
   border: 2px solid red;
 }

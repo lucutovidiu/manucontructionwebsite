@@ -11,6 +11,7 @@ import { NavBarModule } from './page-modules/navbar/navbar.module'
 import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
 import { HomePageModule } from 'page-modules/home-page/home.page.module'
 import { ComponentsModuleModule } from "shared-components/components-module.module"
+import { ProjectsModule } from "page-modules/projects-page/projects.page.module"
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SharedServicesModuleModule,
     ComponentsModuleModule,
     HomePageModule,
+    ProjectsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

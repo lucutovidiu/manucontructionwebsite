@@ -30,6 +30,9 @@
       ],
       "shared-components/*" : [
         "app/shared-components-module/*"
+      ],
+      "shared_daos/*" : [
+        "app/shared_daos/*"
       ]
     }
   },
