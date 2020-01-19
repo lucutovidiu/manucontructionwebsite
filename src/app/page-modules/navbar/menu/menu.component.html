@@ -8,7 +8,7 @@
             routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
         <!-- <a  routerLinkActive="active" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
         <!-- <a  routerLinkActive="active" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>-->
-        <a routerLinkActive="active" mat-button routerLink="/project/123">{{'NAVIGATION_MENU.PROJECTS' | translate}}</a>
+        <a  routerLinkActive="active" mat-button routerLink="/project/123">{{'NAVIGATION_MENU.PROJECTS' | translate}}</a>
         <a  routerLinkActive="active" mat-button
             routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
     </div>
@@ -24,7 +24,7 @@
         routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
     <!-- <a routerLinkActive="mobileactive" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
     <!-- <a routerLinkActive="mobileactive" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>-->
-    <a routerLinkActive="mobileactive" mat-button routerLink="/project">{{'NAVIGATION_MENU.PROJECTS' | translate}}</a>
+    <a (click)="togggleNavMenu()" routerLinkActive="mobileactive" mat-button routerLink="/project/123">{{'NAVIGATION_MENU.PROJECTS' | translate}}</a>
     <a routerLinkActive="mobileactive" (click)="togggleNavMenu()" mat-button
         routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
     <div class="navBarBackbtn" (click)="togggleNavMenu()"><i class="fa fa-arrow-circle-left"
