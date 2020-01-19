@@ -6,6 +6,10 @@
     border-radius: $contact_form_border_radius;
     font-size: $contact_form_font_size;
 
+    @media all and (max-width: $media-sm-width) {
+      font-size: 1.2rem;
+    }
+
     & .form-items {
       display: flex;
       flex-direction: column;

@@ -13,16 +13,6 @@
   letter-spacing: 1px;
   position: relative;
   box-shadow: 0px 2px 5px black;
-  & .hero_text {
-    @media all and (max-width: 379px) {
-      font-size: 1rem;
-      padding-top: 1rem;
-    }
-    @media all and (min-width: 380px) and (max-width: 576px) {
-      font-size: 1.3rem;
-      padding-top: 1rem;
-    }
-  }
   & .blackLayer {
     z-index: 0;
     position: absolute;
@@ -40,5 +30,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    @media all and (max-width:420px) {
+      h1{
+        font-size: 1.6rem;
+      }
+      h2{
+        font-size: 1.35rem;
+      }
+      h3{
+        font-size: 1.2rem;
+      }
+    }
   }
 }
