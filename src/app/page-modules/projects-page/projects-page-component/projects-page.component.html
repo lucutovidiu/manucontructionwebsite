@@ -1,7 +1,63 @@
-<div class="containter-fluid px-2 mt-3" *ngIf="mockPictures">
-    <div class="row">
-        <div class="col-sm-10 offset-sm-1">
+<div class="project_title pb-4">
+    <app-text-with-border>
+        Project Title
+    </app-text-with-border>
+</div>
+
+<div class="container-fluid px-md-2 mt-3" *ngIf="mockPictures">
+    <div class="row m-0">
+        <div class="p-0 col-sm-10 offset-sm-1">
             <app-image-slider [pictures]="mockPictures"></app-image-slider>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-1 offset-lg-1 col-10 offset-1">
+            <h4 class="">
+                <b>Project Description</b>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 offset-lg-1 col-10 offset-1">
+            <h6 class="proj_desc_paragraph">
+                Was a very big project where we had work from piping to electricity, painting and much more, all ended very well and with a big positive from the customer.
+            </h6>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-1 offset-lg-1 col-10 offset-1">
+            <div class="d-flex">
+                <div class="location_icon mr-3">
+                    <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                </div>
+                 <div class="location_description align-self-end">Levallois-Perret 92300, France</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-1 offset-lg-1 col-10 offset-1">
+            <div class="d-flex">
+                <div class="location_icon mr-3">
+                    <i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+                </div>
+                 <div class="location_description align-self-end">
+                    <div class="carac">
+                        Surface: 6000 m<sup>2</sup>
+                    </div> 
+                    <div class="carac">
+                        Works made delicate by its classification
+                    </div> 
+                </div>
+            </div>
         </div>
     </div>
 </div>

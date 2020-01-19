@@ -43,6 +43,27 @@
     "QUOTE": "oferta",
     "AND_YOU_WILL_NOT_BE": "Si nu vei fi dezamagit!"
   },
+  "SERVICE_DESCRIPTION": {
+     "DESIGN_PLANNING": "DESIGN & PLANIFICARE",
+     "FROM_THE_MOMENT_YOU": "Din momentul în care decideți să transformați ideile în realitate, vă putem ajuta. De la proiectare la reglementări, vă ajutăm cu toate lucrările.",
+     "CONSTRUCTION_RESTORATION": "CONSTRUCTIE & RESTAURARE",
+     "OUR_DEDICATED_TEAM": "Echipa noastră dedicată are o gamă largă de abilități și experiență pentru a se potrivi nevoilor dvs. și asigurați-vă că proiectul dvs. funcționează fără probleme.",
+     "INTERIORS": "INTERIOR",
+     "WE_DONT_JUST_BUILD": "Nu doar îți decorăm casa, ci luăm proiectul până la finalul final."
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
   "TEAMS": {
     "PROJECT_TEAMS": "Project teams",
     "TEAM_NAME": "Team name",

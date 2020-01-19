@@ -44,6 +44,14 @@
     "QUOTE":"devis",
     "AND_YOU_WILL_NOT_BE":"Et vous ne serez pas déçu!"
   },
+  "SERVICE_DESCRIPTION": {
+     "DESIGN_PLANNING": "CONCEPTION ET PLANIFICATION",
+     "FROM_THE_MOMENT_YOU": "À partir du moment où vous décidez de transformer vos idées en réalité, nous pouvons vous aider. De la conception à la réglementation, nous vous accompagnons dans tous les travaux préparatoires",
+     "CONSTRUCTION_RESTORATION": "CONSTRUCTION ET RESTAURATION",
+     "OUR_DEDICATED_TEAM": "Notre équipe dévouée possède un large éventail de compétences et d'expérience pour répondre à vos besoins et s'assurer que votre projet se déroule bien.",
+     "INTERIORS": "INTÉRIEURS",
+     "WE_DONT_JUST_BUILD": "Nous ne faisons pas que rénover votre maison, nous menons le projet à son terme."
+  },
 
 
 

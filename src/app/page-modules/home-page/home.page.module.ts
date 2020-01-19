@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomePageRoutingModule } from './home-routing.module' 
@@ -7,13 +7,18 @@ import { ComponentsModuleModule } from 'shared-components/components-module.modu
 import { HeroComponent } from './hero/hero.component'
 import { ServicesIntroComponent } from './services-intro/services-intro.component'
 import { SharedServicesModuleModule } from 'shared_services/shared-services-module.module'
-import { ContactModule } from "page-modules/contact-page/contact.page.module"
-
+import { ContactModule } from "page-modules/contact-page/contact.page.module";
+import { ServicesDescriptionComponent } from './services-description/services-description.component';
+import { ProjectWorkDoneBoxComponent } from '../home-page/project-work-done-box/project-work-done-box.component'
+import { ServicesComponent } from "./services/services.component"
 @NgModule({
   declarations: [
     HomePageComponent,
     HeroComponent,
-    ServicesIntroComponent
+    ServicesComponent,
+    ServicesIntroComponent,
+    ServicesDescriptionComponent,
+    ProjectWorkDoneBoxComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +26,9 @@ import { ContactModule } from "page-modules/contact-page/contact.page.module"
     ComponentsModuleModule,
     SharedServicesModuleModule,
     ContactModule
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA
   ]
 })
 export class HomePageModule {}

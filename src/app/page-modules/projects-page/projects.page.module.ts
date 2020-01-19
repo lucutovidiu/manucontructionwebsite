@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { ProjectsPageComponent } from './projects-page-component/projects-page.component'
 import { ProjectsRoutingModule } from './projects-routing.module'
-import { ComponentsModuleModule } from "shared-components/components-module.module"
+import { ComponentsModuleModule } from "shared-components/components-module.module";
 
 @NgModule({
   declarations: [
@@ -13,6 +13,9 @@ import { ComponentsModuleModule } from "shared-components/components-module.modu
     CommonModule,
     ProjectsRoutingModule,
     ComponentsModuleModule
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA
   ]
 })
 export class ProjectsModule {}

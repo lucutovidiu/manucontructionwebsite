@@ -1,6 +1,8 @@
 @import "../../shared-services-module/websiteSettings/styleConfig.scss";
 
 .articleImageGalery_wrapper {
+  margin: 0;
+  padding:0;
   outline: $image_slider_side_outline;
   outline-offset: $image_slider_side_outline_offset;
   position: relative;

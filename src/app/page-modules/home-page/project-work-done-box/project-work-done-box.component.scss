@@ -1,0 +1,16 @@
+.pr_work_wrapper{
+    & .card-image{
+        font-size: 4rem;
+        height: 20%;
+    }
+
+    & .card_title{
+        color:#AA8877;
+        height: 20%;
+    }
+
+    & .card_description{
+        font-size: 0.8rem;
+        height: 60%;
+    }
+}
