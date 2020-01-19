@@ -40,6 +40,10 @@ export class MenuBarComponent implements OnInit {
   }
 
   togggleNavMenu(): void {
+    if (!this.isMobileMenuActive)
+      document.body.style.overflow = "hidden";
+    else
+      document.body.style.overflow = "auto";
     this.isMobileMenuActive = !this.isMobileMenuActive;
   }
 

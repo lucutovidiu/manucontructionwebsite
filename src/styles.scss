@@ -17,6 +17,16 @@
 $manuapp-primary: mat-palette($mat-indigo);
 $manuapp-accent: mat-palette($mat-pink, A200, A100, A400);
 
+//scroolbar design
+body::-webkit-scrollbar {
+  width:15px;
+  background:transparent; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background:rgba(75, 75, 75, 0.4) !important;
+}
+
 // The warn palette is optional (defaults to red).
 $manuapp-warn: mat-palette($mat-red);
 
