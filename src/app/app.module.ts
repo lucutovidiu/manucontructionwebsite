@@ -5,8 +5,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import * as Hammer from 'hammerjs';
-
+import * as Hammer from '@squadette/hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
