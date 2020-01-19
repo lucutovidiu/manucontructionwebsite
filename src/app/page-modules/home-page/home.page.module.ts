@@ -11,6 +11,7 @@ import { ContactModule } from "page-modules/contact-page/contact.page.module";
 import { ServicesDescriptionComponent } from './services-description/services-description.component';
 import { ProjectWorkDoneBoxComponent } from '../home-page/project-work-done-box/project-work-done-box.component'
 import { ServicesComponent } from "./services/services.component"
+
 @NgModule({
   declarations: [
     HomePageComponent,

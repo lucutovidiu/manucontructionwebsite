@@ -7,7 +7,7 @@ import { ComponentsModuleModule } from "shared-components/components-module.modu
 
 @NgModule({
   declarations: [
-    ProjectsPageComponent
+    ProjectsPageComponent,
   ],
   imports: [
     CommonModule,

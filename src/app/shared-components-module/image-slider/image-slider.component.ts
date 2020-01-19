@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+
 import { ProjectPictureDTO } from "shared_daos/Projects/ProjectPictureDTO";
 
 @Component({
@@ -25,6 +26,10 @@ export class ImageSliderComponent implements OnInit {
         pic.isDisplayed = false;
       return pic;
     });
+  }
+
+  swipe(){
+    console.log("swiping lesdfsfdasf");
   }
 
   handleNextPrevPictureSelect(type) {
