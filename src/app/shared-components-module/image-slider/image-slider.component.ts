@@ -31,11 +31,13 @@ export class ImageSliderComponent implements OnInit {
   handleScrollDownUpPage(type:string):void{
     switch (type){
       case "UP":{
-        window.scrollBy(0, 250);
+        if(window)
+          window.scrollBy(0, 250);
         return;
       }
       case "DOWN":{
-        window.scrollBy(0, -250);
+        if(window)
+          window.scrollBy(0, -250);
         return;
       }
     }
