@@ -32,12 +32,12 @@ export class ImageSliderComponent implements OnInit {
     switch (type){
       case "UP":{
         if(window)
-          window.scrollBy(0, 250);
+          window.scrollBy(0, 50);
         return;
       }
       case "DOWN":{
         if(window)
-          window.scrollBy(0, -250);
+          window.scrollBy(0, -50);
         return;
       }
     }
