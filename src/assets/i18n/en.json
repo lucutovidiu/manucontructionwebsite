@@ -44,12 +44,15 @@
     "AND_YOU_WILL_NOT_BE": "And you will not be dissapointed!"
   },
   "SERVICE_DESCRIPTION": {
-     "DESIGN_PLANNING": "DESIGN & PLANNING",
-     "FROM_THE_MOMENT_YOU": "From the moment you decide to turn ideas into reality, we can help. From design to regulations, we help with all the groundwork",
-     "CONSTRUCTION_RESTORATION": "CONSTRUCTION & RESTORATION",
-     "OUR_DEDICATED_TEAM": "Our dedicated team have a broad range of skills and experience to suit your needs and make sure your project runs smoothly.",
-     "INTERIORS": "INTERIORS",
-     "WE_DONT_JUST_BUILD": "We don’t just decorate your home, we take the project right to the final finish."
+    "DESIGN_PLANNING": "DESIGN & PLANNING",
+    "FROM_THE_MOMENT_YOU": "From the moment you decide to turn ideas into reality, we can help. From design to regulations, we help with all the groundwork",
+    "CONSTRUCTION_RESTORATION": "CONSTRUCTION & RESTORATION",
+    "OUR_DEDICATED_TEAM": "Our dedicated team have a broad range of skills and experience to suit your needs and make sure your project runs smoothly.",
+    "INTERIORS": "INTERIORS",
+    "WE_DONT_JUST_BUILD": "We don’t just decorate your home, we take the project right to the final finish."
+  },
+  "PROJECTS_SLIDER": {
+    "TITLE": "Projects Portfolio"
   },
 
 
