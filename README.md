@@ -1,3 +1,8 @@
+# GIT remote
+git remote add "origin" "and below url"
+git@github-ovidiu:lucutovidiu/manucontructionwebsite.git
+https://github.com/lucutovidiu/manucontructionwebsite.git
+
 # Manuapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
