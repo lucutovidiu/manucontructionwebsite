@@ -55,6 +55,13 @@
   "PROJECTS_SLIDER": {
     "TITLE": "Portefeuille de Projets"
   },
+  "SINGLE_PROJECT_DISPLAY": {
+    "PROJECT_DESCRIPTION": "Description du projet",
+    "SURFACE":"Surface"
+  },
+
+
+
 
 
 

@@ -54,8 +54,19 @@
   "PROJECTS_SLIDER": {
     "TITLE": "Projects Portfolio"
   },
+  "SINGLE_PROJECT_DISPLAY": {
+    "PROJECT_DESCRIPTION": "Project Description",
+    "SURFACE":"Surface"
+  },
 
 
+
+
+
+
+
+
+  
 
   "LOGIN": {
     "USERNAME_OR_EMAIL": "Username or Email",

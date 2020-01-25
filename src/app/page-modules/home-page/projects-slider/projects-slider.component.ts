@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ResizedEvent } from 'angular-resize-event';
 
-import { ProjectPictureDTO } from 'app_module/shared_daos/Projects/ProjectPictureDTO';
+import { ProjectsDTO } from 'app_module/shared_daos/Projects/ProjectsDTO';
+import { ProjectsProviderService } from 'shared_services/services/projects_provider/ProjectsProvider';
 
 @Component({
   selector: 'app-projects-slider',
@@ -17,6 +18,7 @@ export class ProjectsSliderComponent implements OnInit {
   private imageHeightPercentage = 0.30;
   private imageWidthPercentage = 0.30;
 
+  private scrollByUpDown:number = 100;
 
   private smallScreenMaxWidth: number = 900;
   private maxImageBoxHeightForSmallWidth: number = 270;
@@ -25,17 +27,7 @@ export class ProjectsSliderComponent implements OnInit {
   private gapBetweenImages: number = 10;
   private _gapBetweenSliderAndImageBox: number = 10;
 
-  projectPictures: Array<ProjectPictureDTO> = [
-    { id: 1, src: "/assets/projects_component/proj1/proj1_pic4.jpg", title: "Cool Project 1", isDisplayed: true },
-    { id: 2, src: "/assets/projects_component/proj1/proj1_pic3.jpg", title: "Cool Project 2", isDisplayed: false },
-    { id: 3, src: "/assets/projects_component/proj1/proj1_pic2.jpg", title: "Cool Project 3", isDisplayed: false },
-    { id: 4, src: "/assets/projects_component/proj1/proj1_pic1.jpg", title: "Cool Project 4", isDisplayed: false },
-    { id: 5, src: "/assets/projects_component/proj1/proj1_pic2.jpg", title: "Cool Project 5", isDisplayed: false },
-    { id: 6, src: "/assets/projects_component/proj1/proj1_pic3.jpg", title: "Cool Project 6", isDisplayed: false },
-    { id: 7, src: "/assets/projects_component/proj1/proj1_pic1.jpg", title: "Cool Project 7", isDisplayed: false },
-  ]
-
-  constructor() { }
+  constructor(private projectsProviderService: ProjectsProviderService) { }
 
   ngOnInit() {
     this.calculateSliderSizes();
@@ -47,6 +39,11 @@ export class ProjectsSliderComponent implements OnInit {
     } else {
       return Math.round(this.windowHeight * this.imageHeightPercentage);
     }
+  }
+
+  public get projects():Array<ProjectsDTO>{
+    // console.log(this.projectsProviderService.getAllProjects())
+    return this.projectsProviderService.getAllProjects();
   }
 
   private calculateBoxHeight() {
@@ -77,6 +74,21 @@ export class ProjectsSliderComponent implements OnInit {
 
   onResize(event: ResizedEvent) {
     this.calculateSliderSizes();
+  }
+
+  handleScrollDownUpPage(type:string):void{
+    switch (type){
+      case "UP":{
+        if(window)
+          window.scrollBy(0, this.scrollByUpDown);
+        return;
+      }
+      case "DOWN":{
+        if(window)
+          window.scrollBy(0, -this.scrollByUpDown);
+        return;
+      }
+    }
   }
 
   public get gapBetweenSliderAndImageBox() {

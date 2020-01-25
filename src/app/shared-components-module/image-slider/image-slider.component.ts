@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
-import { ProjectPictureDTO } from "shared_daos/Projects/ProjectPictureDTO";
+import { ProjectsDTO } from "app_module/shared_daos/Projects/ProjectsDTO";
 
 @Component({
   selector: 'app-image-slider',
@@ -10,33 +10,40 @@ import { ProjectPictureDTO } from "shared_daos/Projects/ProjectPictureDTO";
 })
 export class ImageSliderComponent implements OnInit {
 
-  @Input("pictures") projectPictures:Array<ProjectPictureDTO>;
+  @Input("project") project: ProjectsDTO;
+  public displayedPicture: { imgArrayId: number } = { imgArrayId: 0 };
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
+  shouldDisplay(picArrayId) {
+    if (this.displayedPicture.imgArrayId === picArrayId) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-  handledDifferentPicture(id): void {
-    this.projectPictures = this.projectPictures.slice().map(pic => {
-      if (pic.id === id)
-        pic.isDisplayed = true;
-      else
-        pic.isDisplayed = false;
-      return pic;
+  handledDifferentPicture(picId): void {
+    this.project.imageSrc.forEach((pic, index) => {
+      if (index === picId)
+        this.displayedPicture = Object.assign({}, { imgArrayId: picId });
     });
   }
 
-  handleScrollDownUpPage(type:string):void{
-    switch (type){
-      case "UP":{
-        if(window)
+  handleScrollDownUpPage(type: string): void {
+    switch (type) {
+      case "UP": {
+        if (window)
           window.scrollBy(0, 50);
         return;
       }
-      case "DOWN":{
-        if(window)
+      case "DOWN": {
+        if (window)
           window.scrollBy(0, -50);
         return;
       }
@@ -44,8 +51,8 @@ export class ImageSliderComponent implements OnInit {
   }
 
   handleNextPrevPictureSelect(type) {
-    let pictureSlidesLenght = this.projectPictures.length;
-    let currentPicIndex = this.projectPictures.findIndex(pic => pic.isDisplayed === true);
+    let pictureSlidesLenght = this.project.imageSrc.length;
+    let currentPicIndex = this.displayedPicture.imgArrayId;
     switch (type) {
       case "PREV": {
         let foundIndex = 0;
@@ -53,12 +60,9 @@ export class ImageSliderComponent implements OnInit {
           foundIndex = pictureSlidesLenght - 1;
         else foundIndex = currentPicIndex - 1
 
-        this.projectPictures = this.projectPictures.slice().map((pic, index) => {
+        this.project.imageSrc.forEach((pic, index) => {
           if (index === foundIndex)
-            pic.isDisplayed = true;
-          else
-            pic.isDisplayed = false;
-          return pic;
+            this.displayedPicture = Object.assign({}, { imgArrayId: index });
         });
         return;
       }
@@ -68,16 +72,12 @@ export class ImageSliderComponent implements OnInit {
           foundIndex = 0
         else foundIndex = currentPicIndex + 1
 
-        this.projectPictures = this.projectPictures.slice().map((pic, index) => {
+        this.project.imageSrc.forEach((pic, index) => {
           if (index === foundIndex)
-            pic.isDisplayed = true;
-          else
-            pic.isDisplayed = false;
-          return pic;
+            this.displayedPicture = Object.assign({}, { imgArrayId: index });
         });
         return;
       }
     }
   }
-
 }

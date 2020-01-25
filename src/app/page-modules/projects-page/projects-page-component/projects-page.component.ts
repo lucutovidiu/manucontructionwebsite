@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { ProjectPictureDTO } from "shared_daos/Projects/ProjectPictureDTO";
+import { ProjectsDTO } from "app_module/shared_daos/Projects/ProjectsDTO";
+import { ProjectsProviderService } from 'shared_services/services/projects_provider/ProjectsProvider';
 
 @Component({
   selector: 'app-project-page',
@@ -9,15 +10,18 @@ import { ProjectPictureDTO } from "shared_daos/Projects/ProjectPictureDTO";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsPageComponent implements OnInit {
-  
-  mockPictures: Array<ProjectPictureDTO> = [
-    { id: 1, src: "/assets/projects_component/proj2/proj2_pic4.jpeg", title: "pic1", isDisplayed: true },
-    { id: 2, src: "/assets/projects_component/proj2/proj2_pic3.jpeg", title: "pic2", isDisplayed: false },
-    { id: 3, src: "/assets/projects_component/proj2/proj2_pic2.jpeg", title: "pic3", isDisplayed: false },
-    { id: 4, src: "/assets/projects_component/proj2/proj2_pic1.jpeg", title: "pic3", isDisplayed: false },
-  ]
+  private _projects: Array<ProjectsDTO> = new Array<ProjectsDTO>();
+  public get projects(): Array<ProjectsDTO> {
+    if (this._projects.length === 0){
+      this._projects = this.projectsProviderService.getAllProjects();
+      // console.log(this._projects)
+      return this._projects;
+    }else{
+      return this._projects;
+    }
+  }
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private projectsProviderService: ProjectsProviderService) {
   }
 
   ngOnInit() {

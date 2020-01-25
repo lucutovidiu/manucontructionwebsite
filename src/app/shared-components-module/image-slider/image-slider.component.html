@@ -1,31 +1,37 @@
-<div (swipeleft)="handleNextPrevPictureSelect('NEXT')" (swipeup)="handleScrollDownUpPage('UP')" (swipedown)="handleScrollDownUpPage('DOWN')"  (swiperight)="handleNextPrevPictureSelect('PREV')" class="articleImageGalery_wrapper mx-3">
+<div (swipeleft)="handleNextPrevPictureSelect('NEXT')" (swipeup)="handleScrollDownUpPage('UP')"
+    (swipedown)="handleScrollDownUpPage('DOWN')" (swiperight)="handleNextPrevPictureSelect('PREV')"
+    class="articleImageGalery_wrapper mx-3">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 order-2 order-md-1">
                 <div class="side_picture_panel mt-2 mt-md-0 mr-2 d-flex flex-row flex-md-column justify-content-center">
-                    <div class="mr-2 mr-md-0" *ngFor="let picture of projectPictures">
-                        <img class="pb-2 pt-1" (click)="handledDifferentPicture(picture.id)"
-                            [ngClass]="{'showBottomBorder':picture.isDisplayed}" [attr.src]="picture.src"
-                            [attr.alt]="picture.title" />
+                    <div *ngIf="project"></div>
+                    <div class="mr-2 mr-md-0" *ngFor="let projectSrc of project.imageSrc;let i = index">
+                        <img [ngClass]="{'showBottomBorder':shouldDisplay(i)}" 
+                        class="pb-2 pt-1" [attr.src]="projectSrc"
+                        (click)="handledDifferentPicture(i)"    
+                        [attr.alt]="project.title" />
                     </div>
                 </div>
             </div>
             <div class="col-md-10 order-1 order-md-2 px-0 px-sm-3">
                 <div class="picture_display_panel">
-                    <div class="" *ngFor="let picture of projectPictures">
-                        <div  class="picture_image " *ngIf="picture.isDisplayed">
-                            <img [attr.src]="picture.src" [attr.alt]="picture.title" />
+                    <div class="" *ngFor="let projectSrc of project.imageSrc;index as i">
+                        <div class="picture_image">
+                            <img  *ngIf="shouldDisplay(i)" [attr.src]="projectSrc" [attr.alt]="project.title" />
                         </div>
                     </div>
-                    <div (click)="handleNextPrevPictureSelect('PREV')" class="prev_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 ml-md-3 ml-lg-4">
-                           <i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i>
+                    <div (click)="handleNextPrevPictureSelect('PREV')"
+                        class="prev_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 ml-md-3 ml-lg-4">
+                        <i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i>
                     </div>
-                    <div (click)="handleNextPrevPictureSelect('NEXT')" class="next_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 mr-md-3 mr-lg-4">
+                    <div (click)="handleNextPrevPictureSelect('NEXT')"
+                        class="next_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 mr-md-3 mr-lg-4">
                         <i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i>
                     </div>
                     <!-- <div class="picture_text">Article Number <b>#1233453245</b></div>  -->
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
 </div>
