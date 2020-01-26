@@ -15,8 +15,8 @@
     "e2e": "ng e2e",
     "serve": "node serve-script",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "serve:ssr": "node dist/server-app",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server-app",
     "build:client-and-server-bundles": "ng build --prod && ng run manuapp:server:production",
     "heroku-postbuild": "npm run build:ssr"
   },
@@ -45,6 +45,7 @@
     "angular-resize-event": "^1.2.1",
     "bootstrap": "^4.4.1",
     "ngx-ui-loader": "^8.0.0",
+    "node-json-db": "^1.0.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

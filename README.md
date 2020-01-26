@@ -23,6 +23,15 @@ npm i
 # Development (Client-side only rendering)
 npm start which will run: npm run start:dev.
 
+# Server Development
+* ng run serve
+- Not Working but for reference- in case of error: Internal watch failed: ENOSPC: System limit for number of file watchers reached:
+    * sudo sysctl -w fs.inotify.max_user_watches=100000
+    * to see if it has been added : echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+    That will persist only until you reboot, though. To make this permanent, add a file named /etc/sysctl.d/10-user-watches.conf with the following contents:
+    - fs.inotify.max_user_watches = 100000
+    After making the above (or any other) change, you can reload the settings from all sysctl configuration files in /etc with sudo sysctl -p.
+
 # Production (also for testing SSR/Pre-rendering locally)
 *npm run build:ssr && npm run serve:ssr 
 

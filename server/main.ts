@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { ApplicationModule } from './app.module';
-const domino = require('domino');
 
 async function bootstrap() {
   const app = await NestFactory.create(ApplicationModule);
