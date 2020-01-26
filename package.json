@@ -7,8 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node dist/server-app/server/main.js",
-    "start:dev": "node dist/server-app/server/main.js",
+    "start": "npm run serve:ssr",
+    "start:dev": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
