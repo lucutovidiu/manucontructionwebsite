@@ -1,5 +1,12 @@
 @import "../../shared-services-module/websiteSettings/styleConfig.scss";
 
+@mixin smallScreenFullPicture {
+  @media all and (max-width: $media-xxl-width) {
+    height: auto;
+    width: 100%;
+  }
+}
+
 .articleImageGalery_wrapper {
   margin: 0;
   padding:0;
@@ -21,6 +28,7 @@
       max-width: 100px;
       display: block;
       border-radius: $image_slider_small_img_border_radius;
+      @include smallScreenFullPicture;
       cursor: pointer;
       &:hover {
         opacity: $image_slider_side_picture_opacity;
@@ -42,6 +50,7 @@
         margin-right: auto;
         display: block;
         border-radius: $image_slider_main_img_border_radius;
+        @include smallScreenFullPicture;
       }
     }
     & .prev_picture_chevroux,
