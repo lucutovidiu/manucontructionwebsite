@@ -10,7 +10,6 @@ export class HelloController {
 
     @Get()
     getAll(){
-        
         return this.projectService.getAllProjects();
     }
 

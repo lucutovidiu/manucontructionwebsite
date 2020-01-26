@@ -9,7 +9,7 @@ import { DbModule } from './db-module/db.module'
     AngularUniversalModule.forRoot({
       viewsPath: join(process.cwd(), 'dist/browser'),
       bundle: require('../server/main'),
-      liveReload: true
+      liveReload: false
     }),
     DbModule
   ],

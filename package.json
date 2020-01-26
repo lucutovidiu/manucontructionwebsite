@@ -1,5 +1,5 @@
 {
-  "name": "manu_sonstruction",
+  "name": "manuapp",
   "description": "a really cool construction app",
   "version": "1.0.0",
   "engines": {
@@ -7,16 +7,16 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "npm run serve:ssr",
-    "start:dev": "ng serve",
+    "start": "node dist/server-app/server/main.js",
+    "start:dev": "node dist/server-app/server/main.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "serve": "node serve-script",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:ssr": "node dist/server-app",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server-app",
+    "serve:ssr": "node dist/server",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run manuapp:server:production",
     "heroku-postbuild": "npm run build:ssr"
   },
