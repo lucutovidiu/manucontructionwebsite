@@ -13,7 +13,10 @@ export class ProjectsPageComponent implements OnInit {
   private _projects: Array<ProjectsDTO> = new Array<ProjectsDTO>();
   public get projects(): Array<ProjectsDTO> {
     if (this._projects.length === 0){
-      this._projects = this.projectsProviderService.getAllProjects();
+      // this.projectsProviderService.getAllProjects()
+      // .subscribe(projects=>{
+      //   this._projects = projects
+      // })
       // console.log(this._projects)
       return this._projects;
     }else{

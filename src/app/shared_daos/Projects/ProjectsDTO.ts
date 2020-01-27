@@ -4,7 +4,7 @@ class WorkCharacteristics{
 }
 
 export class ProjectsDTO {
-    id: number;
+    id?: string;
     title: string;
     description: string;
     locationArea: string;

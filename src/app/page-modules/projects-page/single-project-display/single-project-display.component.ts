@@ -6,31 +6,28 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-single-project-display',
   templateUrl: './single-project-display.component.html',
-  styleUrls: ['./single-project-display.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./single-project-display.component.scss']
 })
 export class SingleProjectDisplayComponent implements OnInit {
-  private _project: ProjectsDTO;
-
-  public get project(): ProjectsDTO {
-    return this._project;
-  }
-
-  public set project(project: ProjectsDTO) {
-    this._project = project;
-  }
+  public project: ProjectsDTO;
 
   constructor(private route: ActivatedRoute, private projectsProviderService: ProjectsProviderService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       let id: string = params.get('projectId');             
-      if (typeof this._project === "undefined") {
-        this._project = this.projectsProviderService.getProjectById(Number.parseInt(id));
-        this.project= this._project;
-      } else
-        this.project = this._project;
+      this.fetchProjects(id);
     })
+  }
+
+  private fetchProjects(id){
+    this.projectsProviderService.getProjectById(id).subscribe((nextProject:ProjectsDTO)=>{
+      this.project = Object.assign({},nextProject);
+    })
+  }
+
+  public projectExists(project:ProjectsDTO):boolean{
+    return typeof project !== "undefined";
   }
 
 }

@@ -12,6 +12,8 @@ import { ProjectsProviderService } from 'shared_services/services/projects_provi
 export class ProjectsSliderComponent implements OnInit {
 
   private _sliderHeight: number;
+  
+  public projects:Array<ProjectsDTO> = [];
 
   private _imageBoxWidth: number;
   private _imageBoxHeight: number;
@@ -31,6 +33,9 @@ export class ProjectsSliderComponent implements OnInit {
 
   ngOnInit() {
     this.calculateSliderSizes();
+    this.projectsProviderService.getAllProjects().subscribe(projects=>{
+      this.projects = projects;
+    })
   }
 
   private calculateSliderHeight(): number {
@@ -39,11 +44,6 @@ export class ProjectsSliderComponent implements OnInit {
     } else {
       return Math.round(this.windowHeight * this.imageHeightPercentage);
     }
-  }
-
-  public get projects():Array<ProjectsDTO>{
-    // console.log(this.projectsProviderService.getAllProjects())
-    return this.projectsProviderService.getAllProjects();
   }
 
   private calculateBoxHeight() {
