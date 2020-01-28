@@ -1,0 +1,10 @@
+version: '3'
+
+services: 
+  back_end_nest_server:
+    container_name: nest_angular_server
+    build: .
+    working_dir: /nest_angular_app
+    volumes: 
+      - ../*:.
+    command: "sh -c 'sleep 100'"
