@@ -23,9 +23,9 @@ npm i
 # Development (Client-side only rendering)
 npm start which will run: npm run start:dev.
 
-# Server Development
-* first replace start script with: "start": "node dist/server-app/server/main.js",
-* then run: sudo npm run serve, when done put back start script to: "start": "npm run serve:ssr",
+# Server Development - locally
+* first replace start script with: "serve:ssr": "node dist/server-app/server/main",
+* then run: sudo npm run serve, when done put back start script to: "serve:ssr": "node dist/server",
 - Not Working but for reference- in case of error: Internal watch failed: ENOSPC: System limit for number of file watchers reached:
     * echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
     That will persist only until you reboot, though. To make this permanent, add a file named /etc/sysctl.d/10-user-watches.conf with the following contents:
