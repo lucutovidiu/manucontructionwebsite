@@ -35,7 +35,7 @@ export class SingleProjectDisplayComponent implements OnInit {
 
   private fetchProjects(id) {    
     this.projectsProviderService.getProjectById(id).subscribe((nextProject: ProjectsDTO) => {
-      console.log(nextProject)
+      // console.log(nextProject)
       this.project = Object.assign({}, nextProject);
     })
   }

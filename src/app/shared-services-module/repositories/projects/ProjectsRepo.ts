@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ProjectsDTO } from 'app_module/shared_daos/Projects/ProjectsDTO';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../../../environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -68,6 +68,6 @@ export class ProjectsRepo {
     }
 
     constructor(private http: HttpClient) {
-        console.log("[env]: ", environment.projects.API_END_POINT);
+        // console.log("[env]: ", environment.projects.API_END_POINT);
     }
 }
