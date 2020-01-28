@@ -1,4 +1,4 @@
-const apiEndpoint = "http://lazurconcept.herokuapp.com";
+const apiEndpoint = "https://lazurconcept.herokuapp.com";
 
 export const environment = {
   production: true,
