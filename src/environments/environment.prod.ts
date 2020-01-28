@@ -1,5 +1,5 @@
-const apiEndpoint = 'http://192.168.1.3';
-// const apiEndpoint = "http://lazurconcept.herokuapp.com";
+// const apiEndpoint = 'http://192.168.1.3';
+const apiEndpoint = "http://lazurconcept.herokuapp.com";
 
 // if (typeof window != "undefined") {
 //   this.apiEndpoint = window.origin;
