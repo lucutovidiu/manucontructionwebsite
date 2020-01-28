@@ -3,8 +3,30 @@ version: '3'
 services: 
   back_end_nest_server:
     container_name: nest_angular_server
-    build: .
+    build: 
+      context: .
+      dockerfile: DockerfileServer
     working_dir: /nest_angular_app
+    ports: 
+      - 80:4200
     volumes: 
-      - ../*:.
-    command: "sh -c 'sleep 100'"
+      - ..:/nest_angular_app
+    networks:
+      - manuapp_network
+    entrypoint: "npm run serve"
+  front_end_server:
+    container_name: angular_server
+    build: 
+      context: .
+      dockerfile: DockerfileClient
+    working_dir: /angular_app
+    ports: 
+      - 4000:4200
+    volumes:
+      - ..:/angular_app
+    networks:
+      - manuapp_network
+    entrypoint: "ng serve --host 0.0.0.0"
+
+networks:
+  manuapp_network:

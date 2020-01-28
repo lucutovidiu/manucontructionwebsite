@@ -6,7 +6,7 @@
     <div class="slider_main_wrapper pt-3" (swipeup)="handleScrollDownUpPage('UP')" (swipedown)="handleScrollDownUpPage('DOWN')">
         <div (swiperight)="handleNextPrevPictureSelect('PREV',frameRef)"
             (swipeleft)="handleNextPrevPictureSelect('NEXT',frameRef)" #frameRef (resized)="onResize($event)"
-            class="p_slider_wrapper" [ngStyle]="{'height': sliderHeight + 'px'}">
+            class="p_slider_wrapper " [ngStyle]="{'height': sliderHeight + 'px'}">
             <ng-container *ngFor="let project of projects; index as i">
                 <div routerLinkActive="active" routerLink="/project/{{project.id}}" [ngClass]="{'slider_box':true,'currentImageBorder':false}"
                     [ngStyle]="{'height': imageBoxHeight + 'px','top':gapBetweenSliderAndImageBox + 'px', 'width': imageBoxWidth + 'px', 'left': calculateImagePosition(i) + 'px'}">

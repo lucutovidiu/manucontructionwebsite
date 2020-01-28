@@ -1,4 +1,4 @@
-<ng-container *ngIf="projectExists(project)">
+<ng-container *ngIf="projectExists(project) else loading">
 <div class="project_title pb-4 pt-3">
     <app-text-with-border>
         {{project.title}}
@@ -69,3 +69,15 @@
     <app-footer></app-footer>
 </div>
 </ng-container>
+
+<!-- <ng-template #loading>
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value">
+    </mat-progress-spinner>
+    </div>
+    
+</ng-template> -->

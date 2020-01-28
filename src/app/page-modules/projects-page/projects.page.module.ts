@@ -6,6 +6,7 @@ import { ProjectsRoutingModule } from './projects-routing.module'
 import { ComponentsModuleModule } from "shared-components/components-module.module";
 import { SingleProjectDisplayComponent } from './single-project-display/single-project-display.component';
 import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
     CommonModule,
     ProjectsRoutingModule,
     ComponentsModuleModule,
-    SharedServicesModuleModule
+    SharedServicesModuleModule,
+    MatProgressSpinnerModule
   ],
   schemas: [
     NO_ERRORS_SCHEMA
