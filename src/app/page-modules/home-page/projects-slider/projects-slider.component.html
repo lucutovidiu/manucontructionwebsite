@@ -3,27 +3,29 @@
         {{'PROJECTS_SLIDER.TITLE' | translate}}
     </app-text-with-border>
 </div>
-    <div class="slider_main_wrapper pt-3" (swipeup)="handleScrollDownUpPage('UP')" (swipedown)="handleScrollDownUpPage('DOWN')">
-        <div (swiperight)="handleNextPrevPictureSelect('PREV',frameRef)"
-            (swipeleft)="handleNextPrevPictureSelect('NEXT',frameRef)" #frameRef (resized)="onResize($event)"
-            class="p_slider_wrapper " [ngStyle]="{'height': sliderHeight + 'px'}">
-            <ng-container *ngFor="let project of projects; index as i">
-                <div routerLinkActive="active" routerLink="/project/{{project.id}}" [ngClass]="{'slider_box':true,'currentImageBorder':false}"
-                    [ngStyle]="{'height': imageBoxHeight + 'px','top':gapBetweenSliderAndImageBox + 'px', 'width': imageBoxWidth + 'px', 'left': calculateImagePosition(i) + 'px'}">
-                    <img [attr.src]="project.imageSrc[0]" alt="proj image">
-                    <div class="slider_proj_title text-center">
-                        <h4>{{project.title}}</h4>
-                    </div>
-                    <div class="p_img_dark_background"></div>
+<div class="slider_main_wrapper pt-3" (swipeup)="handleScrollDownUpPage('UP')"
+    (swipedown)="handleScrollDownUpPage('DOWN')">
+    <div #frameRef (swiperight)="handleNextPrevPictureSelect('PREV',frameRef)"
+        (swipeleft)="handleNextPrevPictureSelect('NEXT',frameRef)" (resized)="onResize($event)"
+        class="p_slider_wrapper " [ngStyle]="{'height': sliderHeight + 'px'}">
+        <ng-container *ngFor="let project of projects; index as i">
+            <div routerLinkActive="active" routerLink="/project/{{project.id}}"
+                [ngClass]="{'slider_box':true,'currentImageBorder':false}"
+                [ngStyle]="{'height': imageBoxHeight + 'px','top':gapBetweenSliderAndImageBox + 'px', 'width': imageBoxWidth + 'px', 'left': calculateImagePosition(i) + 'px'}">
+                <img [attr.src]="project.imageSrc[0]" alt="proj image">
+                <div class="slider_proj_title text-center">
+                    <h4>{{project.title}}</h4>
                 </div>
-            </ng-container>
-        </div>
-        <div (click)="handleNextPrevPictureSelect('PREV',frameRef)"
-            class="prev_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 ml-md-3 ml-lg-4">
-            <i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i>
-        </div>
-        <div (click)="handleNextPrevPictureSelect('NEXT',frameRef)"
-            class="next_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 mr-md-3 mr-lg-4">
-            <i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i>
-        </div>
+                <div class="p_img_dark_background"></div>
+            </div>
+        </ng-container>
     </div>
+    <div (click)="handleNextPrevPictureSelect('PREV',frameRef)"
+        class="prev_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 ml-md-3 ml-lg-4">
+        <i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i>
+    </div>
+    <div (click)="handleNextPrevPictureSelect('NEXT',frameRef)"
+        class="next_picture_chevroux d-none d-sm-block d-md-flex justify-content-center align-items-center p-1 mr-md-3 mr-lg-4">
+        <i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i>
+    </div>
+</div>

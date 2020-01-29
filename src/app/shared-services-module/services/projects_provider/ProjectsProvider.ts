@@ -7,14 +7,22 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class ProjectsProviderService {
-    
+
     constructor(private projectsRepo: ProjectsRepo) { }
 
-    public getAllProjects():Observable<any>{
+    public fetchAllProjects(): void {
+        return this.projectsRepo.fetchAllProjects();
+    }
+
+    public getAllProjects(): Observable<Array<ProjectsDTO>> {
         return this.projectsRepo.findAll();
     }
 
-    public getProjectById(id: string): Observable<any> {
-        return this.projectsRepo.findById(id);
+    public fetchSingleProject(id: string): void {
+        return this.projectsRepo.startGettingProjectById(id);
+    }
+
+    public getProjectById(): Observable<ProjectsDTO> {
+        return this.projectsRepo.findById();
     }
 }

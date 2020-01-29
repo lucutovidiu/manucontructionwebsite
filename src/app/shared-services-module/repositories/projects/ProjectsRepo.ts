@@ -21,9 +21,9 @@ export class ProjectsRepo {
         })
     };
 
-    private startFetchingAllProjects() {
+    public fetchAllProjects():void {
         if (this._projectsArray.length === 0) {
-            this.http.get(environment.projects.GET_ALL_PROJECTS, this._httpGetOptions).subscribe((projects) => {
+            this.http.get(environment.projects.GET_ALL_PROJECTS, this._httpGetOptions).subscribe((projects: any) => {
                 this._projectsArray = Object.values(projects);
                 if (this._projectsArray.length > 0) {
                     this.projectsSubjectArray$.next(this._projectsArray);
@@ -34,27 +34,24 @@ export class ProjectsRepo {
         }
     }
 
-    public findAll(): Observable<any> {
-        this.startFetchingAllProjects();
+    public findAll(): Observable<Array<ProjectsDTO>> {
         return this.projectsSubjectArray$.asObservable();
     }
 
-    private fetchProjectById(id: string) {
+    private fetchProjectById(id: string): void {
         this.http.get(environment.projects.GET_PROJECT_BY_ID + id, this._httpGetOptions).subscribe((project: ProjectsDTO) => {
             this._projectsSingleProject = project;
-            if (typeof this._projectsSingleProject.id !== "undefined") {
+            if (typeof this._projectsSingleProject !== "undefined") {
                 this.projectsSubjectSingleProject$.next(this._projectsSingleProject);
             }
         });
     }
 
-    private startGettingProjectById(id: string) {
+    public startGettingProjectById(id: string): void {
         if (this._projectsArray.length > 0) {
             this._projectsSingleProject = this._projectsArray.find(proj => proj.id === id);
             if (typeof this._projectsSingleProject !== "undefined")
-            setTimeout(()=>{
                 this.projectsSubjectSingleProject$.next(this._projectsSingleProject);
-            },1500)                
             else
                 this.fetchProjectById(id);
         } else {
@@ -62,9 +59,8 @@ export class ProjectsRepo {
         }
     }
 
-    public findById(id: string) {
-        this.startGettingProjectById(id);
-        return this.projectsSubjectSingleProject$;
+    public findById(): Observable<ProjectsDTO> {
+        return this.projectsSubjectSingleProject$.asObservable();
     }
 
     constructor(private http: HttpClient) {

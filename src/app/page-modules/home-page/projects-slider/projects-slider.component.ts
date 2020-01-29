@@ -12,15 +12,15 @@ import { ProjectsProviderService } from 'shared_services/services/projects_provi
 export class ProjectsSliderComponent implements OnInit {
 
   private _sliderHeight: number;
-  
-  public projects:Array<ProjectsDTO> = [];
+
+  public projects: Array<ProjectsDTO> = [];
 
   private _imageBoxWidth: number;
   private _imageBoxHeight: number;
   private imageHeightPercentage = 0.30;
   private imageWidthPercentage = 0.30;
 
-  private scrollByUpDown:number = 100;
+  private scrollByUpDown: number = 100;
 
   private smallScreenMaxWidth: number = 900;
   private maxImageBoxHeightForSmallWidth: number = 270;
@@ -33,9 +33,10 @@ export class ProjectsSliderComponent implements OnInit {
 
   ngOnInit() {
     this.calculateSliderSizes();
-    this.projectsProviderService.getAllProjects().subscribe(projects=>{
+    this.projectsProviderService.getAllProjects().subscribe((projects: Array<ProjectsDTO>) => {
       this.projects = projects;
-    })
+    });
+    this.projectsProviderService.fetchAllProjects();
   }
 
   private calculateSliderHeight(): number {
@@ -59,7 +60,7 @@ export class ProjectsSliderComponent implements OnInit {
   }
 
   handleNextPrevPictureSelect(type, elRef: HTMLElement) {
-    let imageWidth:number = this.imageBoxWidth+ this.gapBetweenImages;
+    let imageWidth: number = this.imageBoxWidth + this.gapBetweenImages;
     switch (type) {
       case "PREV": {
         elRef.scrollTo(elRef.scrollLeft - imageWidth, 0);
@@ -76,15 +77,15 @@ export class ProjectsSliderComponent implements OnInit {
     this.calculateSliderSizes();
   }
 
-  handleScrollDownUpPage(type:string):void{
-    switch (type){
-      case "UP":{
-        if(window)
+  handleScrollDownUpPage(type: string): void {
+    switch (type) {
+      case "UP": {
+        if (window)
           window.scrollBy(0, this.scrollByUpDown);
         return;
       }
-      case "DOWN":{
-        if(window)
+      case "DOWN": {
+        if (window)
           window.scrollBy(0, -this.scrollByUpDown);
         return;
       }

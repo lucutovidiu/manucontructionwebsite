@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-project-display.component.scss']
 })
 export class SingleProjectDisplayComponent implements OnInit {
-  
+
   private _project: ProjectsDTO;
 
   color = 'primary';
@@ -25,23 +25,23 @@ export class SingleProjectDisplayComponent implements OnInit {
     })
   }
 
-  public get project(): ProjectsDTO {    
+  public get project(): ProjectsDTO {
     return this._project;
   }
 
-  public set project(project: ProjectsDTO) {    
+  public set project(project: ProjectsDTO) {
     this._project = project;
   }
 
-  private fetchProjects(id) {    
-    this.projectsProviderService.getProjectById(id).subscribe((nextProject: ProjectsDTO) => {
-      // console.log(nextProject)
+  private fetchProjects(id): void {
+    this.projectsProviderService.getProjectById().subscribe((nextProject: ProjectsDTO) => {
       this.project = Object.assign({}, nextProject);
-    })
+    });
+    this.projectsProviderService.fetchSingleProject(id);
   }
 
   public projectExists(project: ProjectsDTO): boolean {
-    
+
     return typeof project !== "undefined";
   }
 
