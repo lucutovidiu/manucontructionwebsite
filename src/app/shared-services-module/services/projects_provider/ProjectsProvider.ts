@@ -7,16 +7,16 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
     providedIn: 'root'
 })
 export class ProjectsProviderService {
-    
+
     private projectsSubjectSingleProject$ = new Subject<ProjectsDTO>();
     private projectsSubjectArray$ = new BehaviorSubject<ProjectsDTO[]>([]);
 
     constructor(private projectsRepo: ProjectsRepo) { }
 
     public fetchAllProjects(): void {
-        this.projectsRepo.findAll().then((project:Array<ProjectsDTO>)=>{
+        this.projectsRepo.findAll().then((project: Array<ProjectsDTO>) => {
             this.projectsSubjectArray$.next(project);
-        });     
+        });
     }
 
     public getAllProjects(): Observable<Array<ProjectsDTO>> {
@@ -24,7 +24,7 @@ export class ProjectsProviderService {
     }
 
     public fetchSingleProject(id: string): void {
-        this.projectsRepo.findById(id).then((project:ProjectsDTO)=>{
+        this.projectsRepo.findById(id).then((project: ProjectsDTO) => {
             this.projectsSubjectSingleProject$.next(project);
         })
     }

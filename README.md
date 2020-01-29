@@ -51,3 +51,6 @@ npm run heroku-postbuild
 npm run start
 "start": "npm run serve:ssr"
 both above are required by heroku
+
+# JWT TOKEN Info
+https://www.npmjs.com/package/jsonwebtoken

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ProjectsDTO } from 'app_module/shared_daos/Projects/ProjectsDTO';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
-import { Observable } from 'rxjs';
+import { isNull } from 'util';
 
 @Injectable({
     providedIn: 'root'
@@ -17,18 +17,19 @@ export class ProjectsRepo {
 
     private _projectsArray: Array<ProjectsDTO> = [];
 
-    private set projectsArray(array: Array<ProjectsDTO>){
-        if(typeof sessionStorage !== "undefined"){
-            sessionStorage.setItem("projectsArray",JSON.stringify(array));
+    private set projectsArray(array: Array<ProjectsDTO>) {
+        if (typeof sessionStorage !== "undefined") {
+            sessionStorage.setItem("projectsArray", JSON.stringify(array));
         }
         this._projectsArray = array;
     }
 
-    private get projectsArray(): Array<ProjectsDTO>{
-        if(typeof sessionStorage !== "undefined"){
+    private get projectsArray(): Array<ProjectsDTO> {
+        if (typeof sessionStorage !== "undefined") {
             let localcache = JSON.parse(sessionStorage.getItem("projectsArray"));
-            if(localcache){
-                this._projectsArray = JSON.parse(sessionStorage.getItem("projectsArray"));
+            if (!isNull(localcache)) {
+                this._projectsArray = localcache;
+                return this._projectsArray;
             }
         }
         return this._projectsArray;
@@ -46,7 +47,6 @@ export class ProjectsRepo {
     }
 
     public findAll(): Promise<Array<ProjectsDTO>> {
-        console.log(this.projectsArray)
         if (this.projectsArray.length === 0) {
             return this.fetchAllExternally();
         } else {
@@ -55,50 +55,6 @@ export class ProjectsRepo {
             });
         }
     }
-
-    // private fetchAllExternally(): Observable<Array<ProjectsDTO>> {
-    //     return new Observable(observer => {
-    //         this.http.get(environment.projects.GET_ALL_PROJECTS, this._httpGetOptions).subscribe((projects: any) => {
-    //             this.projectsArray = Object.values(projects);
-    //             if (this.projectsArray.length > 0) {
-    //                 observer.next(this.projectsArray);
-    //             }
-    //         });
-    //     });
-    // }
-
-    // public findAll(): Observable<Array<ProjectsDTO>> {
-    //     if (this.projectsArray.length === 0) {
-    //         return this.fetchAllExternally();
-    //     } else {
-    //         return new Observable<Array<ProjectsDTO>>((observer) => {
-    //             return observer.next(this.projectsArray);
-    //         });
-    //     }
-    // }
-
-    // private fetchByIdExternally(id: string): Observable<ProjectsDTO> {
-    //     return new Observable(observe => {
-    //         this.http.get(environment.projects.GET_PROJECT_BY_ID + id, this._httpGetOptions).subscribe((project: ProjectsDTO) => {
-    //             if (typeof project !== "undefined") {
-    //                 observe.next(project);
-    //             }
-    //         });
-    //     })
-    // }
-    // public findById(id: string): Observable<ProjectsDTO> {
-    //     if (this.projectsArray.length > 0) {
-    //         let projectsSingleProject = this.projectsArray.find(proj => proj.id === id);
-    //         if (typeof projectsSingleProject !== "undefined")
-    //             return new Observable(observe => {
-    //                 observe.next(projectsSingleProject);
-    //             });
-    //         else
-    //             this.fetchByIdExternally(id);
-    //     } else {
-    //         this.fetchByIdExternally(id);
-    //     }
-    // }
 
     private fetchByIdExternally(id: string): Promise<ProjectsDTO> {
         return new Promise((resolve, reject) => {
@@ -118,7 +74,7 @@ export class ProjectsRepo {
                     resolve(projectsSingleProject);
                 })
             else
-               return this.fetchByIdExternally(id);
+                return this.fetchByIdExternally(id);
         } else {
             return this.fetchByIdExternally(id);
         }

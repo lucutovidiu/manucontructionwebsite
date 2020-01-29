@@ -1,6 +1,7 @@
-import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards } from '@nestjs/common';
 import { ProjectService } from '../../db-module/projects-service/projects-service';
 import { ProjectsDTO } from '../../../src/app/shared_daos/Projects/ProjectsDTO';
+import { AuthGuard } from '../../interceptors/authorization/auth.guard';
 
 @Controller('/projects')
 export class HelloController {
@@ -11,6 +12,7 @@ export class HelloController {
 
     @Get()
     @HttpCode(200)
+    @UseGuards(new AuthGuard())
     findAllProjects(){
         return this.projectService.getAllProjects();
     }
