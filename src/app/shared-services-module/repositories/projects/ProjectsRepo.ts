@@ -2,18 +2,12 @@ import { Injectable } from "@angular/core";
 import { ProjectsDTO } from 'app_module/shared_daos/Projects/ProjectsDTO';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProjectsRepo {
-
-    private projectsSubjectArray$ = new BehaviorSubject<ProjectsDTO[]>([]);
-    private _projectsArray: Array<ProjectsDTO> = [];
-
-    private projectsSubjectSingleProject$ = new Subject<ProjectsDTO>();
-    private _projectsSingleProject: ProjectsDTO;
 
     private _httpGetOptions = {
         headers: new HttpHeaders({
@@ -21,47 +15,116 @@ export class ProjectsRepo {
         })
     };
 
-    public fetchAllProjects():void {
-        if (this._projectsArray.length === 0) {
+    private _projectsArray: Array<ProjectsDTO> = [];
+
+    private set projectsArray(array: Array<ProjectsDTO>){
+        if(typeof sessionStorage !== "undefined"){
+            sessionStorage.setItem("projectsArray",JSON.stringify(array));
+        }
+        this._projectsArray = array;
+    }
+
+    private get projectsArray(): Array<ProjectsDTO>{
+        if(typeof sessionStorage !== "undefined"){
+            let localcache = JSON.parse(sessionStorage.getItem("projectsArray"));
+            if(localcache){
+                this._projectsArray = JSON.parse(sessionStorage.getItem("projectsArray"));
+            }
+        }
+        return this._projectsArray;
+    }
+
+    private fetchAllExternally(): Promise<Array<ProjectsDTO>> {
+        return new Promise(observer => {
             this.http.get(environment.projects.GET_ALL_PROJECTS, this._httpGetOptions).subscribe((projects: any) => {
-                this._projectsArray = Object.values(projects);
-                if (this._projectsArray.length > 0) {
-                    this.projectsSubjectArray$.next(this._projectsArray);
+                this.projectsArray = Object.values(projects);
+                if (this.projectsArray.length > 0) {
+                    observer(this.projectsArray);
                 }
             });
-        } else {
-            this.projectsSubjectArray$.next(this._projectsArray);
-        }
-    }
-
-    public findAll(): Observable<Array<ProjectsDTO>> {
-        return this.projectsSubjectArray$.asObservable();
-    }
-
-    private fetchProjectById(id: string): void {
-        this.http.get(environment.projects.GET_PROJECT_BY_ID + id, this._httpGetOptions).subscribe((project: ProjectsDTO) => {
-            this._projectsSingleProject = project;
-            if (typeof this._projectsSingleProject !== "undefined") {
-                this.projectsSubjectSingleProject$.next(this._projectsSingleProject);
-            }
         });
     }
 
-    public startGettingProjectById(id: string): void {
-        if (this._projectsArray.length > 0) {
-            this._projectsSingleProject = this._projectsArray.find(proj => proj.id === id);
-            if (typeof this._projectsSingleProject !== "undefined")
-                this.projectsSubjectSingleProject$.next(this._projectsSingleProject);
-            else
-                this.fetchProjectById(id);
+    public findAll(): Promise<Array<ProjectsDTO>> {
+        console.log(this.projectsArray)
+        if (this.projectsArray.length === 0) {
+            return this.fetchAllExternally();
         } else {
-            this.fetchProjectById(id);
+            return new Promise<Array<ProjectsDTO>>((observer) => {
+                observer(this.projectsArray);
+            });
         }
     }
 
-    public findById(): Observable<ProjectsDTO> {
-        return this.projectsSubjectSingleProject$.asObservable();
+    // private fetchAllExternally(): Observable<Array<ProjectsDTO>> {
+    //     return new Observable(observer => {
+    //         this.http.get(environment.projects.GET_ALL_PROJECTS, this._httpGetOptions).subscribe((projects: any) => {
+    //             this.projectsArray = Object.values(projects);
+    //             if (this.projectsArray.length > 0) {
+    //                 observer.next(this.projectsArray);
+    //             }
+    //         });
+    //     });
+    // }
+
+    // public findAll(): Observable<Array<ProjectsDTO>> {
+    //     if (this.projectsArray.length === 0) {
+    //         return this.fetchAllExternally();
+    //     } else {
+    //         return new Observable<Array<ProjectsDTO>>((observer) => {
+    //             return observer.next(this.projectsArray);
+    //         });
+    //     }
+    // }
+
+    // private fetchByIdExternally(id: string): Observable<ProjectsDTO> {
+    //     return new Observable(observe => {
+    //         this.http.get(environment.projects.GET_PROJECT_BY_ID + id, this._httpGetOptions).subscribe((project: ProjectsDTO) => {
+    //             if (typeof project !== "undefined") {
+    //                 observe.next(project);
+    //             }
+    //         });
+    //     })
+    // }
+    // public findById(id: string): Observable<ProjectsDTO> {
+    //     if (this.projectsArray.length > 0) {
+    //         let projectsSingleProject = this.projectsArray.find(proj => proj.id === id);
+    //         if (typeof projectsSingleProject !== "undefined")
+    //             return new Observable(observe => {
+    //                 observe.next(projectsSingleProject);
+    //             });
+    //         else
+    //             this.fetchByIdExternally(id);
+    //     } else {
+    //         this.fetchByIdExternally(id);
+    //     }
+    // }
+
+    private fetchByIdExternally(id: string): Promise<ProjectsDTO> {
+        return new Promise((resolve, reject) => {
+            this.http.get(environment.projects.GET_PROJECT_BY_ID + id, this._httpGetOptions).subscribe((project: ProjectsDTO) => {
+                if (typeof project !== "undefined") {
+                    resolve(project);
+                }
+            });
+        })
     }
+
+    public findById(id: string): Promise<ProjectsDTO> {
+        if (this.projectsArray.length > 0) {
+            let projectsSingleProject = this.projectsArray.find(proj => proj.id === id);
+            if (typeof projectsSingleProject !== "undefined")
+                return new Promise((resolve, reject) => {
+                    resolve(projectsSingleProject);
+                })
+            else
+               return this.fetchByIdExternally(id);
+        } else {
+            return this.fetchByIdExternally(id);
+        }
+    }
+
+
 
     constructor(private http: HttpClient) {
         // console.log("[env]: ", environment.projects.API_END_POINT);
