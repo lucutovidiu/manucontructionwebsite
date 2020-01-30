@@ -1,18 +1,17 @@
 import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards } from '@nestjs/common';
-import { ProjectService } from '../../db-module/projects-service/projects-service';
+import { ProjectService } from '../../modules/db-module/projects-service/projects-service';
 import { ProjectsDTO } from '../../../src/app/shared_daos/Projects/ProjectsDTO';
-import { AuthGuard } from '../../interceptors/authorization/auth.guard';
+import { AuthGuard } from '../../modules/auth-module/auth-controller/auth.guard';
 
 @Controller('/projects')
 export class HelloController {
     
-    constructor(private projectService:ProjectService){
-
+    constructor(private projectService:ProjectService){        
     }
 
     @Get()
     @HttpCode(200)
-    @UseGuards(new AuthGuard())
+    @UseGuards(AuthGuard)
     findAllProjects(){
         return this.projectService.getAllProjects();
     }

@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 import { AngularUniversalModule } from '@nestjs/ng-universal';
 
 import { join } from 'path';
-import { HelloController } from './src/projects/projects.controller';
-import { NotFoundExceptionFilter } from './src/catchAllRoutes/NotFoundExceptionFilter'
-import { DbModule } from './db-module/db.module'
-import { AuthModule } from './interceptors/interceptors.module'
+import { HelloController } from './controllers/projects-controller/projects.controller';
+import { NotFoundExceptionFilter } from './controllers/catch-all-routes-controller/NotFoundExceptionFilter'
+import { DbModule } from './modules/db-module/db.module'
+import { AuthModule } from './modules/auth-module/auth.module'
+import { LoginController } from './controllers/login-controller/login.controller'
 
 
 @Module({
@@ -18,6 +19,8 @@ import { AuthModule } from './interceptors/interceptors.module'
     DbModule,
     AuthModule
   ],
-  controllers: [HelloController, NotFoundExceptionFilter]
+  providers:[
+  ],
+  controllers: [HelloController, LoginController, NotFoundExceptionFilter]
 })
 export class ApplicationModule{}

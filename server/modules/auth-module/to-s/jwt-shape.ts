@@ -8,3 +8,10 @@ export class JWTTokenTo{
     expiresIn?: string='1h';
     algorithm?:string='RS256';
 }
+
+export class TokenValidationReponse{
+    isValid:boolean;
+    errorMassage?:string;
+    exceptionMassage?:string;
+    decodedToken?:string;
+}

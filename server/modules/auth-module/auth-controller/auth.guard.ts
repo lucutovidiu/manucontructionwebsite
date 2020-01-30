@@ -1,20 +1,20 @@
-import { CanActivate, ExecutionContext, HttpException, HttpStatus, Inject, Injectable, } from '@nestjs/common';
+import { CanActivate, ExecutionContext, HttpException, HttpStatus, Inject, Injectable, Dependencies, Controller, Scope, } from '@nestjs/common';
 import { Request, Response } from 'express-serve-static-core'
+import { AuthService } from '../auth-service/auth-service';
 
-import { JWTProcessor } from './jwt.token-processor'
-
+@Controller({scope: Scope.REQUEST})
 export class AuthGuard implements CanActivate {
 
-    private jwtService: JWTProcessor = new JWTProcessor();
+    private authService:AuthService;
 
     constructor() {
-        let token = this.jwtService.generateJWTToken({ data: "ce mai faci?" }, "3h");
-        console.log(token)
+        this.authService = new AuthService();
     }
 
     canActivate(context: ExecutionContext): boolean | Promise<boolean> {
         const request: Request = context.switchToHttp().getRequest();
         const response: Response = context.switchToHttp().getResponse();
+        // console.log(request.headers)
         return true;
     }
     asyncvalidateRequest(request) {
