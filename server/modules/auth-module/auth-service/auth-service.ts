@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import { JWTDataObject, TokenValidationReponse } from '../to-s/jwt-shape';
+import { TokenValidationReponse } from '../to-s/jwt-shape';
 
 export class AuthService {
 
@@ -27,10 +27,10 @@ export class AuthService {
         return token;
     }
 
-    public validateToken(token: any): TokenValidationReponse {
+    public validateToken(token: string): TokenValidationReponse {
         let response: TokenValidationReponse = new TokenValidationReponse();
         try {
-            var decoded = jwt.verify(token, this.jwtSecret);
+            var decoded = jwt.verify(token.split(" ")[1], this.jwtSecret);
             response.isValid = true;
             response.decodedToken = decoded;
             return response;

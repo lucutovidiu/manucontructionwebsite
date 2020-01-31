@@ -1,10 +1,11 @@
-import { Controller, Post, Body, Param, Delete, Put, Get, Patch } from "@nestjs/common";
+import { Controller, Post, Body, Param, Delete, Put, Get, Patch, UseGuards } from "@nestjs/common";
 
 import { User } from '../../../src/app/shared_daos/User'
 import { UsersService } from "../../modules/db-module/users-service/users.service";
 import { AuthService } from '../../modules/auth-module/auth-service/auth-service'
 import { AuthResponseDto } from "../../modules/db-module/users-service/dto/auth-response-dto";
 import { UpdateUserDto } from "../../modules/db-module/users-service/dto/update-user";
+import { AuthGuard } from "../../modules/auth-module/auth-controller/auth.guard";
 
 @Controller("/login")
 export class LoginController {
@@ -12,33 +13,37 @@ export class LoginController {
     }
 
     @Post()
-    public authenticateUser(@Body() user:User): AuthResponseDto{
+    public async authenticateUser(@Body() user: User) {
         let userAuth: AuthResponseDto = this.userService.checkUserExistInDB(user);
-        if(userAuth.wasSuccesfull){
-            userAuth.jwtToken = this.authSevice.generateJWTToken({...userAuth});
+        if (userAuth.wasSuccesfull) {
+            userAuth.jwtToken = this.authSevice.generateJWTToken({ ...userAuth });
             return userAuth;
-        }else{
+        } else {
             return userAuth;
-        }            
+        }
     }
 
     @Get("/getAllUsers")
-    public getAllUsers(){
+    @UseGuards(AuthGuard)
+    public async getAllUsers() {
         return this.userService.findAllUsers();
     }
 
     @Put("/save")
-    public saveUserIntoDB(@Body() user: User){
-        this.userService.saveUser(user);
+    @UseGuards(AuthGuard)
+    public async saveUserIntoDB(@Body() user: User) {
+        return this.userService.saveUser(user);
     }
 
     @Delete("/delete")
-    public deleteUserById(@Body() user: User){
-        this.userService.removeUserById(user);
+    @UseGuards(AuthGuard)
+    public async deleteUserById(@Body() user: User) {
+        return this.userService.removeUserById(user);
     }
 
     @Patch("/update")
-    public updateUser(@Body() user: UpdateUserDto){
-        this.userService.updateUser(user);
+    @UseGuards(AuthGuard)
+    public async updateUser(@Body() user: UpdateUserDto) {
+        return this.userService.updateUser(user);
     }
 }
