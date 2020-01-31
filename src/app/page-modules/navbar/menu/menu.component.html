@@ -8,9 +8,9 @@
             routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
         <a routerLinkActive="active" mat-button routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
     </div>
-    <div class="loginBtn">
-        <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.LOGIN' | translate}}</a>
-    </div>
+</div>
+<div class="loginBtn p-0 m-0">
+    <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.ADMIN_LOGIN' | translate}}</a>
 </div>
 
 <div class="mobile_navbar_wrapper">
@@ -23,7 +23,7 @@
         routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
     <a routerLinkActive="mobileactive" (click)="togggleNavMenu()" mat-button
         routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
-    <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.LOGIN' | translate}}</a>
+    <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.ADMIN_LOGIN' | translate}}</a>
     <div class="navBarBackbtn" (click)="togggleNavMenu()"><i class="fa fa-arrow-circle-left"
             aria-hidden="true"></i>&nbsp;{{'GENERAL.BACK' | translate}}</div>
     <div class="callToActionMenu_forMobileVersion">

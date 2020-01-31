@@ -59,7 +59,8 @@
     "SURFACE": "Surface"
   },
   "LOGIN": {
-    "LOGIN": "Admin Login",
+    "LOGIN": "Login",
+    "ADMIN_LOGIN": "Admin Login",
     "USERNAME_OR_EMAIL": "Username or Email",
     "PASSWORD": "Password",    
     "USERNAME_OR_PASSWORD_INCORRECT": "The username or password is incorrect!"

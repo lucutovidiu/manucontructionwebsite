@@ -59,7 +59,8 @@
     "SURFACE":"Suprafata"
   },
   "LOGIN": {
-    "LOGIN": "Admin Login",
+    "LOGIN": "Login",
+    "ADMIN_LOGIN": "Admin Login",
     "USERNAME_OR_EMAIL": "User sau Email",
     "PASSWORD": "Parola",
     "USERNAME_OR_PASSWORD_INCORRECT": "User sau parala incorecte!"
