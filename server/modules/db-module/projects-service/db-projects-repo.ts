@@ -1,9 +1,8 @@
 import { JsonDB } from 'node-json-db';
 import { isNull } from 'util';
-import { ProjectsDTO } from '../../../../src/app/shared_daos/Projects/ProjectsDTO'
 import { DbPathsEnum } from '../db-config/DbPathsEnum';
 import { NotFoundException } from '@nestjs/common';
-import { User } from '../../../../src/app/shared_daos/User';
+import { ProjectsDTO } from '../../../../src/app/shared_daos/Projects/ProjectsDTO';
 const uuidv4 = require('uuid/v4');
 
 export class DbProjectsRepo {
@@ -82,7 +81,7 @@ export class DbProjectsRepo {
         }
     }
 
-    public deleteByUser(user: User) {
+    public deleteById(id: string) {
         if (this.checkConnection()) {
             let pushPath = DbPathsEnum.PROJECTS + id;
             try {
