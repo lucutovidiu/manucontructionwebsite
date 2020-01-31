@@ -4,7 +4,6 @@ const uuidv4 = require('uuid/v4');
 import { DbPathsEnum } from "../db-config/DbPathsEnum";
 import { isNullOrUndefined } from "util";
 import { User } from "../../../../src/app/shared_daos/User";
-import { NotFoundException } from "@nestjs/common";
 import { AuthResponseDto } from "./dto/auth-response-dto";
 import { UpdateUserDto } from "./dto/update-user";
 
@@ -50,7 +49,7 @@ export class UsersRepo {
             try {
                 let allUsers: User[] = Object.values(this._dbConnection.getData(DbPathsEnum.USERS));
                 let foundUser: User = allUsers.find(u => u.userName == user.userName && u.password == user.password);
-                if (foundUser) {                    
+                if (foundUser) {
                     return "false";
                 } else {
                     let userId = "user-" + uuidv4();
@@ -67,7 +66,7 @@ export class UsersRepo {
         }
     }
 
-    public findAll(){
+    public findAll() {
         if (this.checkConnection()) {
             try {
                 let users = this._dbConnection.getData(DbPathsEnum.USERS);
@@ -89,10 +88,11 @@ export class UsersRepo {
                 if (foundUser) {
                     this.removeByName(foundUser);
                     let userId = "user-" + uuidv4();
-                    return this.insertOrUpdateUser(new User(user.userName,user.newPassword), userId);
+                    return this.insertOrUpdateUser(new User(user.userName, user.newPassword), userId);
                 }
             } catch (e) {
                 console.log(this._className, "Error Updateing User to DB");
+                return "false";
             }
         } else {
             console.log(this._className, "No connection found");
@@ -114,19 +114,25 @@ export class UsersRepo {
                         return "true";
                     } catch (e) {
                         console.log(this._className, "User hasn't been deleted : ", e);
-                        throw new NotFoundException("User hasn't been deleted");
+                        return "false";
                     }
                 }
             })
         } else {
             console.log(this._className, "No project found");
-            return "false";
+            return "No project found false";
         }
     }
 
-    private insertOrUpdateUser(user: User,userId:string): any {
-        let path  = DbPathsEnum.USERS + userId;
-        this._dbConnection.push(path,user);
+    private insertOrUpdateUser(user: User, userId: string): any {
+        try {
+            let path = DbPathsEnum.USERS + userId;
+            this._dbConnection.push(path, user);
+            return "true";
+        } catch (e) {
+            console.log("cound not save update user: "+e);
+            return "false";
+        }
     }
 
     private checkConnection(): boolean {
