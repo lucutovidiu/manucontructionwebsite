@@ -56,73 +56,15 @@
   },
   "SINGLE_PROJECT_DISPLAY": {
     "PROJECT_DESCRIPTION": "Project Description",
-    "SURFACE":"Surface"
+    "SURFACE": "Surface"
   },
-
-
-
-
-
-
-
-
-  
-
   "LOGIN": {
+    "LOGIN": "Admin Login",
     "USERNAME_OR_EMAIL": "Username or Email",
-    "PASSWORD": "Password",
-    "LOGIN": "Login",
-    "INVALID_EMAIL": "Invalid email",
-    "INVALID_PASSWORD": "Invalid password",
-    "USERNAME_OR_PASSWORD_INCORRECT": "The username or password is incorrect!",
-    "MAXIM_NUMBER_OF_ATTEMPTS": "You've reached the maximum number of failed attempts.",
-    "TRY_AGAIN_LATER": "You can try again 30 minutes later."
+    "PASSWORD": "Password",    
+    "USERNAME_OR_PASSWORD_INCORRECT": "The username or password is incorrect!"
   },
-  "LOGOUT": "Logout",
-  "NOTIFICATIONS": {
-    "SKILL_WAS": "skill was",
-    "UPDATED": "updated",
-    "DELETED": "deleted",
-    "CREATED": "created",
-    "ADDED": "added",
-    "UNASSIGNED": "unassigned",
-    "HAS_BEEN_REMOVED": "has been removed",
-    "NOT_REMOVED": "was not removed, maybe the project still has skills",
-    "PROFILE_AVAILABILITY_WAS": "Profile availability was",
-    "PROFILE_REMOVE_FROM_PROJECT": "was removed from the project.",
-    "PROFILE_ADD_TO_PROJECT": "was added to the project.",
-    "MAKE_SNAPSHOT": "Snapshot was created",
-    "DELETE_SNAPSHOT": "Snapshot was deleted"
-  },
-  "ERRORS": {
-    "SOMETHING_WENT_WRONG": "Something went wrong!",
-    "NOTHING_FOUND": "Nothing found!",
-    "REQUEST_CANNOT_BE_DONE": "Request cannot be done!",
-    "FORBIDDEN_RESOURCE": "Forbidden resource!",
-    "CONFLICT_ACTION": "Conflict action!",
-    "PAGE_NOT_FOUND": "Page not found",
-    "FILE_TOO_LARGE": "File too large",
-    "WRONG_FORMAT": "Wrong format"
-  },
-  "APP_TOKEN": {
-    "TOKEN": "Token",
-    "TOKENS": "Applications tokens",
-    "NAME": "Name",
-    "DESCRIPTION": "Description",
-    "ENABLED": "Enabled",
-    "CREATED": "Created",
-    "ENABLED": "Enabled",
-    "NO_TOKENS_FOUND": "There's no current token generated.",
-    "GENERATE_NEW": "Create new",
-    "UPDATE_TOKEN": "Update token",
-    "UPDATE": "Update",
-    "DELETE_TOKEN": "Delete token",
-    "DELETE": "Delete",
-    "SURE_DELETE_TOKEN": "Are you sure you want to delete?",
-    "PERMISSIONS": "Permissions",
-    "GENERATE_NEW": "Generate new token",
-    "SELECT_ALL": "Select all",
-    "DESELECT_ALL": "Deselect all",
-    "AUTO_GENERATE_TOKEN": "Auto generate token"
+  "LOGOUT":{
+    "LOGOUT": "Logout"
   }
 }

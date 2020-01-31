@@ -17,6 +17,10 @@
     font-size: inherit;
   }
 
+  & .loginBtn{
+    justify-self: flex-end;
+  }
+
   & .active {
     border-left: 2px solid $nav_bar_desktop_active_link_color;
     background-color: lighten($nav_bar_desktop_active_link_color, 15%);

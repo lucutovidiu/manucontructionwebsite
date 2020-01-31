@@ -4,13 +4,12 @@
 <div class="desktop_navbar_wrapper pb-2 pb-xl-3">
     <img alt="Lazur Concept" class="lazurLogo" src="/assets/logo/lazurconcept-logo1.png" />
     <div>
-        <a   [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button
+        <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button
             routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
-        <!-- <a  routerLinkActive="active" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
-        <!-- <a  routerLinkActive="active" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>-->
-        <!-- <a  routerLinkActive="active" mat-button routerLink="/project/123">{{'NAVIGATION_MENU.PROJECTS' | translate}}</a> -->
-        <a  routerLinkActive="active" mat-button
-            routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
+        <a routerLinkActive="active" mat-button routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
+    </div>
+    <div class="loginBtn">
+        <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.LOGIN' | translate}}</a>
     </div>
 </div>
 
@@ -22,11 +21,9 @@
 <div *ngIf="isMobileMenuActive" [@inOutAnimation] [class.mobile_view_menu]="isMobileMenuActive">
     <a [routerLinkActiveOptions]="{exact: true}" (click)="togggleNavMenu()" routerLinkActive="mobileactive" mat-button
         routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
-    <!-- <a routerLinkActive="mobileactive" mat-button routerLink="/about">{{'NAVIGATION_MENU.ABOUT' | translate}}</a> -->
-    <!-- <a routerLinkActive="mobileactive" mat-button routerLink="/services">{{'NAVIGATION_MENU.SERVICES' | translate}}</a>-->
-    <!-- <a (click)="togggleNavMenu()" routerLinkActive="mobileactive" mat-button routerLink="/project/123">{{'NAVIGATION_MENU.PROJECTS' | translate}}</a> -->
     <a routerLinkActive="mobileactive" (click)="togggleNavMenu()" mat-button
         routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
+    <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.LOGIN' | translate}}</a>
     <div class="navBarBackbtn" (click)="togggleNavMenu()"><i class="fa fa-arrow-circle-left"
             aria-hidden="true"></i>&nbsp;{{'GENERAL.BACK' | translate}}</div>
     <div class="callToActionMenu_forMobileVersion">
