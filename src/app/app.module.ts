@@ -10,7 +10,7 @@ import * as Hammer from '@squadette/hammerjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarModule } from './page-modules/navbar/navbar.module'
-import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { SharedServicesModule } from "shared_services/shared-services.module"
 import { HomePageModule } from 'page-modules/home-page/home.page.module'
 import { ComponentsModuleModule } from "shared-components/components-module.module"
 import { ProjectsModule } from "page-modules/projects-page/projects.page.module"
@@ -35,7 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     NavBarModule,
     HttpClientModule,
-    SharedServicesModuleModule,
+    SharedServicesModule,
     ComponentsModuleModule,
     HomePageModule,
     ProjectsModule,

@@ -62,10 +62,16 @@
     "LOGIN": "Login",
     "ADMIN_LOGIN": "Admin Login",
     "USERNAME_OR_EMAIL": "User sau Email",
+    "USERNAME_OR_EMAIL_INVALID": "Username sau Email Invalid",
     "PASSWORD": "Parola",
+    "PASSWORD_INVALID": "Trebuie sa introduceti parola!",    
     "USERNAME_OR_PASSWORD_INCORRECT": "User sau parala incorecte!"
   },
   "LOGOUT":{
     "LOGOUT": "Logout"
+  },
+  "ADMIN_MENU":{
+    "ADMIN_MENU":"Meniu Admin",
+    "ADD_PROJECT":"Proiect Nou"
   }
 }

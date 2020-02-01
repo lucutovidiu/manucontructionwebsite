@@ -1,11 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { AuthService } from 'shared_services/services/auth-service/auth.service';
+import { NavBarValues } from 'app_module/shared_daos/navbar/NavBarValues';
 
 @Component({
   selector: 'menu-bar',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger(
       'inOutAnimation',
@@ -33,10 +34,14 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class MenuBarComponent implements OnInit {
   isMobileMenuActive: boolean = false;
 
-
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+
+  }
+
+  get navBarValues() {
+    return NavBarValues;
   }
 
   togggleNavMenu(): void {
@@ -45,6 +50,14 @@ export class MenuBarComponent implements OnInit {
     else
       document.body.style.overflow = "auto";
     this.isMobileMenuActive = !this.isMobileMenuActive;
+  }
+
+  shouldMenuShowToUser() {
+    return this.authService.isUserAuthenticated;
+  }
+
+  logout(){
+    return this.authService.logout();
   }
 
 }

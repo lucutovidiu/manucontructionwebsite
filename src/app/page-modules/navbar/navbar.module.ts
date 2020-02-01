@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router';
 
 import { MenuBarComponent } from './menu/menu.component';
-import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { SharedServicesModule } from "shared_services/shared-services.module"
 import { CallToActionComponent } from './call-to-action/call-to-action.component'
 
 @NgModule({
@@ -20,7 +20,7 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
     MatMenuModule,
     MatButtonModule,
     RouterModule,
-    SharedServicesModuleModule
+    SharedServicesModule
   ],
   exports: [
     MenuBarComponent,

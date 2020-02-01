@@ -5,7 +5,7 @@ import { ProjectsPageComponent } from './projects-page-component/projects-page.c
 import { ProjectsRoutingModule } from './projects-routing.module'
 import { ComponentsModuleModule } from "shared-components/components-module.module";
 import { SingleProjectDisplayComponent } from './single-project-display/single-project-display.component';
-import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { SharedServicesModule } from "shared_services/shared-services.module"
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
@@ -17,7 +17,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CommonModule,
     ProjectsRoutingModule,
     ComponentsModuleModule,
-    SharedServicesModuleModule,
+    SharedServicesModule,
     MatProgressSpinnerModule
   ],
   schemas: [

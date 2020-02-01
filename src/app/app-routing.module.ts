@@ -24,6 +24,10 @@ const routes: Routes = [
     path:"login",
     loadChildren: "page-modules/login-page/login-page.module#LoginPageModule"
   },
+  {
+    path:"add-project",
+    loadChildren: "page-modules/project-manager/project-manager.module#ProjectManagerModule"
+  },
 
   // {
   //   path: 'about',

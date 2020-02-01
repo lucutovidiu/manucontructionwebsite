@@ -6,7 +6,7 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { FindmeMapComponent } from './findme-map/findme-map.component'
 import { ComponentsModuleModule } from "shared-components/components-module.module";
 import { ContactFormComponent } from './contact-form/contact-form.component'
-import { SharedServicesModuleModule } from "shared_services/shared-services-module.module"
+import { SharedServicesModule } from "shared_services/shared-services.module"
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { SharedServicesModuleModule } from "shared_services/shared-services-modu
     CommonModule,
     ContactRoutingModule,
     ComponentsModuleModule,
-    SharedServicesModuleModule
+    SharedServicesModule
   ],
   exports:[
     ContactPageComponent

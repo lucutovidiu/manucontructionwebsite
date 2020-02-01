@@ -2,30 +2,47 @@
     <app-call-to-action></app-call-to-action>
 </div>
 <div class="desktop_navbar_wrapper pb-2 pb-xl-3">
-    <img alt="Lazur Concept" class="lazurLogo" src="/assets/logo/lazurconcept-logo1.png" />
+    <a class="lazurLogo" routerLink="{{navBarValues.LOGIN}}">
+        <img alt="Lazur Concept" src="/assets/logo/lazurconcept-logo1.png" />
+    </a>
     <div>
         <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" mat-button
-            routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
-        <a routerLinkActive="active" mat-button routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
+            routerLink="{{navBarValues.HOME}}">{{'NAVIGATION_MENU.HOME' |translate}}</a>
+        <a routerLinkActive="active" mat-button routerLink="{{navBarValues.CONTACT}}">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
+        <div *ngIf="shouldMenuShowToUser()" class="d-inline">
+            <button mat-button [matMenuTriggerFor]="menu">{{"ADMIN_MENU.ADMIN_MENU" | translate}}</button>
+            <mat-menu #menu="matMenu">
+                <a mat-menu-item routerLink="{{navBarValues.ADD_PROJECT}}">{{'ADMIN_MENU.ADD_PROJECT' | translate}}</a>
+                <a mat-menu-item (click)="logout()">{{'LOGOUT.LOGOUT' | translate}}</a>
+            </mat-menu>
+        </div>
     </div>
 </div>
 <div class="loginBtn p-0 m-0">
-    <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.ADMIN_LOGIN' | translate}}</a>
 </div>
 
 <div class="mobile_navbar_wrapper">
-    <img alt="Lazur Concept" class="lazurLogo ml-4" src="/assets/logo/lazurconcept-logo1.png" />
+    <a class="lazurLogo" routerLink="{{navBarValues.LOGIN}}">
+        <img alt="Lazur Concept" src="/assets/logo/lazurconcept-logo1.png" />
+    </a>
     <div (click)="togggleNavMenu()" class="menu_btn mr-4"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
 </div>
 
 <div *ngIf="isMobileMenuActive" [@inOutAnimation] [class.mobile_view_menu]="isMobileMenuActive">
     <a [routerLinkActiveOptions]="{exact: true}" (click)="togggleNavMenu()" routerLinkActive="mobileactive" mat-button
-        routerLink="/">{{'NAVIGATION_MENU.HOME' |translate}}</a>
+        routerLink="{{navBarValues.HOME}}">{{'NAVIGATION_MENU.HOME' |translate}}</a>
     <a routerLinkActive="mobileactive" (click)="togggleNavMenu()" mat-button
-        routerLink="/contact">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
-    <a routerLinkActive="active" mat-button routerLink="/login">{{'LOGIN.ADMIN_LOGIN' | translate}}</a>
+        routerLink="{{navBarValues.CONTACT}}">{{'NAVIGATION_MENU.CONTACT' | translate}}</a>
+    <div *ngIf="shouldMenuShowToUser()" class="d-flex justify-content-center">
+        <button mat-button [matMenuTriggerFor]="menu">{{"ADMIN_MENU.ADMIN_MENU" | translate}}</button>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="{{navBarValues.ADD_PROJECT}}">{{'ADMIN_MENU.ADD_PROJECT' | translate}}</a>
+            <a mat-menu-item (click)="logout()">{{'LOGOUT.LOGOUT' | translate}}</a>
+        </mat-menu>
+    </div>
     <div class="navBarBackbtn" (click)="togggleNavMenu()"><i class="fa fa-arrow-circle-left"
             aria-hidden="true"></i>&nbsp;{{'GENERAL.BACK' | translate}}</div>
+
     <div class="callToActionMenu_forMobileVersion">
         <app-call-to-action></app-call-to-action>
     </div>

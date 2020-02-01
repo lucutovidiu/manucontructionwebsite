@@ -7,7 +7,7 @@ import { HomePageComponent } from './home-page.component/home-page.component'
 import { ComponentsModuleModule } from 'shared-components/components-module.module'
 import { HeroComponent } from './hero/hero.component'
 import { ServicesIntroComponent } from './services-intro/services-intro.component'
-import { SharedServicesModuleModule } from 'shared_services/shared-services-module.module'
+import { SharedServicesModule } from 'shared_services/shared-services.module'
 import { ContactModule } from "page-modules/contact-page/contact.page.module";
 import { ServicesDescriptionComponent } from './services-description-component/services-description/services-description.component';
 import { ProjectWorkDoneBoxComponent } from '../home-page/services-description-component/project-work-done-box/project-work-done-box.component'
@@ -28,7 +28,7 @@ import { ProjectsSliderComponent } from './projects-slider/projects-slider.compo
     CommonModule,
     HomePageRoutingModule,
     ComponentsModuleModule,
-    SharedServicesModuleModule,
+    SharedServicesModule,
     ContactModule,
     AngularResizedEventModule
   ],

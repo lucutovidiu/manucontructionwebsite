@@ -63,10 +63,16 @@
     "LOGIN": "S'identifier",
     "ADMIN_LOGIN": "Connexion administrateur",
     "USERNAME_OR_EMAIL": "Nom d'utilisateur ou email",
+    "USERNAME_OR_EMAIL_INVALID": "Nom d'utilisateur ou e-mail non valide",
     "PASSWORD": "Mot de passe",    
+    "PASSWORD_INVALID": "Vous devez saisir un mot de passe!",    
     "USERNAME_OR_PASSWORD_INCORRECT": "Le pseudo ou mot de passe est incorect!"
   },
   "LOGOUT":{
     "LOGOUT": "Se déconnecter"
+  },
+  "ADMIN_MENU":{
+    "ADMIN_MENU":"Admin Menu",
+    "ADD_PROJECT":"Nouveau projet"
   }
 }

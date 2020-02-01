@@ -10,6 +10,9 @@ export const environment = {
     PUT_UPDATE_PROJECT: apiEndpoint + "/api/projects/update-project/",
     DELETE_PROJECT: apiEndpoint + "/api/projects/delete-project/",
     GET_PROJECT_BY_ID: apiEndpoint + "/api/projects/project/"
+  },
+  auth:{
+    LOGIN_ENPOINT:apiEndpoint + "/api/login",
   }
 };
 

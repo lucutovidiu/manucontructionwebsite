@@ -73,6 +73,8 @@ $image_slider_wrapper_bottom_text_height: 30px;
 $image_slider_small_img_border_radius:5px;
 $image_slider_main_img_border_radius:10px;
 
-.borderd {
-  border: 2px solid red;
+@mixin setWidth($screen_width,$box_width) {
+  @media all and (max-width: $screen_width) {
+    width: $box_width;
+  }
 }
