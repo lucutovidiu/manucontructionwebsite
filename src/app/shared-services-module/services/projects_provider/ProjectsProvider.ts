@@ -13,6 +13,10 @@ export class ProjectsProviderService {
 
     constructor(private projectsRepo: ProjectsRepo) { }
 
+    public forceFetchAllProjects(){
+        this.projectsRepo.forceFetchAll();
+    }
+
     public fetchAllProjects(): void {
         this.projectsRepo.findAll().then((project: Array<ProjectsDTO>) => {
             this.projectsSubjectArray$.next(project);
@@ -31,5 +35,13 @@ export class ProjectsProviderService {
 
     public getProjectById(): Observable<ProjectsDTO> {
         return this.projectsSubjectSingleProject$.asObservable();
+    }
+
+    public uploadImageToServerTemporary(formData:any): Observable<any>{
+       return this.projectsRepo.saveImageTemporary(formData);
+    }
+
+    public uploadProject(project:ProjectsDTO): Observable<any>{
+        return this.projectsRepo.saveProject(project);
     }
 }

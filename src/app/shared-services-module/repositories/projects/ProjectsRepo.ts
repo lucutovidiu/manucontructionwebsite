@@ -3,11 +3,14 @@ import { ProjectsDTO } from 'app_module/shared_daos/Projects/ProjectsDTO';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { isNull } from 'util';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProjectsRepo {
+
+    private _projectsArraySessionStorage:string = "projectsArray";
 
     private _httpGetOptions = {
         headers: new HttpHeaders({
@@ -19,20 +22,27 @@ export class ProjectsRepo {
 
     private set projectsArray(array: Array<ProjectsDTO>) {
         if (typeof sessionStorage !== "undefined") {
-            sessionStorage.setItem("projectsArray", JSON.stringify(array));
+            sessionStorage.setItem(this._projectsArraySessionStorage, JSON.stringify(array));
         }
         this._projectsArray = array;
     }
 
     private get projectsArray(): Array<ProjectsDTO> {
         if (typeof sessionStorage !== "undefined") {
-            let localcache = JSON.parse(sessionStorage.getItem("projectsArray"));
+            let localcache = JSON.parse(sessionStorage.getItem(this._projectsArraySessionStorage));
             if (!isNull(localcache)) {
                 this._projectsArray = localcache;
                 return this._projectsArray;
             }
         }
         return this._projectsArray;
+    }
+
+    public forceFetchAll(){
+        this._projectsArray = [];
+        if (typeof sessionStorage !== "undefined") {
+            sessionStorage.removeItem(this._projectsArraySessionStorage);
+        }
     }
 
     private fetchAllExternally(): Promise<Array<ProjectsDTO>> {
@@ -80,7 +90,13 @@ export class ProjectsRepo {
         }
     }
 
+    public saveImageTemporary(formData): Observable<any>{
+        return this.http.post(environment.projects.UPLOAD_IMAGE_TEMORARY, formData);
+    }
 
+    public saveProject(project:ProjectsDTO): Observable<any>{
+        return this.http.post(environment.projects.POST_CREATE_PROJECT,project);
+    }
 
     constructor(private http: HttpClient) {
         // console.log("[env]: ", environment.projects.API_END_POINT);

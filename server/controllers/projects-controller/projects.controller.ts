@@ -1,5 +1,5 @@
-import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFile } from '@nestjs/common';
-import { FileInterceptor } from "@nestjs/platform-express"
+import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFiles, UploadedFile } from '@nestjs/common';
+import { FileInterceptor, FilesInterceptor } from "@nestjs/platform-express"
 
 import { ProjectService } from '../../modules/db-module/projects-service/projects-service';
 import { ProjectsDTO } from '../../../src/app/shared_daos/Projects/ProjectsDTO';
@@ -31,12 +31,12 @@ export class HelloController {
     }
 
     @Post('/create-project/uploadpicture')
-    @UseInterceptors(FileInterceptor('projImage'))
+    @UseInterceptors(FilesInterceptor('projImages'))
     @UseGuards(AuthGuard)
-    async uploadPicture(@UploadedFile() file) {
-       return this.projectService.convertAndSaveImage(file).then(res=>{
-           return res;
-       })
+    async uploadPicture(@UploadedFiles() files) {
+        return this.projectService.convertAndSaveImage(files).then(res => {
+            return res;
+        })
     }
 
     @Put("/update-project/:id")

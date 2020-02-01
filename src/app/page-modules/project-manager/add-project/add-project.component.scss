@@ -1,4 +1,27 @@
-.submitbtn {
+.add_project_wrapper {
+
+  text-transform: capitalize;
+
+  & .submitbtn {
     margin: auto; /* Important */
     text-align: center;
   }
+
+  & .uploadImageBtn {
+    font-weight: bold;
+    font-size: 0.8rem;
+    background-color: #0074d9;
+    display: inline-block;
+    color: rgb(219, 214, 214);
+    padding: 0.6rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  & .spinner {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    // height: 60px !important;
+  }
+}

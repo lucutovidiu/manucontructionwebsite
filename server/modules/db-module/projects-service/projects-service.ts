@@ -5,11 +5,15 @@ import { DbConfig } from '../db-config/db-config'
 import { DbProjectsRepo } from './db-projects-repo'
 import { DbPathsEnum } from '../db-config/DbPathsEnum';
 import { ProjectsDTO } from '../../../../src/app/shared_daos/Projects/ProjectsDTO';
+import { UploadResultDto } from './daos/UploadResult';
+import { ReceivedFileTo } from './daos/ReceivedFileTo';
 
 export class ProjectService {
     private _dbConfig: DbConfig;
     private _dbConnection: JsonDB;
     private _dbRepo: DbProjectsRepo;
+
+    private _tempFileLocationFolder: string = "./src/assets/projects_component/temp/";
 
     constructor() {
         this._dbConfig = new DbConfig();
@@ -37,19 +41,20 @@ export class ProjectService {
         return this._dbRepo.deleteById(id);
     }
 
-    public async convertAndSaveImage(file) {
+    public async convertAndSaveImage(files: Array<ReceivedFileTo>) {
         return new Promise((res, rej) => {
-            Jimp.read(file.buffer, (err, pic) => {
-                if (err) {
-                    rej({ wasSuccesfull: false, message: "Server Error" });
-                }
-                pic
-                    .quality(60) // set JPEG quality
-                    .resize(Jimp.AUTO, 800) // resize the height to 800 and scale the width accordingly
-                    .write('./pictures/testoviii.jpg'); // save
-                res({ wasSuccesfull: true, message: "Succesfully uploaded" })
-            });
+            for (let file of files) {                
+                Jimp.read(file.buffer, (err, pic) => {
+                    if (err) {
+                        rej({ wasSuccesfull: false, message: "Server Error" });
+                    }
+                    pic
+                        .quality(80) // set JPEG quality
+                        .resize(Jimp.AUTO, 800) // resize the height to 800 and scale the width accordingly
+                        .write(this._tempFileLocationFolder + file.originalname); // save                    
+                });
+            }
+            res(new UploadResultDto(true, "Succesfully uploaded"));
         })
     }
-
 }
