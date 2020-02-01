@@ -3,6 +3,7 @@ $smallSizeScreenBrakeDown: 670px;
 
 //screen widths
 $media-sm-width: 576px;
+// $media-md-width: 576px;
 $media-lg-width: 767px;
 $media-xl-width: 1024px;
 $media-xxl-width: 1500px;
@@ -73,7 +74,12 @@ $image_slider_wrapper_bottom_text_height: 30px;
 $image_slider_small_img_border_radius:5px;
 $image_slider_main_img_border_radius:10px;
 
-@mixin setWidth($screen_width,$box_width) {
+@mixin setMinWidth($screen_width,$box_width) {
+  @media all and (min-width: $screen_width) {
+    width: $box_width;
+  }
+}
+@mixin setMaxWidth($screen_width,$box_width) {
   @media all and (max-width: $screen_width) {
     width: $box_width;
   }

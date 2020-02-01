@@ -1,14 +1,17 @@
 @import "../../../shared-services-module/websiteSettings/styleConfig.scss";
 
 .login-wrapper {
-  
   & .login-box-wrapper {
-      width: 40%;
-      @include setWidth($media-sm-width,80%);
+    padding: 1.5rem;
+    box-shadow: 1px 1px 5px 1px gray;
+    @include setMaxWidth($media-sm-width, 80%);
+    @include setMinWidth($media-sm-width, 60%);
+    @include setMinWidth($media-lg-width, 40%);
+    @include setMinWidth($media-xl-width, 30%);
   }
 
-  & .submitbtn{
-    margin: auto; /* Important */ 
-    text-align: center; 
+  & .submitbtn {
+    margin: auto; /* Important */
+    text-align: center;
   }
 }
