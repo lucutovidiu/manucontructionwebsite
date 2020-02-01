@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/interceptor/JwtInterceptor';
 
 @NgModule({
   declarations: [],
@@ -10,7 +12,12 @@ import { TranslateService } from '@ngx-translate/core';
     TranslateModule
   ],
   providers:[
-    TranslateService
+    TranslateService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   exports: [
     TranslateModule

@@ -1,4 +1,6 @@
-import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { FileInterceptor } from "@nestjs/platform-express"
+
 import { ProjectService } from '../../modules/db-module/projects-service/projects-service';
 import { ProjectsDTO } from '../../../src/app/shared_daos/Projects/ProjectsDTO';
 import { AuthGuard } from '../../modules/auth-module/auth-controller/auth.guard';
@@ -11,34 +13,43 @@ export class HelloController {
 
     @Get()
     @HttpCode(200)
-    findAllProjects() {
+    async findAllProjects() {
         return this.projectService.getAllProjects();
     }
 
     @Get("project/:id")
     @HttpCode(200)
-    findProjectById(@Param("id") id: string) {
+    async findProjectById(@Param("id") id: string) {
         return this.projectService.getProjectById(id);
     }
 
     @Post("/create-project")
     @HttpCode(201)
     @UseGuards(AuthGuard)
-    createNewProject(@Body() project: ProjectsDTO) {
+    async createNewProject(@Body() project: ProjectsDTO) {
         return this.projectService.saveProject(project);
+    }
+
+    @Post('/create-project/uploadpicture')
+    @UseInterceptors(FileInterceptor('projImage'))
+    @UseGuards(AuthGuard)
+    async uploadPicture(@UploadedFile() file) {
+       return this.projectService.convertAndSaveImage(file).then(res=>{
+           return res;
+       })
     }
 
     @Put("/update-project/:id")
     @HttpCode(200)
     @UseGuards(AuthGuard)
-    updateProject(@Param("id") id: string, @Body() project: ProjectsDTO) {
+    async updateProject(@Param("id") id: string, @Body() project: ProjectsDTO) {
         return this.projectService.updateProject(project, id);
     }
 
     @Delete("/delete-project/:id")
     @HttpCode(200)
     @UseGuards(AuthGuard)
-    deleteRecord(@Param("id") id) {
+    async deleteRecord(@Param("id") id) {
         return this.projectService.deleteProject(id);
     }
 }

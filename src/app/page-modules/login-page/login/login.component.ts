@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'shared_services/services/auth-service/auth.service';
 import { Router } from '@angular/router';
+
+import { AuthService } from 'shared_services/services/auth-service/auth.service';
 import { NavBarValues } from 'app_module/shared_daos/navbar/NavBarValues';
 
 @Component({
@@ -12,7 +13,7 @@ import { NavBarValues } from 'app_module/shared_daos/navbar/NavBarValues';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   hasLoginFailed: boolean = false;
-  constructor(private fb: FormBuilder, protected authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     if (this.authService.isUserAuthenticated)

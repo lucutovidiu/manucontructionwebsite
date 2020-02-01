@@ -1,1 +1,84 @@
-<p>add-project works!</p>
+{{addProjectForm.value | json}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="file" name="fileupload" (change)="uploadFile($event)">
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-12 mb-5">
+            <app-text-with-border [borderColor]="'primary'">
+                {{'ADD_PROJECT.ADD_PROJECT' | translate}}
+            </app-text-with-border>
+        </div>
+    </div>
+    <form class="example-container" [formGroup]="addProjectForm">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
+                <mat-form-field class="w-100">
+                    <input autocomplete="off" formControlName="title" matInput placeholder="title">
+                    <mat-error>
+                        title is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
+                <mat-form-field class="w-100">
+                    <textarea autocomplete="off" formControlName="description" matInput rows="3"
+                        placeholder="description"></textarea>
+                    <mat-error>
+                        description is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
+                <mat-form-field class="w-100">
+                    <input autocomplete="off" formControlName="locationArea" matInput placeholder="locationArea">
+                    <mat-error>
+                        description is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div formGroupName="characteristics">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 offset-md-3">
+                    <mat-form-field class="w-100">
+                        <input autocomplete="off" formControlName="workSurface" matInput placeholder="workSurface">
+                        <mat-error>
+                            workSurface is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 offset-md-3">
+                    <mat-form-field class="w-100">
+                        <input autocomplete="off" formControlName="workType" matInput placeholder="workType">
+                        <mat-error>
+                            workType is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 ">
+                <div class="d-flex justify-content-center">
+                    <button (click)="submitProject()" mat-raised-button mat-button class="py-1"
+                        disabled="{{!addProjectForm.valid}}">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

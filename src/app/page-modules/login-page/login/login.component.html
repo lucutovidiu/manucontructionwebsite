@@ -9,7 +9,7 @@
         <form class="w-100" [formGroup]="loginForm">
             <div class="login-user-name">
                 <mat-form-field class="w-100">
-                    <input formControlName="userName" matInput placeholder="{{'LOGIN.USERNAME_OR_EMAIL' | translate}}">
+                    <input autocomplete="off" formControlName="userName" matInput placeholder="{{'LOGIN.USERNAME_OR_EMAIL' | translate}}">
                     <mat-error>
                         {{'LOGIN.USERNAME_OR_EMAIL_INVALID' | translate}}
                     </mat-error>
@@ -17,7 +17,7 @@
             </div>
             <div class="login-password">
                 <mat-form-field class="w-100">
-                    <input formControlName="password" matInput type="password"
+                    <input autocomplete="off" formControlName="password" matInput type="password"
                         placeholder="{{'LOGIN.PASSWORD' | translate}}">
                     <mat-error>
                         {{'LOGIN.PASSWORD_INVALID' | translate}}
