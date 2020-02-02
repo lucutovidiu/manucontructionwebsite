@@ -4,7 +4,6 @@ import { FilesInterceptor } from "@nestjs/platform-express"
 import { ProjectService } from '../../modules/db-module/projects-service/projects-service';
 import { ProjectsDTO } from '../../../src/app/shared_daos/Projects/ProjectsDTO';
 import { AuthGuard } from '../../modules/auth-module/auth-controller/auth.guard';
-
 @Controller('/projects')
 export class HelloController {
 
@@ -31,7 +30,9 @@ export class HelloController {
     }
 
     @Post('/create-project/uploadpicture')
-    @UseInterceptors(FilesInterceptor('projImages'))
+    @UseInterceptors(FilesInterceptor('projImages',15,{
+        dest:"src/assets/projects_component/temp"
+    }))
     @UseGuards(AuthGuard)
     async uploadPicture(@UploadedFiles() files) {
         return this.projectService.convertAndSaveImage(files).then(res => {

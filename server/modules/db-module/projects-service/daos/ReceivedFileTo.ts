@@ -1,7 +1,9 @@
-export class ReceivedFileTo {
+export class ReceivedFilesTo {
     originalname: string;
     encoding: string;
     mimetype: string;
-    buffer: any;
+    destination:string;
+    filename:string;
+    path:string;
     size: any;
 }

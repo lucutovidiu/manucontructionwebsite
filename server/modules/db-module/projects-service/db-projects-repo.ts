@@ -4,6 +4,7 @@ import { DbPathsEnum } from '../db-config/DbPathsEnum';
 import { NotFoundException } from '@nestjs/common';
 import { ProjectsDTO } from '../../../../src/app/shared_daos/Projects/ProjectsDTO';
 import { UploadResultDto } from './daos/UploadResult';
+import { Utils } from '../../../utils/UtilFunctions';
 const uuidv4 = require('uuid/v4');
 
 export class DbProjectsRepo {
@@ -12,7 +13,7 @@ export class DbProjectsRepo {
     private _className = "[DbRepo] :";
     private _projectsBaseLocation = "./src/assets/projects_component/";
     private _projectsTempLocation = "./src/assets/projects_component/temp/"
-    private _projectsBaseLocationForDB = "/assets/projects_component/";
+    private _projectsBaseLocationForDB = "assets/projects_component/";
 
     constructor(jsonDB: JsonDB) {
         this._dbConnection = jsonDB;
@@ -57,13 +58,14 @@ export class DbProjectsRepo {
     // By default the push will override the old value
     public save(project: ProjectsDTO): UploadResultDto {
         if (this.checkConnection()) {
-            let projId = "project" + this.convertDashToUnderscore(uuidv4());
-            project.imageSrc = this.createProjectStructure(project, projId)
-            let pushPath = DbPathsEnum.PROJECTS + projId;
             try {
+                let projId = "project" + Utils.convertDashToUnderscore(uuidv4());
+                project.imageSrc = this.createProjectStructure(project, projId)
+                let pushPath = DbPathsEnum.PROJECTS + projId;
                 this._dbConnection.push(pushPath, this.updateIdBeforeSavingToDB(project, projId));
                 return new UploadResultDto(true, "Project Uploaded Succesfully")
-            } catch (e) {
+            } catch (e) {                
+                console.log(e)
                 return new UploadResultDto(false, "Project couldn't be saved");
             }
         } else {
@@ -73,39 +75,40 @@ export class DbProjectsRepo {
     }
 
     private createProjectStructure(projectsDTO: ProjectsDTO, projectDir): Array<string> {
-        let _newProjectDir = this._projectsBaseLocation + projectDir + "/";
-        let _newProjectImages: Array<string> = new Array<string>();
-        for (let image of projectsDTO.imageSrc) {
-            this.moveFile(this._projectsTempLocation + image, _newProjectDir + this.convertDashToUnderscore(image), _newProjectDir);
-            _newProjectImages.push(this._projectsBaseLocationForDB + projectDir + "/" + this.convertDashToUnderscore(image))
+        try {
+            let _newProjectDir = this._projectsBaseLocation + projectDir + "/";
+            let _newProjectImages: Array<string> = new Array<string>();
+            for (let image of projectsDTO.imageSrc) {
+                this.moveFile(this._projectsTempLocation + image, _newProjectDir + Utils.convertDashToUnderscore(image), _newProjectDir);
+                _newProjectImages.push(this._projectsBaseLocationForDB + projectDir + "/" + Utils.convertDashToUnderscore(image))
+            }
+            return _newProjectImages;
+        } catch (err) {
+            throw err;
         }
-        return _newProjectImages;
-    }
-
-    private convertDashToUnderscore(str:string){
-        return str.replace(/-/g,"l").substr(Math.round(str.length/2),str.length);
     }
 
     //moves the $file to $dir2
     private moveFile(from, to, todirectory) {
         //include the fs, path modules
         var fs = require('fs');
-        var path = require('path');
+        // var path = require('path');
 
         //resolve source
-        var dest = path.resolve(to);
+        var dest = to;//path.resolve(to);
         //gets file name and adds it to dir2        
-        var origin = path.resolve(from);
-        var originDirectory = path.resolve(todirectory);
+        var origin = from;//path.resolve(from);
+        var originDirectory = todirectory; //path.resolve(todirectory);
         //create dest if not exists
-        if (!fs.existsSync(originDirectory)) {
-            fs.mkdirSync(originDirectory);
+        try {
+            if (!fs.existsSync(originDirectory)) {
+                fs.mkdirSync(originDirectory);
+            }
+            fs.renameSync(origin, dest);
+        } catch (err) {
+            console.log("errrrrrrrrrrrr")
+            throw err;
         }
-
-        fs.rename(origin, dest, (err) => {
-            if (err) console.log(err);
-            // else console.log('Successfully moved');
-        });
     };
 
     // //copy the $file to $dir2

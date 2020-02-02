@@ -5,6 +5,7 @@ const uuidv4 = require('uuid/v4');
 import { ProjectsProviderService } from "shared_services/services/projects_provider/ProjectsProvider";
 import { UploadResultDto } from '../../../../../server/modules/db-module/projects-service/daos/UploadResult';
 import { ProjectsDTO } from 'app_module/shared_daos/Projects/ProjectsDTO';
+import { Utils } from '../../../../../server/utils/UtilFunctions';
 
 @Component({
   selector: 'app-add-project',
@@ -60,16 +61,25 @@ export class AddProjectComponent implements OnInit {
     this.projectsProviderService.uploadProject(uploadForm)
       .subscribe((res: UploadResultDto) => {
         if (res.wasSuccesfull) {
-          this.successfullyUploadedMessage.wasSuccesfull = true;
-          this.isFormUploading = false;
+          this.updateUserLog(res,true);
           this.projectsProviderService.forceFetchAllProjects();
         } else {
-          this.successfullyUploadedMessage = res;
-          this.isFormUploading = false;
+          this.updateUserLog(res,false);
         }
       })
-    this.successfullyUploadedMessage.wasSuccesfull = true;
-    this.isFormUploading = false;
+  }
+
+  private updateUserLog(res,error:boolean){
+    if(!error){
+      //in case of error
+      this.uploadResult = new UploadResultDto(res.wasSuccesfull, res.message);
+      this.isFormUploading = false;
+      this.successfullyUploadedMessage.wasSuccesfull = false;
+    }else{
+      this.uploadResult.wasSuccesfull = true;
+      this.successfullyUploadedMessage = new UploadResultDto(res.wasSuccesfull, res.message);
+      this.isFormUploading = false;
+    }
   }
 
   private convertHtmlFormToUploadForm(htmlForm): ProjectsDTO {
@@ -88,21 +98,19 @@ export class AddProjectComponent implements OnInit {
         if (res.wasSuccesfull) {
           this.sendProjectData();
         } else {
-          this.successfullyUploadedMessage = res;
-          this.isFormUploading = false;
+          this.updateUserLog(res,false);
         }
       })
     } else {
-      this.uploadResult = new UploadResultDto(false, "You Must Select Images Too");
+      this.updateUserLog(new UploadResultDto(false, "You Must Select Images Too"),false);
     }
   }
 
   uploadFile(event) {
     let file: File;//= event.target.files;
     this.filesFormData = new FormData();
-
     for (file of event.target.files) {
-      let newFileName = uuidv4() + "." + file.type.split("/")[1];
+      let newFileName = Utils.convertDashToUnderscore(uuidv4()) + "." + file.type.split("/")[1];
       this.uploadFilesNames.push(newFileName);
       this.filesFormData.append("projImages", file, newFileName);
     }

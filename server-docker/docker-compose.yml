@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 
 services: 
   back_end_nest_server:
@@ -11,6 +11,7 @@ services:
       - JWT_SECRET=${JWT_SECRET}
     ports: 
       - 80:4200
+    user: ${CURRENT_UID}
     volumes: 
       - ..:/nest_angular_app
     networks:
