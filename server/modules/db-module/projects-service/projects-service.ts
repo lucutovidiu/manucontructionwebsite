@@ -1,6 +1,6 @@
 import { JsonDB } from 'node-json-db';
-var Jimp = require('jimp');
 var fs = require('fs');
+const resizeImg = require('resize-img');
 
 import { DbConfig } from '../db-config/db-config'
 import { DbProjectsRepo } from './db-projects-repo'
@@ -45,19 +45,47 @@ export class ProjectService {
     public async convertAndSaveImage(files: Array<ReceivedFilesTo>) {
         return new Promise((res, rej) => {
             for (let file of files) {
-                Jimp.read(file.path)
-                    .then(img => {
-                        img
-                            .quality(85) // set JPEG quality
-                            .resize(Jimp.AUTO, 800) // resize the height to 800 and scale the width accordingly
-                            .write(this._tempFileLocationFolder + file.originalname); // save      
-                            fs.unlinkSync(file.path); //remove old file from the system  
-                    })
-                    .catch(() => {
-                        rej({ wasSuccesfull: false, message: "Server Error" });
-                    });
+                let inputPicPath = file.path;
+                let outputPicPath = this._tempFileLocationFolder + file.originalname;
+                resizeImg(fs.readFileSync(inputPicPath), {
+                    height: 800
+                }).then(image=>{
+                    fs.unlinkSync(inputPicPath)
+                    fs.writeFileSync(outputPicPath, image);
+                    res(new UploadResultDto(true, "Succesfully uploaded"));
+                }).catch(err=>{
+                    console.log(err);
+                    rej({ wasSuccesfull: false, message: "Server Error" });
+                });
+                // resize({
+                //     width: 0,
+                //     height:800,
+                //     quality:80,
+                //     src: inputPicPath,
+                //     dst: outputPicPath
+                // }).then(()=>{
+                //     console.log("okkkkkkkkkkk")
+                //     fs.unlinkSync(inputPicPath);
+                //     res(new UploadResultDto(true, "Succesfully uploaded"));
+                // }).catch((err)=>{
+                //     console.log("errrrrrrrrrrrrr")
+                //     console.log(err)
+                //     rej({ wasSuccesfull: false, message: "Server Error" });
+                // })
+
+                // im.resize({
+                //     srcPath: inputPicPath,
+                //     dstPath: outputPicPath,
+                //     height: 800
+                // }, function (err, stdout, stderr) {
+                //     if (err) {
+                //         console.log(err);
+                //         rej({ wasSuccesfull: false, message: "Server Error" });
+                //     };
+                //     fs.unlinkSync(inputPicPath)
+                //     res(new UploadResultDto(true, "Succesfully uploaded"));
+                // });
             }
-            res(new UploadResultDto(true, "Succesfully uploaded"));
         })
     }
 }
