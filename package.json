@@ -8,8 +8,9 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run serve:ssr",
+    "start:test": "nodemon --watch src/ -e ts,html,scss --exec 'npm run build:ssr && npm run serve:ssr'",
     "start:dev": "ng serve",
-    "build": "ng build",
+    "build": "ng build --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
