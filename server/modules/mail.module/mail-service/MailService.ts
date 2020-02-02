@@ -29,7 +29,7 @@ export class MailService {
 
             let mailData = this.mailData(data);           
 
-            transporter.sendMail(mailData, function (err, info) {
+            transporter.sendMail(mailData, function (err) {
                 if (err) {
                     console.log("err:", err);
                     rej("Error Sending Email");

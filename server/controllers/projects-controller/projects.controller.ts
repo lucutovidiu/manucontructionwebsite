@@ -1,5 +1,5 @@
-import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFiles, UploadedFile } from '@nestjs/common';
-import { FileInterceptor, FilesInterceptor } from "@nestjs/platform-express"
+import { Controller, Get, Post, HttpCode, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFiles } from '@nestjs/common';
+import { FilesInterceptor } from "@nestjs/platform-express"
 
 import { ProjectService } from '../../modules/db-module/projects-service/projects-service';
 import { ProjectsDTO } from '../../../src/app/shared_daos/Projects/ProjectsDTO';

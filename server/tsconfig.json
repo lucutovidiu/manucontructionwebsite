@@ -2,11 +2,19 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es2017"],
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "ESNext",
+    "target": "ES6",
     "sourceMap": true,
+    "esModuleInterop": true,
     "outDir": "../dist/server-app"
   },
   "exclude": ["node_modules", "dist"]

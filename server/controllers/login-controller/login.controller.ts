@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, Delete, Put, Get, Patch, UseGuards } from "@nestjs/common";
+import { Controller, Post, Body, Delete, Put, Get, Patch, UseGuards } from "@nestjs/common";
 
 import { User } from '../../../src/app/shared_daos/User'
 import { UsersService } from "../../modules/db-module/users-service/users.service";

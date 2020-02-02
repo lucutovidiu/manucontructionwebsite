@@ -1,5 +1,5 @@
 import { CanActivate, ExecutionContext } from '@nestjs/common';
-import { Request, Response } from 'express-serve-static-core'
+import { Request } from 'express-serve-static-core'
 import { AuthService } from '../auth-service/auth-service';
 
 export class AuthGuard implements CanActivate {
@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
     canActivate(context: ExecutionContext): Promise<boolean> {
         const request: Request = context.switchToHttp().getRequest();
-        const response: Response = context.switchToHttp().getResponse();
+        // const response: Response = context.switchToHttp().getResponse();
 
         return new Promise<boolean>(res => {
             return res(this.asyncvalidateRequest(request));

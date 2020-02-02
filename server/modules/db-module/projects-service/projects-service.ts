@@ -43,16 +43,17 @@ export class ProjectService {
 
     public async convertAndSaveImage(files: Array<ReceivedFileTo>) {
         return new Promise((res, rej) => {
-            for (let file of files) {                
-                Jimp.read(file.buffer, (err, pic) => {
-                    if (err) {
+            for (let file of files) {
+                Jimp.read(file.buffer)
+                    .then(img => {
+                        img
+                            .quality(80) // set JPEG quality
+                            .resize(Jimp.AUTO, 800) // resize the height to 800 and scale the width accordingly
+                            .write(this._tempFileLocationFolder + file.originalname); // save          
+                    })
+                    .catch(() => {
                         rej({ wasSuccesfull: false, message: "Server Error" });
-                    }
-                    pic
-                        .quality(80) // set JPEG quality
-                        .resize(Jimp.AUTO, 800) // resize the height to 800 and scale the width accordingly
-                        .write(this._tempFileLocationFolder + file.originalname); // save                    
-                });
+                    });
             }
             res(new UploadResultDto(true, "Succesfully uploaded"));
         })
