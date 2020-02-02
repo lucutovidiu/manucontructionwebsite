@@ -91,7 +91,7 @@ export class DbProjectsRepo {
     //moves the $file to $dir2
     private moveFile(from, to, todirectory) {
         //include the fs, path modules
-        var fs = require('fs');
+        const fs = require('fs-extra')
         // var path = require('path');
 
         //resolve source
@@ -106,7 +106,7 @@ export class DbProjectsRepo {
             }
             fs.renameSync(origin, dest);
         } catch (err) {
-            console.log("errrrrrrrrrrrr")
+            fs.removeSync(originDirectory); 
             throw err;
         }
     };

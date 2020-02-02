@@ -1,6 +1,5 @@
 import { JsonDB } from 'node-json-db';
-var fs = require('fs');
-const resizeImg = require('resize-img');
+var fs = require('fs-extra');
 
 import { DbConfig } from '../db-config/db-config'
 import { DbProjectsRepo } from './db-projects-repo'
@@ -47,16 +46,23 @@ export class ProjectService {
             for (let file of files) {
                 let inputPicPath = file.path;
                 let outputPicPath = this._tempFileLocationFolder + file.originalname;
-                resizeImg(fs.readFileSync(inputPicPath), {
-                    height: 800
-                }).then(image=>{
-                    fs.unlinkSync(inputPicPath)
-                    fs.writeFileSync(outputPicPath, image);
-                    res(new UploadResultDto(true, "Succesfully uploaded"));
-                }).catch(err=>{
-                    console.log(err);
-                    rej({ wasSuccesfull: false, message: "Server Error" });
-                });
+                try {
+                    fs.copyFile(inputPicPath, outputPicPath, (err) => {
+                        if (err) {
+                            console.log(err);
+                            rej({ wasSuccesfull: false, message: "Server Error" });
+                        }
+                        fs.unlinkSync(inputPicPath)
+                        res(new UploadResultDto(true, "Succesfully uploaded"));
+                    })
+
+                } catch{
+                    (err) => {
+                        console.log(err);
+                        rej({ wasSuccesfull: false, message: "Server Error" });
+                    }
+                }
+
                 // resize({
                 //     width: 0,
                 //     height:800,
@@ -86,6 +92,7 @@ export class ProjectService {
                 //     res(new UploadResultDto(true, "Succesfully uploaded"));
                 // });
             }
+            res(new UploadResultDto(true, "Succesfully uploaded"));
         })
     }
 }
