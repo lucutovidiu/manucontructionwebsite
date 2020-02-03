@@ -15,4 +15,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  getPhonesLength(){
+    return this.siteConfig.phoneNumber.length -1;
+  }
+
 }

@@ -41,7 +41,8 @@
     "CONTACT_US": "Contacteaza-ne",
     "DONT_HESITATE": "Nu ezita sa ne contactezi pentru o oferta",
     "QUOTE": "oferta",
-    "AND_YOU_WILL_NOT_BE": "Si nu vei fi dezamagit!"
+    "AND_YOU_WILL_NOT_BE": "Si nu vei fi dezamagit!",
+    "OR":"sau"
   },
   "SERVICE_DESCRIPTION": {
      "DESIGN_PLANNING": "DESIGN & PLANIFICARE",

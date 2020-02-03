@@ -1,1 +1,12 @@
-{"users":{"user-6a774cf7-6960-475d-86ae-61981c11990f":{"userName":"oci","password":"dabniii"},"user-ace91c04-4cb7-465e-9bb6-7792f5b99918":{"userName":"ovidiu","password":"test"}}}
+{
+    "users": {
+        "user-6a774cf7-6960-475d-86ae-61981c11990f": {
+            "userName": "contact@lazurconcept.fr",
+            "password": "Mercedes20."
+        },
+        "user-ace91c04-4cb7-465e-9bb6-7792f5b99918": {
+            "userName": "ovidiu",
+            "password": "test"
+        }
+    }
+}

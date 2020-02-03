@@ -1,6 +1,6 @@
 export const siteConfig={
     topNabBar:{
-        phoneNumber:"0745898754",
+        phoneNumber:["0033603910281","0033753676797"],
         email:"contact@lazurconcept.fr"
     },
     address:{
