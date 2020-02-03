@@ -16,7 +16,7 @@ export class AddProjectComponent implements OnInit {
 
   addProjectForm: FormGroup;
   uploadFilesNames: Array<string> = new Array<string>();
-  filesFormData: FormData;
+  filesFormData: FormData = new FormData();;
   isFormUploading: boolean = false;
   uploadResult: UploadResultDto = new UploadResultDto(true, "");
   successfullyUploadedMessage: UploadResultDto = new UploadResultDto(false, "Succesfully Uploaded Files");
@@ -61,21 +61,21 @@ export class AddProjectComponent implements OnInit {
     this.projectsProviderService.uploadProject(uploadForm)
       .subscribe((res: UploadResultDto) => {
         if (res.wasSuccesfull) {
-          this.updateUserLog(res,true);
+          this.updateUserLog(res, true);
           this.projectsProviderService.forceFetchAllProjects();
         } else {
-          this.updateUserLog(res,false);
+          this.updateUserLog(res, false);
         }
       })
   }
 
-  private updateUserLog(res,error:boolean){
-    if(!error){
+  private updateUserLog(res, error: boolean) {
+    if (!error) {
       //in case of error
       this.uploadResult = new UploadResultDto(res.wasSuccesfull, res.message);
       this.isFormUploading = false;
       this.successfullyUploadedMessage.wasSuccesfull = false;
-    }else{
+    } else {
       this.uploadResult.wasSuccesfull = true;
       this.successfullyUploadedMessage = new UploadResultDto(res.wasSuccesfull, res.message);
       this.isFormUploading = false;
@@ -98,17 +98,16 @@ export class AddProjectComponent implements OnInit {
         if (res.wasSuccesfull) {
           this.sendProjectData();
         } else {
-          this.updateUserLog(res,false);
+          this.updateUserLog(res, false);
         }
       })
     } else {
-      this.updateUserLog(new UploadResultDto(false, "You Must Select Images Too"),false);
+      this.updateUserLog(new UploadResultDto(false, "You Must Select Images Too"), false);
     }
   }
 
   uploadFile(event) {
     let file: File;//= event.target.files;
-    this.filesFormData = new FormData();
     for (file of event.target.files) {
       let newFileName = Utils.convertDashToUnderscore(uuidv4()) + "." + file.type.split("/")[1];
       this.uploadFilesNames.push(newFileName);

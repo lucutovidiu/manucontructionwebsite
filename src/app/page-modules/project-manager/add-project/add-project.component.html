@@ -84,7 +84,7 @@
                 <div class="col-sm-12 col-md-6 offset-md-3">
                     <div class="d-flex justify-content-center">
                         <button (click)="submitProject()" mat-raised-button mat-button class="py-1"
-                            disabled="{{!addProjectForm.valid}}">
+                            disabled="{{!addProjectForm.valid || isFormUploading}}">
                             Submit
                         </button>
                     </div>
