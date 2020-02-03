@@ -8,19 +8,63 @@
                             {{'CONTACT_FORM.SEND_US_A_MESSAGE' | translate}}
                         </app-text-with-border>
                     </div>
-                    <form class="form-items pt-2">
-                        <input class="form-item-style py-2 px-3 my-2" type="text"
-                            placeholder="{{'CONTACT_FORM.FULL_NAME' | translate}}" />
-                        <input class="form-item-style py-2 px-3 my-2" type="text"
-                            placeholder="{{'CONTACT_FORM.EMAIL' | translate}}" />
-                        <input class="form-item-style py-2 px-3 my-2" type="text"
-                            placeholder="{{'CONTACT_FORM.PHONE' | translate}}" />
-                        <textarea class="form-item-style-area py-2 px-3 my-2" name="contact_message" id="" cols="30"
-                            rows="10" placeholder="{{'CONTACT_FORM.YOUR_MESSAGE' | translate}}"></textarea>
-                        <button class="form-submit-btn py-2 px-3 my-2 mt-3 mb-2 py-2 px-3" type="submit"><i
-                                class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;
-                            {{'CONTACT_FORM.SEND_MESSAGE' | translate}}</button>
+                    <form [formGroup]="contactFormData" class="form-items pt-2">
+                        <mat-form-field class="w-100">
+                            <input autocomplete="off" matInput formControlName="fullName"
+                                class="form-item-style py-1 px-3 my-2" type="text"
+                                placeholder="{{'CONTACT_FORM.FULL_NAME' | translate}}" />
+                            <mat-error>
+                                {{"CONTACT_FORM.NAME_IS_REQUIRED_OR_INCORECT" | translate}}
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput formControlName="eMail" class="py-2 px-3 my-2" type="text"
+                                placeholder="{{'CONTACT_FORM.EMAIL' | translate}}" />
+                            <mat-error>
+                                {{"CONTACT_FORM.EMAIL_IS_REQUIRED_OR_INCORECT" | translate}}
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput formControlName="phoneNumber" class="py-2 px-3 my-2" type="text"
+                                placeholder="{{'CONTACT_FORM.PHONE' | translate}}" />
+                            <mat-error>
+                                {{"CONTACT_FORM.PHONE_IS_REQUIRED_OR_INCORECT" | translate}}
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <textarea autocomplete="off" formControlName="message" matInput rows="3"
+                                placeholder="{{'CONTACT_FORM.YOUR_MESSAGE' | translate}}"></textarea>
+                            <mat-error>
+                                {{"CONTACT_FORM.MESSAGE_IS_REQUIRED_OR_INCORECT" | translate}}
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <button (click)="submitFormData()" [disabled]="!contactFormData.valid || isEmailSending"
+                                class="form-submit-btn py-2 px-3 my-2 mt-3 mb-2 py-2 px-3" type="submit"><i
+                                    class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;
+                                {{'CONTACT_FORM.SEND_MESSAGE' | translate}}</button>
+                            <mat-progress-spinner *ngIf="isEmailSending" class="spinner ml-5" [color]="color"
+                                [mode]="mode" [value]="value" diameter="40">
+                            </mat-progress-spinner>
+                        </div>
                     </form>
+                    <ng-container *ngIf="emailServerReponse">
+                        <div class="mt-4 text-center alert"
+                            [ngClass]="{'alert-success':emailServerReponse.wasSuccesfull,'alert-danger':!emailServerReponse.wasSuccesfull}">
+                            <span *ngIf="emailServerReponse.wasSuccesfull else error">
+                                {{'CONTACT_FORM.MESSAGE_SENT_SUCCEFULLY' | translate}}
+                            </span> viorel_ghertanu@yahoo.com;lazurconcept@gmail.com
+                            <ng-template #error>
+                                <span>
+                                    {{'CONTACT_FORM.SERVER_ERROR' | translate}}
+                                </span>
+                                <a href="mailto:{{siteEmail}}">{{siteEmail}}</a>
+                            </ng-template>
+                        </div>
+                    </ng-container>
                 </div>
             </div>
         </div>

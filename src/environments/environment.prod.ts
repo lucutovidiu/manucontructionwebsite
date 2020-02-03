@@ -12,5 +12,8 @@ export const environment = {
   },
   auth: {
     LOGIN_ENPOINT: apiEndpoint + "/api/login",
+  },
+  email:{
+    emailSendEndpoint: apiEndpoint + "/api/email/sendEmail"
   }
 };

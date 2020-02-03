@@ -16,7 +16,7 @@ export class AddProjectComponent implements OnInit {
 
   addProjectForm: FormGroup;
   uploadFilesNames: Array<string> = new Array<string>();
-  filesFormData: FormData = new FormData();;
+  filesFormData: FormData = new FormData();
   isFormUploading: boolean = false;
   uploadResult: UploadResultDto = new UploadResultDto(true, "");
   successfullyUploadedMessage: UploadResultDto = new UploadResultDto(false, "Succesfully Uploaded Files");

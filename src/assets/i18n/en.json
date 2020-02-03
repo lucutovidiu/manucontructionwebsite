@@ -35,7 +35,13 @@
     "EMAIL": "E-mail",
     "PHONE": "Phone",
     "YOUR_MESSAGE": "Your Message",
-    "SEND_MESSAGE": "Send Message"
+    "SEND_MESSAGE": "Send Message",
+    "NAME_IS_REQUIRED_OR_INCORECT" : "Name is required and it must be greater than 4",
+    "EMAIL_IS_REQUIRED_OR_INCORECT" : "Email is required or is incorrect",
+    "PHONE_IS_REQUIRED_OR_INCORECT" : "Phone number is required or is incorrect",
+    "MESSAGE_IS_REQUIRED_OR_INCORECT" : " Message is required",
+    "SERVER_ERROR":"Server error, sorry for inconvenience, please still contact us on",
+    "MESSAGE_SENT_SUCCEFULLY":"Your email has been set successfully."
   },
   "FOOTER": {
     "CONTACT_US": "Contact us",

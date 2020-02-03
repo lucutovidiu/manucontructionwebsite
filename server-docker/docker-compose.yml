@@ -9,6 +9,10 @@ services:
     working_dir: /nest_angular_app
     environment: 
       - JWT_SECRET=${JWT_SECRET}
+      - EmailFromUserName=${EmailFromUserName}
+      - EmailPassword=${EmailPassword}
+      - EmailToUserName=${EmailToUserName}
+      - EmailUserName=${EmailUserName}
     ports: 
       - 80:4200
     user: ${CURRENT_UID}

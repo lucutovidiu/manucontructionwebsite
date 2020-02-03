@@ -7,6 +7,8 @@ import { NotFoundExceptionFilter } from './controllers/catch-all-routes-controll
 import { DbModule } from './modules/db-module/db.module'
 import { AuthModule } from './modules/auth-module/auth.module'
 import { LoginController } from './controllers/login-controller/login.controller'
+import { EmailController } from './controllers/email/email.controller';
+import { MailModule } from './modules/mail.module/mail.module';
 
 
 @Module({
@@ -17,10 +19,11 @@ import { LoginController } from './controllers/login-controller/login.controller
       liveReload: false
     }),
     DbModule,
-    AuthModule
+    AuthModule,
+    MailModule
   ],
   providers: [
   ],
-  controllers: [HelloController, LoginController, NotFoundExceptionFilter]
+  controllers: [HelloController, LoginController, EmailController, NotFoundExceptionFilter]
 })
 export class ApplicationModule { }

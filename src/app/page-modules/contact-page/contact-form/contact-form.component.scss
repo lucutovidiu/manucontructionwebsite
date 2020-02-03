@@ -10,17 +10,21 @@
       font-size: 1.2rem;
     }
 
+    & .width100 {
+      width: 100%;
+    }
     & .form-items {
       display: flex;
       flex-direction: column;
     }
-    & .form-item-style {
-      border: none;
-      border-radius: $contact_form_border_radius;
-      &:focus {
-        outline: none;
-      }
-    }
+    // & .form-item-style {
+      // width: 100%;
+      // border: none;
+      // border-radius: $contact_form_border_radius;
+      // &:focus {
+      //   outline: none;
+      // }
+    // }
     & .form-item-style-area {
       border: none;
       border-radius: $contact_form_border_radius;
@@ -28,15 +32,20 @@
         outline: none;
       }
     }
-    & .form-submit-btn{
-        align-self: center;
-        border-radius: $contact_form_border_radius;
-        font-weight: bold;
-        border:none;
-        background-color: $contact_form_submit_btn_color;
-        &:hover{
-            background-color: $contact_form_submit_btn_active_color;
-        }
+    & .form-submit-btn {
+      align-self: center;
+      border-radius: $contact_form_border_radius;
+      font-weight: bold;
+      border: none;
+      background-color: $contact_form_submit_btn_color;
+      &:hover {
+        background-color: $contact_form_submit_btn_active_color;
+      }
     }
   }
 }
+
+.mat-form-field.mat-form-field {
+  font-size: 0.9rem;
+  font-weight: bold;
+  }

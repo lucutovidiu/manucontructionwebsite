@@ -35,7 +35,13 @@
     "EMAIL": "E-mail",
     "PHONE": "Telefon",
     "YOUR_MESSAGE": "Mesaj",
-    "SEND_MESSAGE": "Trimite Mesajul"
+    "SEND_MESSAGE": "Trimite Mesajul",
+    "NAME_IS_REQUIRED_OR_INCORECT" : "Nume incorect, trebuie sa fie mai mare de 4 caractere",
+    "EMAIL_IS_REQUIRED_OR_INCORECT" : "Email incorect",
+    "PHONE_IS_REQUIRED_OR_INCORECT" : "Telefon incorect",
+    "MESSAGE_IS_REQUIRED_OR_INCORECT" : "Mesajul este necesar",
+    "SERVER_ERROR":"Eroare de server, va rugam sa n-e contactati pe",
+    "MESSAGE_SENT_SUCCEFULLY":"Email-ul dumneavoastra a fost trimis cu success."
   },
   "FOOTER": {
     "CONTACT_US": "Contacteaza-ne",

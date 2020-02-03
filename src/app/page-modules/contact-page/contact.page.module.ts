@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 import { ContactPageComponent } from './contact-page-component/contact-page.component'
 import { ContactRoutingModule } from './contact-routing.module';
@@ -19,7 +23,10 @@ import { SharedServicesModule } from "shared_services/shared-services.module"
     CommonModule,
     ContactRoutingModule,
     ComponentsModuleModule,
-    SharedServicesModule
+    SharedServicesModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   exports:[
     ContactPageComponent

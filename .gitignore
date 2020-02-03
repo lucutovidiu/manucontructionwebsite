@@ -50,7 +50,7 @@ Thumbs.db
 /server-docker/.env
 
 #Database
-# /db
+/db
 
 #picture assets
-# src/assets/projects_component
+src/assets/projects_component

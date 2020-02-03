@@ -36,7 +36,13 @@
     "EMAIL": "E-mail",
     "PHONE": "Phone",
     "YOUR_MESSAGE": "Message",
-    "SEND_MESSAGE": "Envoyer"
+    "SEND_MESSAGE": "Envoyer",
+    "NAME_IS_REQUIRED_OR_INCORECT" : "Le nom est obligatoire et doit être supérieur à 4",
+    "EMAIL_IS_REQUIRED_OR_INCORECT" : "L'email est requis ou incorrect",
+    "PHONE_IS_REQUIRED_OR_INCORECT" : "Le numéro de téléphone est requis ou incorrect",
+    "MESSAGE_IS_REQUIRED_OR_INCORECT" : "Un message est requis",
+    "SERVER_ERROR":"Erreur de serveur, désolé pour la gêne occasionnée, veuillez toujours nous contacter sur",
+    "MESSAGE_SENT_SUCCEFULLY":"Votre e-mail a été défini avec succès."
   },
   "FOOTER":{
     "CONTACT_US":"Nous contacter",
