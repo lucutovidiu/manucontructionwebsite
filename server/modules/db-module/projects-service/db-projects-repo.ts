@@ -1,19 +1,22 @@
 import { JsonDB } from 'node-json-db';
+import * as path from "path";
+import { NotFoundException } from '@nestjs/common';
+
 import { isNull } from 'util';
 import { DbPathsEnum } from '../db-config/DbPathsEnum';
-import { NotFoundException } from '@nestjs/common';
 import { ProjectsDTO } from '../../../../src/app/shared_daos/Projects/ProjectsDTO';
 import { UploadResultDto } from './daos/UploadResult';
 import { Utils } from '../../../utils/UtilFunctions';
+
 const uuidv4 = require('uuid/v4');
 
 export class DbProjectsRepo {
 
     private _dbConnection: JsonDB = null;
     private _className = "[DbRepo] :";
-    private _projectsBaseLocation = "./src/assets/projects_component/";
-    private _projectsTempLocation = "./src/assets/projects_component/temp/"
-    private _projectsBaseLocationForDB = "assets/projects_component/";
+    private _projectsBaseLocation = path.join(process.cwd(), 'src', 'assets', 'projects_component');
+    private _projectsTempLocation = path.join(process.cwd(), 'src', 'assets', 'projects_component', 'temp');
+    private _projectsBaseLocationForDB = "sassets/projects_component/";
 
     constructor(jsonDB: JsonDB) {
         this._dbConnection = jsonDB;
@@ -64,7 +67,7 @@ export class DbProjectsRepo {
                 let pushPath = DbPathsEnum.PROJECTS + projId;
                 this._dbConnection.push(pushPath, this.updateIdBeforeSavingToDB(project, projId));
                 return new UploadResultDto(true, "Project Uploaded Succesfully")
-            } catch (e) {                
+            } catch (e) {
                 console.log(e)
                 return new UploadResultDto(false, "Project couldn't be saved");
             }
@@ -76,11 +79,11 @@ export class DbProjectsRepo {
 
     private createProjectStructure(projectsDTO: ProjectsDTO, projectDir): Array<string> {
         try {
-            let _newProjectDir = this._projectsBaseLocation + projectDir + "/";
+            let _newProjectDir = path.join(this._projectsBaseLocation, projectDir);
             let _newProjectImages: Array<string> = new Array<string>();
             for (let image of projectsDTO.imageSrc) {
-                this.moveFile(this._projectsTempLocation + image, _newProjectDir + Utils.convertDashToUnderscore(image), _newProjectDir);
-                _newProjectImages.push(this._projectsBaseLocationForDB + projectDir + "/" + Utils.convertDashToUnderscore(image))
+                this.moveFile(path.join(this._projectsTempLocation, image), path.join(_newProjectDir, Utils.convertDashToUnderscore(image)), _newProjectDir);
+                _newProjectImages.push(path.join(this._projectsBaseLocationForDB, projectDir, Utils.convertDashToUnderscore(image)))
             }
             return _newProjectImages;
         } catch (err) {
@@ -89,24 +92,18 @@ export class DbProjectsRepo {
     }
 
     //moves the $file to $dir2
-    private moveFile(from, to, todirectory) {
+    private moveFile(origin, dest, newDirName) {
         //include the fs, path modules
-        const fs = require('fs-extra')
-        // var path = require('path');
+        const fs = require('fs-extra');
 
-        //resolve source
-        var dest = to;//path.resolve(to);
-        //gets file name and adds it to dir2        
-        var origin = from;//path.resolve(from);
-        var originDirectory = todirectory; //path.resolve(todirectory);
         //create dest if not exists
         try {
-            if (!fs.existsSync(originDirectory)) {
-                fs.mkdirSync(originDirectory);
+            if (!fs.existsSync(newDirName)) {
+                fs.mkdirSync(newDirName);
             }
             fs.renameSync(origin, dest);
         } catch (err) {
-            fs.removeSync(originDirectory); 
+            fs.removeSync(newDirName);
             throw err;
         }
     };

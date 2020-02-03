@@ -19,8 +19,8 @@ import { LoginController } from './controllers/login-controller/login.controller
     DbModule,
     AuthModule
   ],
-  providers:[
+  providers: [
   ],
   controllers: [HelloController, LoginController, NotFoundExceptionFilter]
 })
-export class ApplicationModule{}
+export class ApplicationModule { }

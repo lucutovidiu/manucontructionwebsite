@@ -7,8 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "nodemon --watch 'src/**/*' -e jpeg,jpg,png --exec 'ng build --prod && npm run serve:ssr'",
-    "start:dev": "ng serve",
+    "start": "npm run serve:ssr",
+    "start:dev": "nodemon --watch 'src/**/*' -e jpeg,jpg,png --exec 'ng build --prod && npm run serve:ssr'",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
