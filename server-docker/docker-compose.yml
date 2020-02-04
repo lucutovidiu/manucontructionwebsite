@@ -13,8 +13,8 @@ services:
       - EmailPassword=${EmailPassword}
       - EmailToUserName=${EmailToUserName}
       - EmailUserName=${EmailUserName}
-    ports: 
-      - 80:4200
+    # ports: 
+    #   - 8080:4200
     user: ${CURRENT_UID}
     volumes: 
       - ..:/nest_angular_app
@@ -27,13 +27,24 @@ services:
       context: .
       dockerfile: DockerfileClient
     working_dir: /angular_app
-    ports: 
-      - 4000:4200
+    # ports: 
+    #   - 4000:4200
     volumes:
       - ..:/angular_app
     networks:
       - manuapp_network
     entrypoint: "ng serve --host 0.0.0.0"
+  ng_inx_server:
+    container_name: nginx_server
+    build: 
+      context: ./nginx
+      dockerfile: dockerfile
+    ports: 
+      - 80:80
+    volumes: 
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/my.conf > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
+    
 
 networks:
   manuapp_network:
