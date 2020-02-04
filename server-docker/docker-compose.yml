@@ -1,11 +1,11 @@
 version: '3.3'
 
 services: 
-  back_end_nest_server:
-    container_name: nest_angular_server
+  backend_nest_server:
+    container_name: nest_server
     build: 
       context: .
-      dockerfile: DockerfileServer
+      dockerfile: DockerNest
     working_dir: /nest_angular_app
     environment: 
       - JWT_SECRET=${JWT_SECRET}
@@ -15,17 +15,17 @@ services:
       - EmailUserName=${EmailUserName}
     # ports: 
     #   - 8080:4200
-    user: ${CURRENT_UID}
+    # user: ${CURRENT_UID}
     volumes: 
       - ..:/nest_angular_app
     networks:
       - manuapp_network
     entrypoint: "npm run serve"
-  front_end_server:
+  frontend_angular_server:
     container_name: angular_server
     build: 
       context: .
-      dockerfile: DockerfileClient
+      dockerfile: DockerAngular
     working_dir: /angular_app
     # ports: 
     #   - 4000:4200
@@ -33,17 +33,20 @@ services:
       - ..:/angular_app
     networks:
       - manuapp_network
-    entrypoint: "ng serve --host 0.0.0.0"
-  ng_inx_server:
-    container_name: nginx_server
-    build: 
-      context: ./nginx
-      dockerfile: dockerfile
-    ports: 
-      - 80:80
-    volumes: 
-      - ./nginx/conf.d:/etc/nginx/conf.d
-    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/my.conf > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
+    entrypoint: "sleep 100"
+    # entrypoint: "ng serve --host 0.0.0.0"
+  # ng_inx_server:
+  #   container_name: nginx_server
+  #   build: 
+  #     context: ./nginx
+  #     dockerfile: dockerfile
+  #   ports: 
+  #     - 80:80
+  #   volumes: 
+  #     - ./nginx/conf.d:/etc/nginx/conf.d
+  #   command: /bin/bash -c "nginx -g 'daemon off;'"
+  #   networks:
+  #     - manuapp_network
     
 
 networks:
