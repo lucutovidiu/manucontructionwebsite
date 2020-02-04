@@ -54,3 +54,7 @@ Thumbs.db
 
 #picture assets
 src/assets/projects_component
+
+#dev only allow dev work with portfolio
+#architect -> build -> options -> assets -> "ignore": [ "**/projects_component/**" ] - it's already on prod server and now ignored so it should not be added only on another prod env when host will change
+angular.json
