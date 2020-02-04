@@ -130,3 +130,6 @@ this.http.get<HttpResponse<object>>(url, {observe: 'response'})
                 resolve(error);
             }
         );
+
+# NgInx restart server
+into docker -> cd /etc/init.d/ -> ./nginx reload

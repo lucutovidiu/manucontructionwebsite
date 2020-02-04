@@ -34,6 +34,8 @@ export class ProjectsSliderComponent implements OnInit {
   ngOnInit() {
     this.calculateSliderSizes();
     this.projectsProviderService.getAllProjects().subscribe((projects: Array<ProjectsDTO>) => {
+      console.log("porjectssssssssssssssssssssssssssss")
+      console.log(projects)
       this.projects = projects;
     });
     this.projectsProviderService.fetchAllProjects();
