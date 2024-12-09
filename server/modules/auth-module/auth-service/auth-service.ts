@@ -16,7 +16,7 @@ export class AuthService {
     }
 
     public generateJWTToken(data: any, expiresIn?: string, algorithm?: string) {
-        console.log("secrect = ", this.jwtSecret)
+        // console.log("secrect = ", this.jwtSecret)
         let token = jwt.sign({
             ...data
         },

@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { ApplicationModule } from './app.module';
-import * as path from "path";
+import * as path from 'path';
 // import {resolve, basename, } from "path"
 
 async function bootstrap() {
@@ -34,7 +34,7 @@ async function bootstrap() {
   app.useStaticAssets(path.join(process.cwd(), 'src', 'assets'), {
     prefix: "/sassets",
   });
-  app.enableCors();
+  // app.enableCors();
   app.setGlobalPrefix('api');
   await app.listen(appPort);
 }

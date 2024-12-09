@@ -1,14 +1,13 @@
-version: '3'
+version: '3.8'
 
 services:
-  angular:
+  manu-project-fe:
+    container_name: manu-project-fe
     build:
-      context: ./client
+      context: .
       dockerfile: dockerfile
-#    volumes:
-#      - ./client:/app
-    ports:
-      - "3002:4200"
+#    ports:
+#      - "3002:80"
     restart: unless-stopped
     networks:
       - bible-project-network
